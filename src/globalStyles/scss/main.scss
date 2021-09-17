@@ -1,0 +1,111 @@
+@import "~bootstrap/scss/bootstrap.scss";
+
+@font-face {
+  font-family: "pf_beausans_probbook";
+  src: url("../../fonts/pfbeausanspro-bbook-webfont.woff2") format("woff2"),
+    url("../../fonts/pfbeausanspro-bbook-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "pf_beausans_probbook_italic";
+  src: url("../../fonts/pfbeausanspro-bbookitalic-webfont.woff2") format("woff2"),
+    url("../../fonts/pfbeausanspro-bbookitalic-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "pf_beausans_probold";
+  src: url("../../fonts/pfbeausanspro-bold-webfont.woff2") format("woff2"),
+    url("../../fonts/pfbeausanspro-bold-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "pf_beausans_prolight_italic";
+  src: url("../../fonts/pfbeausanspro-lightitalic-webfont.woff2") format("woff2"),
+    url("../../fonts/pfbeausanspro-lightitalic-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "pf_beausans_proregular";
+  src: url("../../fonts/pfbeausanspro-regular-webfont.woff2") format("woff2"),
+    url("../../fonts/pfbeausanspro-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "pf_beausans_proSBdIt";
+  src: url("../../fonts/pfbeausanspro-semibolditalic-webfont.woff2") format("woff2"),
+    url("../../fonts/pfbeausanspro-semibolditalic-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+.bg-image {
+  background: url("../../images/collage.jpg") no-repeat;
+  background-size: cover;
+}
+
+.recaptcha {
+  min-height: 6rem;
+}
+
+footer {
+  width: 100%;
+  height: 7rem;
+  position: relative;
+  margin-top: 1.5625rem;
+  color: white;
+}
+
+.footer-box-top {
+  width: 100%;
+  min-height: 4rem;
+  background-color: $teal-600;
+}
+
+.footer-box-bottom {
+  width: 100%;
+  min-height: 3rem;
+  background-color: $teal-200;
+}
+
+.content-box-login {
+  padding: 2rem;
+  background-color: $gray-100;
+  border-radius: 0.7rem;
+}
+
+.main-login {
+  display: flex;
+  align-items: center;
+  .child-login {
+    width: 100%;
+    margin: 2.05rem 0 0 0;
+  }
+}
+
+.logo {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: flex-start;
+}
+
+.logo img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: top;
+}
