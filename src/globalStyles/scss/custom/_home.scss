@@ -1,0 +1,23 @@
+.content-box-login-home {
+  padding: 2rem;
+  min-height: 26.125rem;
+}
+
+.logo {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: flex-start;
+}
+
+.logo img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: top;
+}
+
+.bg-image {
+  background: url("../../../images/collage.jpg") no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
