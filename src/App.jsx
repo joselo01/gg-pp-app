@@ -2,9 +2,8 @@ import React from "react";
 //import Proveedores from './pages/Proveedores';
 
 import { Provider } from "react-redux";
-import { Login } from "./pages/Login";
-import { Footer } from "./components/molecules/Footer";
 import generateStore from "./redux/store";
+import { AppRouter } from "./AppRouter";
 
 function App() {
   const store = generateStore();
@@ -12,12 +11,11 @@ function App() {
   return (
     <Provider store={store}>
       <div className="bg-image">
-        <div className="main-login">
+        <div className="main-login h-75">
           <div className="child-login">
-            <div className="container">
-              <Login />
+            <div className="fluid-container">
+              <AppRouter/>
             </div>
-            <Footer />
           </div>
         </div>
       </div>

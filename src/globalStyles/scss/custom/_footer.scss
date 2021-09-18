@@ -1,0 +1,46 @@
+footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  color: white;
+}
+
+.footer-box-top {
+  width: 100%;
+  min-height: 4.5rem;
+  background-color: #149288;
+  padding: 0.4rem 0;
+}
+
+.footer-box-bottom {
+  width: 100%;
+  min-height: 3rem;
+  background-color:#ADDBD8;
+}
+@media (max-width: 768px) {
+  .footer-box-bottom {
+    display: none;
+  }
+
+  .h-75 {
+    height: 85% !important;
+  }
+ }
+.title {
+  font-family: "pf_beausans_probold";
+}
+
+.subtitle {
+  font-family: "pf_beausans_proregular";
+  font-size: 0.9rem;
+  padding-bottom: 0.2rem;
+  a {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+.text-button {
+  font-family: "pf_beausans_proregular";
+  font-size: 0.9rem;
+}

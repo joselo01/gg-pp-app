@@ -1,0 +1,72 @@
+.content-box-login {
+  padding: 2rem;
+  background-color: $gray-100;
+  border-radius: 0.7rem;
+
+  .title {
+    font-family: "pf_beausans_probold";
+  }
+
+  .subtitle {
+    font-family: "pf_beausans_proregular";
+  }
+
+  .forgot {
+    font-family: "pf_beausans_probbook";
+  }
+  .questions {
+    font-family: "pf_beausans_probbook";
+    color: gray;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .content-box-login{
+    margin-top: 1.25rem;
+  }
+  
+}
+
+.main-login {
+  display: flex;
+  align-items: center;
+  .child-login {
+    width: 100%;
+    margin: 0;
+  }
+}
+
+.logo {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: flex-start;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+ /*  .logo {
+    padding: 1.25rem 0;
+  } */
+}
+
+.logo img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: top;
+}
+
+.bg-image {
+  background: url("../../../images/collage.jpg") no-repeat;
+  background-size: cover;
+}
+
+.recaptcha {
+  min-height: 4rem;
+}
+
+.bg-button {
+  background-color: #149288;
+  color: white;
+}
