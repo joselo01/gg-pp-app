@@ -4,6 +4,10 @@ import { CreatePassword } from "./pages/CreatePassword.jsx";
 import { Home } from "./pages/Home";
 import { Login } from "./pages/Login";
 import { VerificacionProveedor } from "./pages/VerificacionProveedor";
+import { RegisterInfo } from "./pages/RegisterInfo";
+import { Home } from "./pages/Home";
+import { Login } from "./pages/Login";
+import { Register } from "./pages/Register";
 
 export const AppRouter = () => {
   return (
@@ -14,6 +18,8 @@ export const AppRouter = () => {
             <Route exact path="/login" component={ Login } />
             <Route extac path="/supplier_verification" component={ VerificacionProveedor } />
             <Route extac path="/create_password" component={ CreatePassword } />
+            <Route exact path="/register-info" component={ RegisterInfo } />
+            <Route exact path="/register" component={ Register } />
         </Switch>
       </>
     </Router>
