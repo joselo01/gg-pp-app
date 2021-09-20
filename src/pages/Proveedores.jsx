@@ -12,7 +12,7 @@ const Proveedores = () => {
 
     return (
         <div>
-            lista de Proveedores
+            Lista de Proveedores
             <button onClick={() => dispatch(getProveedoresAction())}>Obtener Proveedores</button>
 
             <ul>
