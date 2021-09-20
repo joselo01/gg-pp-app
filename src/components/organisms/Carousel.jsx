@@ -18,7 +18,7 @@ export const Carousel = (props) => {
     if (currentIndex < (length - show)) {
       setCurrentIndex(prevState => prevState + 1)
     }
-    else{
+    else {
       setCurrentIndex(0)
     }
   }
@@ -26,8 +26,8 @@ export const Carousel = (props) => {
   const prev = () => {
     if (currentIndex > 0) {
       setCurrentIndex(prevState => prevState - 1)
-    } else{
-      setCurrentIndex(children.length -show)
+    } else {
+      setCurrentIndex(children.length - show)
     }
   }
 
@@ -63,16 +63,16 @@ export const Carousel = (props) => {
         {/* You can alwas change the content of the button to other things */}
         {/* {
           currentIndex > 0 && */}
-          <button
-        className="carousel-control-prev left-arrow"
-        type="button"
-        data-bs-target="#carouselExampleCaptions"
-        data-bs-slide="prev"
-        onClick={prev}
-      >
-        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span className="visually-hidden">Previous</span>
-      </button>
+        <button
+          className="carousel-control-prev left-arrow"
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide="prev"
+          onClick={prev}
+        >
+          <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span className="visually-hidden">Previous</span>
+        </button>
         {/* } */}
         <div
           className="carousel-content-wrapper"
@@ -89,7 +89,7 @@ export const Carousel = (props) => {
         {/* You can alwas change the content of the button to other things */}
         {/* {
           currentIndex < (length - show) && */}
-          <button
+        <button
           className="carousel-control-next right-arrow"
           type="button"
           data-bs-target="#carouselExampleCaptions"

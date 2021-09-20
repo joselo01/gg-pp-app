@@ -28,7 +28,7 @@ export const Footer = () => {
         <div className="footer-box-bottom">
           <div className="container">
           <Carousel
-            show={5}
+            show={4}
           >
                 <img src={c1} alt="placeholder" />
                 <img src={c2} alt="placeholder" />
