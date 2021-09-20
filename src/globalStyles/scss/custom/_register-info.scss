@@ -1,0 +1,25 @@
+.content-box-register-info {
+    padding: 2rem;
+    background-color: $gray-100;
+    border-radius: 0.7rem;
+    .welcome{
+        font-family: "pf_beausans_probold";
+        color: #000;
+    }
+    .title {
+        font-family: "pf_beausans_probold";
+        color: #000;
+        font-weight: 100;
+    }
+
+    .description {
+        font-family: "pf_beausans_proregular";
+    }
+}
+
+@media (max-width: 768px) {
+    .content-box-register-info {
+        margin-top: 1.25rem;
+    }
+
+}

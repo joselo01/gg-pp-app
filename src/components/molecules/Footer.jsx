@@ -13,7 +13,7 @@ export const Footer = () => {
   }
 
   function handleRegister() {
-    history.push("/");
+    history.push("/register-info");
   }
 
 
