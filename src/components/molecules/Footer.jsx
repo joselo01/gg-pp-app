@@ -15,7 +15,7 @@ export const Footer = () => {
   function handleRegister() {
     history.push("/");
   }
-  
+
 
   return (
     <>
