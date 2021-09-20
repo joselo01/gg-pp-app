@@ -11,7 +11,7 @@ export const FormLogin = () => {
   return (
     <>
       <form>
-        <div className="form-group mb-3">
+        <div className="form-group mb-2">
           <input
             className="form-control"
             type="text"
@@ -22,7 +22,7 @@ export const FormLogin = () => {
             onChange={handleInputChange}
           />
         </div>
-        <div className="form-group mb-3">
+        <div className="form-group mb-2">
           <input
             type="password"
             name="password"
@@ -33,18 +33,19 @@ export const FormLogin = () => {
             onChange={handleInputChange}
           />
         </div>
-        <div className="form-group mb-3">
+        <div className="form-group mb-2">
           <select className="form-select" aria-label="Default select example"
             name="options"
             value={options}
+            onChange={handleInputChange}
           >
-            <option selected>Seleccion una opción</option>
+            <option selected>Selecciona una opción</option>
             <option value="1">One</option>
             <option value="2">Two</option>
             
           </select>
         </div>
-        <div className="text-center mb-3">
+        <div className="text-center mb-2">
           <a href="/#" className="text-decoration-none text-secondary forgot">
             Olvidé mi contraseña
           </a>
@@ -56,7 +57,7 @@ export const FormLogin = () => {
           </button>
         </div>
       </form>
-      <div className="text-center mt-3">
+      <div className="text-center mt-2">
         <a href="/#" className="text-decoration questions">
           PREGUNTAS FRECUENTES
         </a>
