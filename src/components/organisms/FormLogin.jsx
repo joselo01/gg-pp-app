@@ -4,9 +4,10 @@ export const FormLogin = () => {
   const [formValues, handleInputChange] = useForm({
     usuario: "",
     password: "",
+    options: ""
   });
 
-  const { usuario, password } = formValues;
+  const { usuario, password, options } = formValues;
   return (
     <>
       <form>
@@ -31,6 +32,17 @@ export const FormLogin = () => {
             value={password}
             onChange={handleInputChange}
           />
+        </div>
+        <div className="form-group mb-3">
+          <select className="form-select" aria-label="Default select example"
+            name="options"
+            value={options}
+          >
+            <option selected>Seleccion una opción</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            
+          </select>
         </div>
         <div className="text-center mb-3">
           <a href="/#" className="text-decoration-none text-secondary forgot">
