@@ -1,8 +1,14 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 import { Logo } from "../components/atoms/Logo";
 import { Footer } from "../components/molecules/Footer";
 
 export const VerificacionProveedor = () => {
+  const history = useHistory();
+
+  function handlePassword() {
+    history.push("/create_password");
+  }
   return (
     <>
       <div className="container">
@@ -12,7 +18,7 @@ export const VerificacionProveedor = () => {
           </div>
           <div className="col-6"></div>
 
-          <div className="content-box-internas mt-5">
+          <div className="content-box-internas mt-4">
             <form>
               <div className="col-12">
                 <div className="input-group">
@@ -26,10 +32,10 @@ export const VerificacionProveedor = () => {
                   />
                 </div>
               </div>
-              <div className="row mt-5">
+              <div className="row mt-4">
                 <div className="col-6">
                   <div className="d-grid gap-2">
-                    <button
+                    <button onClick={() => console.log('hizo click')}
                       type="button"
                       className="btn bg-button block subtitle"
                     >
@@ -39,7 +45,7 @@ export const VerificacionProveedor = () => {
                 </div>
                 <div className="col-6">
                   <div className="d-grid gap-2">
-                    <button
+                    <button onClick={handlePassword}
                       type="button"
                       className="btn bg-button block subtitle"
                     >
@@ -52,7 +58,6 @@ export const VerificacionProveedor = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 };

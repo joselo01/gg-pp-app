@@ -39,7 +39,7 @@ export const FormLogin = () => {
             value={options}
             onChange={handleInputChange}
           >
-            <option selected>Selecciona una opción</option>
+            <option defaultValue>Selecciona una opción</option>
             <option value="1">One</option>
             <option value="2">Two</option>
             

@@ -1,14 +1,15 @@
 @import "~bootstrap/scss/bootstrap.scss";
 @import '../scss/custom/login';
 @import '../scss/custom/home';
-@import '../scss/custom/register-info';
 @import '../scss/custom/carousel';
 @import '../scss/custom/footer';
+@import '../scss/custom/register-info';
 @import '../scss/custom/fonts';
 
 html,
 body {
   height: 100%;
+  font-family: "pf_beausans_proregular";
 }
 
 

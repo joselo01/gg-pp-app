@@ -12,7 +12,7 @@ export const CreatePassword = () => {
           </div>
           <div className="col-6"></div>
 
-          <div className="content-box-internas mt-5 col-12">
+          <div className="content-box-internas mt-4 col-12">
             <form>
               <div className="col-12">
                 <div className="input-group">
@@ -62,7 +62,7 @@ export const CreatePassword = () => {
           </div>
         </div>
       </div>
-      <Footer />
+     
 
       <div
         className="modal fade"

@@ -11,7 +11,7 @@ function App() {
   return (
     <Provider store={store}>
       <div className="bg-image">
-        <div className="main-login h-75">
+        <div className="main-login">
           <div className="child-login">
             <div className="fluid-container">
               <AppRouter/>

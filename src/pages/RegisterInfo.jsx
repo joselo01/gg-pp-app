@@ -1,40 +1,47 @@
-import React from 'react'
-import { Accordion } from '../components/molecules/Accordion'
+import React from "react";
+import { Accordion } from "../components/molecules/Accordion";
 import { useHistory } from "react-router-dom";
+import { Logo } from "../components/atoms/Logo";
+import { Footer } from "../components/molecules/Footer";
 
 export const RegisterInfo = () => {
-    const history = useHistory();
+  const history = useHistory();
 
-    function handleRegister() {
-        history.push("/register");
-    };
+  function handleRegister() {
+    history.push("/register");
+  }
 
-    
+  return (
+    <>
+       <div className="container">
+        <div className="row">
+          <div className="col-12 col-md-6">
+            <Logo />
+          </div>
+          <div className="col-12 col-md-6"></div>
 
-    return (
-        <>
-            <div className="container content-box-register-info">
-                <div className="row">
-                    <div className="col-12 col-md-6">
-                        <h1 className="welcome">Gloria da la bienvenida</h1>
-                    </div>
-                    <hr />
-                    <div className="col-12">
-                        <Accordion />
-                    </div>
-                    <hr />
-                    <div className="d-grid col-6 ">
-                        <button
-                            onClick={handleRegister}
-                            type="button"
-                            className="btn bg-button block subtitle">
-                            Completar Formulario
-                        </button>
-                    </div>
-                </div>
-            </div>
-
-            {/* <Footer /> */}
-        </>
-    )
-}
+          <div className="content-box-register-info mt-4 col-12">
+            <form>
+              <div className="col-12">
+              <div className="welcome">Gloria da la bienvenida</div>
+              </div>
+              <div className="col-12">
+                <Accordion/>
+              </div>
+              
+            </form>
+           
+                  <div className="d-grid gap-2 mt-3">
+                    <button onClick={handleRegister}
+                      type="button"
+                      className="btn bg-button block subtitle"
+                    >
+                      Completar formulario
+                    </button>
+                  </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};

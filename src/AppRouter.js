@@ -5,8 +5,6 @@ import { Home } from "./pages/Home";
 import { Login } from "./pages/Login";
 import { VerificacionProveedor } from "./pages/VerificacionProveedor";
 import { RegisterInfo } from "./pages/RegisterInfo";
-import { Home } from "./pages/Home";
-import { Login } from "./pages/Login";
 import { Register } from "./pages/Register";
 
 export const AppRouter = () => {
