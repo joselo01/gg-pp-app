@@ -9941,7 +9941,7 @@ fieldset:disabled .btn {
   min-height: 100vh;
   flex-direction: column;
   padding-top: 1.25rem;
-  background: url(./static/media/collage.6e65db4f.jpg) no-repeat 50%;
+  background: url(../static/media/collage.6e65db4f.jpg) no-repeat 50%;
   background-size: cover;
 }
 .main-login .child-login {
@@ -10215,34 +10215,34 @@ footer {
 }
 @font-face {
   font-family: "pf_beausans_probbook";
-  src: url(./static/media/pfbeausanspro-bbook-webfont.8750d57f.woff2)
+  src: url(../static/media/pfbeausanspro-bbook-webfont.8750d57f.woff2)
       format("woff2"),
-    url(./static/media/pfbeausanspro-bbook-webfont.78af7c82.woff) format("woff");
+    url(../static/media/pfbeausanspro-bbook-webfont.78af7c82.woff) format("woff");
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: "pf_beausans_probbook_italic";
-  src: url(./static/media/pfbeausanspro-bbookitalic-webfont.f330acbd.woff2)
+  src: url(../static/media/pfbeausanspro-bbookitalic-webfont.f330acbd.woff2)
       format("woff2"),
-    url(./static/media/pfbeausanspro-bbookitalic-webfont.a0ec85ff.woff)
+    url(../static/media/pfbeausanspro-bbookitalic-webfont.a0ec85ff.woff)
       format("woff");
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: "pf_beausans_probold";
-  src: url(./static/media/pfbeausanspro-bold-webfont.e95d5964.woff2)
+  src: url(../static/media/pfbeausanspro-bold-webfont.e95d5964.woff2)
       format("woff2"),
-    url(./static/media/pfbeausanspro-bold-webfont.1a8e0f3b.woff) format("woff");
+    url(../static/media/pfbeausanspro-bold-webfont.1a8e0f3b.woff) format("woff");
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: "pf_beausans_prolight_italic";
-  src: url(./static/media/pfbeausanspro-lightitalic-webfont.207f9feb.woff2)
+  src: url(../static/media/pfbeausanspro-lightitalic-webfont.207f9feb.woff2)
       format("woff2"),
-    url(./static/media/pfbeausanspro-lightitalic-webfont.49896aeb.woff)
+    url(../static/media/pfbeausanspro-lightitalic-webfont.49896aeb.woff)
       format("woff");
   font-weight: 400;
   font-style: normal;
@@ -10251,16 +10251,16 @@ footer {
   font-family: "pf_beausans_proregular";
   src: url(./static/media/pfbeausanspro-regular-webfont.4306e6d3.woff2)
       format("woff2"),
-    url(./static/media/pfbeausanspro-regular-webfont.006943ba.woff)
+    url(../static/media/pfbeausanspro-regular-webfont.006943ba.woff)
       format("woff");
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
   font-family: "pf_beausans_proSBdIt";
-  src: url(./static/media/pfbeausanspro-semibolditalic-webfont.af281ac3.woff2)
+  src: url(../static/media/pfbeausanspro-semibolditalic-webfont.af281ac3.woff2)
       format("woff2"),
-    url(./static/media/pfbeausanspro-semibolditalic-webfont.76e1fade.woff)
+    url(../static/media/pfbeausanspro-semibolditalic-webfont.76e1fade.woff)
       format("woff");
   font-weight: 400;
   font-style: normal;
