@@ -16,7 +16,7 @@ export const StepItem = ({ item, selectedTab, index, handleStepChange }) => {
 
             <li className={`step ${index <= selectedTab ? 'active' : ''}`}>
                 <div onClick={() => handleStepChange(index)}>
-                    <img height="20" src="https://peopleshub.org/wp-content/uploads/2018/04/person-icon-white.png" alt="" />
+                    <img height="20" src={item.icon} alt="" />
                 </div>
                 {item.name}
             </li>
