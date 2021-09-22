@@ -22,17 +22,16 @@
 }
 
 @media (max-width: 768px) {
-  .content-box-login{
+  .content-box-login {
     margin-top: 1.25rem;
   }
-  
 }
 
 .main-login {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-  padding-top:1.25rem;
+  padding-top: 1.25rem;
   background: url("../../../images/collage.jpg") no-repeat center center;
   background-size: cover;
   .child-login {
@@ -57,7 +56,7 @@
 }
 
 @media (max-width: 768px) {
- /*  .logo {
+  /*  .logo {
     padding: 1.25rem 0;
   } */
 }
@@ -70,6 +69,15 @@
 
 .recaptcha {
   min-height: 4rem;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 1rem;
+}
+
+.text-danger {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 1rem;
 }
 
 .bg-button {
