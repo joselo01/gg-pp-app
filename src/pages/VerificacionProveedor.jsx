@@ -36,7 +36,7 @@ export const VerificacionProveedor = () => {
                   <div className="d-grid gap-2">
                     <button onClick={() => console.log('hizo click')}
                       type="button"
-                      className="btn bg-button block subtitle"
+                      className="btn btn-prev block subtitle"
                     >
                       CANCELAR
                     </button>

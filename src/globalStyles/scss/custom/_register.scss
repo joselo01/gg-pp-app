@@ -64,18 +64,28 @@
 
 .bs4-order-tracking li.active {
     font-weight: bold;
-    color: #149288;
+    color: $green;
 }
 
 .bs4-order-tracking li.active>div {
-    background: #149288;
+    background: $green;
 }
 
 .bs4-order-tracking li.active:after {
-    background: #149288;
+    background: $green;
 }
 
 .card-timeline {
     background-color: #fff;
     z-index: 0;
+}
+
+.btn-prev {
+    background-color: $blue;
+    color: white;
+}
+
+.btn-next {
+    background-color: $green;
+    color: white;
 }
