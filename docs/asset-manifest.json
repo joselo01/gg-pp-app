@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/static/css/main.790c794e.chunk.css",
+    "main.js": "/static/js/main.34d02232.chunk.js",
+    "main.js.map": "/static/js/main.34d02232.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.5cd7c95f.js",
+    "runtime-main.js.map": "/static/js/runtime-main.5cd7c95f.js.map",
+    "static/js/2.a39d1c6b.chunk.js": "/static/js/2.a39d1c6b.chunk.js",
+    "static/js/2.a39d1c6b.chunk.js.map": "/static/js/2.a39d1c6b.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.790c794e.chunk.css.map": "/static/css/main.790c794e.chunk.css.map",
+    "static/js/2.a39d1c6b.chunk.js.LICENSE.txt": "/static/js/2.a39d1c6b.chunk.js.LICENSE.txt",
+    "static/media/AgroAurora.5bd588b3.jpg": "/static/media/AgroAurora.5bd588b3.jpg",
+    "static/media/Agroazucar.bf53df26.jpg": "/static/media/Agroazucar.bf53df26.jpg",
+    "static/media/Andina.f4657abd.jpg": "/static/media/Andina.f4657abd.jpg",
+    "static/media/main.scss": "/static/media/pfbeausanspro-semibolditalic-webfont.af281ac3.woff2",
+    "static/media/logo_proveedores.9b9030d6.png": "/static/media/logo_proveedores.9b9030d6.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5cd7c95f.js",
+    "static/js/2.a39d1c6b.chunk.js",
+    "static/css/main.790c794e.chunk.css",
+    "static/js/main.34d02232.chunk.js"
+  ]
+}
