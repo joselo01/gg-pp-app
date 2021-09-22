@@ -2,7 +2,6 @@ import React from "react";
 import { Accordion } from "../components/molecules/Accordion";
 import { useHistory } from "react-router-dom";
 import { Logo } from "../components/atoms/Logo";
-import { Footer } from "../components/molecules/Footer";
 
 export const RegisterInfo = () => {
   const history = useHistory();
