@@ -1,7 +1,6 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import { Logo } from "../components/atoms/Logo";
-import { Footer } from "../components/molecules/Footer";
 
 export const VerificacionProveedor = () => {
   const history = useHistory();

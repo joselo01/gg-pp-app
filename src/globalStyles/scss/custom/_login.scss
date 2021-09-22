@@ -29,12 +29,22 @@
 }
 
 .main-login {
-  min-height: 100%;
-  position: relative;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
   padding-top:1.25rem;
+  background: url("../../../images/collage.jpg") no-repeat center center;
+  background-size: cover;
   .child-login {
     width: 100%;
     margin: 0;
+    flex: 1;
+    display: table;
+
+    .fluid-container {
+      display: table-cell;
+      vertical-align: middle;
+    }
   }
 }
 
@@ -56,11 +66,6 @@
   max-width: 100%;
   height: auto;
   vertical-align: top;
-}
-
-.bg-image {
-  background: url("../../../images/collage.jpg") no-repeat;
-  background-size: cover;
 }
 
 .recaptcha {

@@ -14,6 +14,25 @@
 
     .description {
         font-family: "pf_beausans_proregular";
+        font-size:0.8rem;
+    }
+
+    .accordion-item .accordion-button {
+        font-size: 0.9rem;
+        padding: 0.6rem;
+    }
+
+    span {
+        font-size:0.84rem;
+        width: 11rem;
+    }
+
+    input {
+        font-size:0.84rem;
+        height: 2.125rem;
+    }
+    select {
+        height: 2.125rem;
     }
 }
 

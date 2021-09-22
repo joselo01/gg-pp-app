@@ -1,7 +1,6 @@
 import React from "react";
 import { BoxLogin } from "../components/organisms/BoxLogin";
 import { Logo } from "../components/atoms/Logo";
-import { Footer } from "../components/molecules/Footer";
 
 export const Login = () => {
   return (
@@ -16,7 +15,6 @@ export const Login = () => {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 };

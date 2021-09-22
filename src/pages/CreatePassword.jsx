@@ -1,6 +1,5 @@
 import React from "react";
 import { Logo } from "../components/atoms/Logo";
-import { Footer } from "../components/molecules/Footer";
 
 export const CreatePassword = () => {
   return (
