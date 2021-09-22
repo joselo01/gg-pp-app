@@ -40,7 +40,7 @@ export const CreatePassword = () => {
                       type="button"
                       className="btn btn-prev block subtitle"
                     >
-                      CANCELAR
+                      Cancelar
                     </button>
                   </div>
                 </div>
@@ -52,7 +52,7 @@ export const CreatePassword = () => {
                       type="button"
                       className="btn btn-next block subtitle"
                     >
-                      ENVIAR
+                      Enviar
                     </button>
                   </div>
                 </div>

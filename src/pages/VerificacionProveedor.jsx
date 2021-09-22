@@ -38,7 +38,7 @@ export const VerificacionProveedor = () => {
                       type="button"
                       className="btn btn-prev block subtitle"
                     >
-                      CANCELAR
+                      Cancelar
                     </button>
                   </div>
                 </div>
@@ -48,7 +48,7 @@ export const VerificacionProveedor = () => {
                       type="button"
                       className="btn bg-button block subtitle"
                     >
-                      ENVIAR
+                      Enviar
                     </button>
                   </div>
                 </div>
