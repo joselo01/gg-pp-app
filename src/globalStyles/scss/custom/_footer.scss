@@ -7,14 +7,14 @@ footer {
 .footer-box-top {
   width: 100%;
   min-height: 4.5rem;
-  background-color: #149288;
+  background-color: $green;
   padding: 0.4rem 0;
 }
 
 .footer-box-bottom {
   width: 100%;
   min-height: 3rem;
-  background-color:#ADDBD8;
+  background-color:$green;
 }
 @media (max-width: 768px) {
   .footer-box-bottom {

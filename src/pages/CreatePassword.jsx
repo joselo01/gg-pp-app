@@ -38,7 +38,7 @@ export const CreatePassword = () => {
                   <div className="d-grid gap-2">
                     <button
                       type="button"
-                      className="btn bg-button block subtitle"
+                      className="btn btn-prev block subtitle"
                     >
                       CANCELAR
                     </button>
@@ -50,7 +50,7 @@ export const CreatePassword = () => {
                       data-bs-toggle="modal"
                       data-bs-target="#exampleModal"
                       type="button"
-                      className="btn bg-button block subtitle"
+                      className="btn btn-next block subtitle"
                     >
                       ENVIAR
                     </button>

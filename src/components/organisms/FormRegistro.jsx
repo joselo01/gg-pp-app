@@ -8,7 +8,7 @@ export const FormRegistro = ({ handleValidated }) => {
 
     const history = useHistory();
 
-    function handVerification() {
+    function handleVerification() {
         history.push("/supplier_verification");
     }
 
@@ -822,14 +822,14 @@ export const FormRegistro = ({ handleValidated }) => {
                     }[stepIndex]
                 }
 
-                <div className="row">
+                <div className="row justify-content-md-center">
                     {
                         stepIndex > 0 ?
                             <div className="col-12 col-md-6 mb-3">
                                 <div className="d-grid gap-2">
                                     <button
                                         type="button"
-                                        className="btn btn-danger block subtitle"
+                                        className="btn btn-prev block subtitle"
                                         onClick={() => handleStepChange(index => index - 1)}
                                     >
                                         Volver
@@ -842,8 +842,11 @@ export const FormRegistro = ({ handleValidated }) => {
                         <div className="d-grid gap-2">
                             <button
                                 type="button"
-                                className="btn bg-button block subtitle"
-                                onClick={() => handleStepChange(index => index + 1)}
+                                className="btn btn-next block subtitle"
+                                onClick={ 
+                                    stepIndex < steps.length -1
+                                    ? () => handleStepChange(index => index + 1)
+                                    : handleVerification}
                             >
                                 {
                                     stepIndex < steps.length -1 ? 'Siguiente' : 'Enviar'
