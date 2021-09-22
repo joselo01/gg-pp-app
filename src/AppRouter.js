@@ -7,6 +7,7 @@ import { VerificacionProveedor } from "./pages/VerificacionProveedor";
 import { RegisterInfo } from "./pages/RegisterInfo";
 import { Register } from "./pages/Register";
 
+
 export const AppRouter = () => {
   return (
     <Router>
