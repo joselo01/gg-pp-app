@@ -5,11 +5,17 @@ export const FormLogin = () => {
   const [formValues, handleInputChange] = useForm({
     usuario: "",
     password: "",
-    options: "",
+    user: ""
   });
 
-  const { usuario, password, options } = formValues;
+  const user = [
+    { value: '1', label: 'Usuario 1'},
+    { value: '2', label: 'Usuario 2'}
+   ];
 
+
+ 
+  const { usuario, password } = formValues;
   const [captchaValido, cambiarCaptchaValido] = useState(null);
   //const [usuarioValido, cambiarUsuarioValido] = useState(false);
   const [errorUsuario, setErrorUsuario] = useState(null);
@@ -47,6 +53,8 @@ export const FormLogin = () => {
 
     setErrorUsuario(null);
     setErrorPasword(null);
+
+    console.log(formValues);
   };
 
   return (
@@ -87,13 +95,16 @@ export const FormLogin = () => {
             <select
               className="form-select"
               aria-label="Default select example"
-              name="options"
-              value={options}
+              name="user"
               onChange={handleInputChange}
             >
-              <option defaultValue>Selecciona una opción</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
+              {user.map((item) => {
+              return (
+                <option key={item.value} value={item.value}>
+                  {item.label}
+                </option>
+              );
+            })}
             </select>
           </div>
           <div className="text-center mb-2">
