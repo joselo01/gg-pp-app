@@ -59,15 +59,13 @@ export const FormLogin = () => {
     }
 
     if (!errorSelect.trim()) {
-      seterrorSelect("Debe selecconar una opción");
+      seterrorSelect("Debe seleccionar una opción");
       return;
     }
 
     setErrorUsuario(null);
     setErrorPasword(null);
     seterrorSelect("");
-
-    console.log(formValues);
   };
 
   return (
