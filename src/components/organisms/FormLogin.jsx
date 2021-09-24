@@ -5,21 +5,21 @@ export const FormLogin = () => {
   const [formValues, handleInputChange] = useForm({
     usuario: "",
     password: "",
-    user: ""
+    user: "",
   });
 
   const user = [
-    { value: '1', label: 'Usuario 1'},
-    { value: '2', label: 'Usuario 2'}
-   ];
+    { value: "", label: "Seleccione una opcion" },
+    { value: "1", label: "Usuario 1" },
+    { value: "2", label: "Usuario 2" },
+  ];
 
-
- 
   const { usuario, password } = formValues;
   const [captchaValido, cambiarCaptchaValido] = useState(null);
   //const [usuarioValido, cambiarUsuarioValido] = useState(false);
   const [errorUsuario, setErrorUsuario] = useState(null);
   const [errorPassword, setErrorPasword] = useState(null);
+  const [errorSelect, seterrorSelect] = useState("");
 
   const captcha = useRef(null);
   const onCaptcha = () => {
@@ -49,10 +49,23 @@ export const FormLogin = () => {
     if (!password.trim()) {
       setErrorPasword("El campo password es requerido");
       return;
+    } else if (
+      !/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])([A-Za-z\d$@$!%*?&]|[^ ]){8,15}$/.test(
+        password
+      )
+    ) {
+      setErrorPasword("Ingrese un formato Valido");
+      return;
+    }
+
+    if (!errorSelect.trim()) {
+      seterrorSelect("Debe selecconar una opción");
+      return;
     }
 
     setErrorUsuario(null);
     setErrorPasword(null);
+    seterrorSelect("");
 
     console.log(formValues);
   };
@@ -94,18 +107,20 @@ export const FormLogin = () => {
           <div className="form-group mb-2">
             <select
               className="form-select"
-              aria-label="Default select example"
               name="user"
               onChange={handleInputChange}
             >
               {user.map((item) => {
-              return (
-                <option key={item.value} value={item.value}>
-                  {item.label}
-                </option>
-              );
-            })}
+                return (
+                  <option key={item.value} value={item.value}>
+                    {item.label}
+                  </option>
+                );
+              })}
             </select>
+            {errorSelect ? (
+              <span className="text-danger">{errorSelect}</span>
+            ) : null}
           </div>
           <div className="text-center mb-2">
             <a href="/#" className="text-decoration-none text-secondary forgot">
