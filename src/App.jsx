@@ -1,27 +1,15 @@
 import React from "react";
-//import Proveedores from './pages/Proveedores';
-
 import { Provider } from "react-redux";
-import generateStore from "./redux/store";
-import { AppRouter } from "./AppRouter";
-import { Footer } from "./components/molecules/Footer";
+import { AppRouter } from "./routers/AppRouter";
+import { store } from "./redux/store/store";
 
 function App() {
-  const store = generateStore();
-
+  
   return (
-    <Provider store={store}>
-      <div className="bg-image">
-        <div className="main-login">
-          <div className="child-login">
-            <div className="fluid-container">
-              <AppRouter/>
-            </div>
-          </div>
-          <Footer />
-        </div>
-      </div>
+    <Provider store={ store }>
+      <AppRouter/>
     </Provider>
+    
   );
 }
 

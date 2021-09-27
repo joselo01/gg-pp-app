@@ -31,7 +31,7 @@
   display: flex;
   min-height: 100vh;
   flex-direction: column;
-  padding-top: 1.25rem;
+  padding-top: 1rem;
   background: url("../../../images/collage.jpg") no-repeat center center;
   background-size: cover;
   .child-login {
@@ -39,6 +39,7 @@
     margin: 0;
     flex: 1;
     display: table;
+    min-height: 46.875rem;
 
     .fluid-container {
       display: table-cell;
@@ -72,6 +73,7 @@
   display: flex;
   justify-content: center;
   padding-bottom: 1rem;
+  overflow-x: hidden;
 }
 
 .text-danger {

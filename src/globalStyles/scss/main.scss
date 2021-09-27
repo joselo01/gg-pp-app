@@ -1,22 +1,22 @@
-$green:   #149288 !default;
-$blue:   #04003f !default;
-
-
-
+@import "../scss/colors_base/base";
 @import "~bootstrap/scss/bootstrap.scss";
-@import '../scss/custom/login';
-@import '../scss/custom/home';
-@import '../scss/custom/carousel';
-@import '../scss/custom/footer';
-@import '../scss/custom/register-info';
-@import '../scss/custom/register';
-@import '../scss/custom/fonts';
-
-@import '../scss/colors_base/base';
-
+@import "../scss/custom/login";
+@import "../scss/custom/home";
+@import "../scss/custom/carousel";
+@import "../scss/custom/footer";
+@import "../scss/custom/register-info";
+@import "../scss/custom/register";
+@import "../scss/custom/fonts";
 
 html,
 body {
   height: 100%;
   font-family: "pf_beausans_proregular";
+}
+
+.loading {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  align-items: center;
 }

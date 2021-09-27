@@ -1,29 +1,36 @@
-import React from 'react';
+import React from "react";
+import { useDispatch } from "react-redux";
+import { Logo } from "../components/atoms/Logo";
+import { startLogout } from "../redux/actions/auth";
 
-import {useDispatch, useSelector} from 'react-redux';
-import { getProveedoresAction } from '../redux/proveedores';
+export const Proveedores = () => {
+  const dispatch = useDispatch();
 
-const Proveedores = () => {
+  const handleLogout = () => {
+    dispatch(startLogout())
+  };
 
-    const dispatch = useDispatch();
 
-    const proveedores = useSelector(store => store.proveedores.array)
-    //console.log(proveedores);
+  return (
+    <>
+      <div className="container">
+        <div className="row">
+          <div className="col-6">
+            <Logo />
+          </div>
+          <div className="col-6"></div>
 
-    return (
-        <div>
-            Lista de Proveedores
-            <button onClick={() => dispatch(getProveedoresAction())}>Obtener Proveedores</button>
-
-            <ul>
-                {
-                    proveedores.map(item => (
-                            <li key={item.name}>{item.name}</li>
-                    ))
-                }
-            </ul>
+          <div className="content-box-internas mt-4">
+            <span className="nav-item nav-link-text-info">
+            
+              
+              <button onClick={handleLogout} className="nav-item nav-link btn">
+                Logout
+              </button>
+            </span>
+          </div>
         </div>
-    )
-}
-
-export default Proveedores
+      </div>
+    </>
+  );
+};
