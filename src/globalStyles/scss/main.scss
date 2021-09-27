@@ -1,5 +1,7 @@
 @import "../scss/colors_base/base";
 @import "~bootstrap/scss/bootstrap.scss";
+@import "bootstrap-icons/font/bootstrap-icons.css";
+
 @import "../scss/custom/login";
 @import "../scss/custom/home";
 @import "../scss/custom/carousel";
@@ -19,4 +21,17 @@ body {
   min-height: 100vh;
   flex-direction: column;
   align-items: center;
+}
+
+.input-group-text {
+  width: 17rem;
+  &.in-modal{
+    width: 12rem;
+  }
+}
+
+@media (min-width: 576px) {
+  .h-sm-100 {
+      height: 100%;
+  }
 }

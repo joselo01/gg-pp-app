@@ -13,8 +13,8 @@ export const FormLogin = () => {
   //console.log(msgError);
 
   const [formValues, handleInputChange] = useForm({
-    email: "",
-    password: "",
+    email: "user@gmail.com",
+    password: "Lima@2021",
     options: "",
   });
   const { email, password, options } = formValues;

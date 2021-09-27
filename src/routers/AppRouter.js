@@ -13,6 +13,9 @@ import { login } from "../redux/actions/auth";
 import { Footer } from "../components/molecules/Footer";
 import { PrivateRoute } from "./PrivateRoute";
 import { PublicRoute } from "./PublicRoute";
+import { Compradores } from "../pages/Compradores";
+import { ProviderPreview } from "../pages/ProviderPreview";
+import { Navbar } from "../components/molecules/Navbar";
 
 export const AppRouter = () => {
   const dispatch = useDispatch();
@@ -39,7 +42,7 @@ export const AppRouter = () => {
         <div className="spinner-border" role="status">
           <span className="visually-hidden">Loading...</span>
         </div>
-        <h5 className="mt-2">Eseper por favor...</h5>
+        <h5 className="mt-2">Espere por favor...</h5>
       </div>
     );
   }
@@ -51,36 +54,59 @@ export const AppRouter = () => {
           <div className="main-login">
             <div className="child-login">
               <div className="fluid-container">
-                <Switch>
-                  <Route exact path="/" component={Home} />
-                  <PublicRoute
-                    exact
-                    path="/login"
-                    component={Login}
-                    isAuthenticated={isLoggedIn}
-                  />
-                  <PrivateRoute
-                    exact
-                    path="/proveedor"
-                    component={Proveedores}
-                    isAuthenticated={isLoggedIn}
-                  />
-                  <Route
-                    extac
-                    path="/supplier_verification"
-                    component={VerificacionProveedor}
-                  />
-                  <Route
-                    extac
-                    path="/create_password"
-                    component={CreatePassword}
-                  />
-                  <Route exact path="/register-info" component={RegisterInfo} />
-                  <Route exact path="/register" component={Register} />
-                </Switch>
+                <div className="container-fluid overflow-hidden">
+                  <div className="row vh-100 overflow-auto">
+                    {isLoggedIn ? <Navbar /> : <></>}
+                    <div className={`col d-flex flex-column h-sm-100 ${isLoggedIn ? 'card' : ''}`}>
+                      <main className="row overflow-auto">
+                        <div className="col pt-4">
+                          <Switch>
+                            <Route exact path="/" component={Home} />
+                            <PublicRoute
+                              exact
+                              path="/login"
+                              component={Login}
+                              isAuthenticated={isLoggedIn}
+                            />
+                            <PrivateRoute
+                              exact
+                              path="/comprador"
+                              component={Compradores}
+                              isAuthenticated={isLoggedIn}
+                            />
+                            <PrivateRoute
+                              exact
+                              path="/provider-preview"
+                              component={ProviderPreview}
+                              isAuthenticated={isLoggedIn}
+                            />
+                            <PrivateRoute
+                              exact
+                              path="/proveedor"
+                              component={Proveedores}
+                              isAuthenticated={isLoggedIn}
+                            />
+                            <Route
+                              extac
+                              path="/supplier_verification"
+                              component={VerificacionProveedor}
+                            />
+                            <Route
+                              extac
+                              path="/create_password"
+                              component={CreatePassword}
+                            />
+                            <Route exact path="/register-info" component={RegisterInfo} />
+                            <Route exact path="/register" component={Register} />
+                          </Switch>
+                        </div>
+                      </main>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
-            <Footer />
+            {isLoggedIn ? <></> : <Footer />}
           </div>
         </div>
       </>
