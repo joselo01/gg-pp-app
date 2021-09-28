@@ -35,7 +35,8 @@ export const TableProveedores = () => {
             status: 'En solicitud',
         },
     ]
-    const [tableList, setTableList] = useState(mockData);
+    // setTableList
+    const [tableList ] = useState(mockData);
 
     function handleViewSolitude() {
         history.push("/provider-preview");

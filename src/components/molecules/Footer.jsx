@@ -1,5 +1,5 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { Carousel } from "../organisms/Carousel";
 import c1 from "../../images/logo_empresas/AgroAurora.jpg";
 import c2 from "../../images/logo_empresas/Agroazucar.jpg";
@@ -22,7 +22,7 @@ export const Footer = () => {
           <div className="container">
             <div className="text-center subtitle">
               Antes de registrarse, ingresar a "
-              <a href="#/">Requisitos para el registro del proveedor</a>"
+              <Link to="#" >Requisitos para el registro del proveedor</Link>"
             </div>
             <div className="text-center">
               <button

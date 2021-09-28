@@ -3,6 +3,7 @@ import { useForm } from "../../hooks/useForm";
 import ReCAPTCHA from "react-google-recaptcha";
 import { useDispatch, useSelector } from "react-redux";
 import { startLoginEmailPassword } from "../../redux/actions/auth";
+import { Link } from "react-router-dom";
 //import { setError, removeError } from "../../redux/actions/ui";
 export const FormLogin = () => {
   const dispatch = useDispatch();
@@ -156,9 +157,9 @@ export const FormLogin = () => {
             ) : null}
           </div>
           <div className="text-center mb-2">
-            <a href="/#" className="text-decoration-none text-secondary forgot">
+            <Link to="/#" className="text-decoration-none text-secondary forgot">
               Olvidé mi contraseña
-            </a>
+            </Link>
           </div>
           <div className="recaptcha">
             <ReCAPTCHA
@@ -178,9 +179,9 @@ export const FormLogin = () => {
         </form>
 
         <div className="text-center mt-2">
-          <a href="/#" className="text-decoration questions">
+          <Link to="/#" className="text-decoration questions">
             PREGUNTAS FRECUENTES
-          </a>
+          </Link>
         </div>
       </div>
     </>

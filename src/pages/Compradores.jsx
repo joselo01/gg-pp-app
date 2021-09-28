@@ -1,9 +1,8 @@
 import React from "react";
-import { useDispatch } from "react-redux";
-import { Logo } from "../components/atoms/Logo";
-import { Navbar } from "../components/molecules/Navbar";
+// import { useDispatch } from "react-redux";
+// import { Logo } from "../components/atoms/Logo";
 import { TableProveedores } from "../components/organisms/TableProveedores";
-import { startLogout } from "../redux/actions/auth";
+// import { startLogout } from "../redux/actions/auth";
 
 export const Compradores = () => {
     

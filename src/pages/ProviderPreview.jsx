@@ -9,6 +9,10 @@ export const ProviderPreview = () => {
         history.push("/comprador");
     }
 
+    const handleInputChange = () =>{
+
+    }
+
     return (
         <div>
             <FormRegistro />
@@ -77,7 +81,7 @@ export const ProviderPreview = () => {
                                         // name="idFiscal"
                                         autoComplete="off"
                                         value="datamaster@gloria.com"
-                                        // onChange={handleInputChange}
+                                        onChange={handleInputChange}
                                     />
                                 </div>
                                 <div className="input-group mb-3">
@@ -90,7 +94,7 @@ export const ProviderPreview = () => {
                                         // name="idFiscal"
                                         autoComplete="off"
                                         value="jefatura@gloria.com"
-                                        // onChange={handleInputChange}
+                                        onChange={handleInputChange}
                                     />
                                 </div>
                                 <span>Antes de enviar, por favor valide que la información consignada es correcta.</span>
