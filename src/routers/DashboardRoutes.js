@@ -18,7 +18,6 @@ export const DashboardRoutes = () => {
                                 <div className={`col d-flex flex-column h-sm-100`}>
                                     <main className="row overflow-auto">
                                         <Navbar />
-
                                         <div className="col">
                                             {/* ${isLoggedIn ? 'card' : ''}` */}
                                             <div className="col d-flex flex-column pb-3 card">

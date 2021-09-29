@@ -9,7 +9,7 @@ export const ProviderPreview = () => {
         history.push("/comprador");
     }
 
-    const handleInputChange = () =>{
+    const handleInputChange = () => {
 
     }
 
@@ -20,6 +20,8 @@ export const ProviderPreview = () => {
                 <div className="col-12 col-md-3">
                     <div className="d-grid gap-2">
                         <button
+                            data-bs-toggle="modal"
+                            data-bs-target="#rejectModal"
                             type="button"
                             className="btn btn-danger block subtitle"
                         >
@@ -30,6 +32,8 @@ export const ProviderPreview = () => {
                 <div className="col-12 col-md-3">
                     <div className="d-grid gap-2">
                         <button
+                        data-bs-toggle="modal"
+                        data-bs-target="#observModal"
                             type="button"
                             className="btn btn-warning block subtitle"
                         >
@@ -40,6 +44,7 @@ export const ProviderPreview = () => {
                 <div className="col-12 col-md-3">
                     <div className="d-grid gap-2">
                         <button
+
                             type="button"
                             className="btn btn-primary block subtitle"
                         >
@@ -51,7 +56,7 @@ export const ProviderPreview = () => {
                     <div className="d-grid gap-2">
                         <button
                             data-bs-toggle="modal"
-                            data-bs-target="#exampleModal"
+                            data-bs-target="#sendModal"
                             type="button"
                             className="btn btn-secondary block subtitle"
                         >
@@ -60,11 +65,90 @@ export const ProviderPreview = () => {
                     </div>
                 </div>
             </div>
-
             <div
                 className="modal fade"
-                id="exampleModal"
-                aria-labelledby="exampleModalLabel"
+                id="rejectModal"
+                aria-labelledby="rejectModal"
+                aria-hidden="true"
+            >
+                <div className="modal-dialog modal-dialog-centered">
+                    <div className="modal-content">
+                        <div className="modal-body">
+                            <form className="form-group">
+                            <span>¿Está seguro de rechazar esta solicitud?.</span>
+                                <div className=" mb-3">
+                                    {/* <div className="input-group-prepend">
+                                        <span className="input-group-text in-modal">Motivo:</span>
+                                    </div> */}
+                                    <textarea
+                                        className="form-control"
+                                        type="text"
+                                        placeholder="Ingrese un motivo"
+                                        // name="idFiscal"
+                                        autoComplete="off"
+                                        value="motivo de rechazo"
+                                        onChange={handleInputChange}
+                                    />
+                                </div>
+                            </form>
+                        </div>
+                        <div className="modal-footer">
+                            <button
+                                type="button"
+                                className="btn btn-primary"
+                                data-bs-dismiss="modal"
+                                onClick={handleConfirmData}
+                            >
+                                Confirmar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div
+                className="modal fade"
+                id="observModal"
+                aria-labelledby="observModal"
+                aria-hidden="true"
+            >
+                <div className="modal-dialog modal-dialog-centered">
+                    <div className="modal-content">
+                        <div className="modal-body">
+                            <form className="form-group">
+                            <span>¿Está seguro de observar esta solicitud?.</span>
+                                <div className=" mb-3">
+                                    {/* <div className="input-group-prepend">
+                                        <span className="input-group-text in-modal">Motivo:</span>
+                                    </div> */}
+                                    <textarea
+                                        className="form-control"
+                                        type="text"
+                                        placeholder="Ingrese un motivo"
+                                        // name="idFiscal"
+                                        autoComplete="off"
+                                        value="motivo de observación"
+                                        onChange={handleInputChange}
+                                    />
+                                </div>
+                            </form>
+                        </div>
+                        <div className="modal-footer">
+                            <button
+                                type="button"
+                                className="btn btn-primary"
+                                data-bs-dismiss="modal"
+                                onClick={handleConfirmData}
+                            >
+                                Confirmar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div
+                className="modal fade"
+                id="sendModal"
+                aria-labelledby="sendModal"
                 aria-hidden="true"
             >
                 <div className="modal-dialog modal-dialog-centered">

@@ -137,7 +137,69 @@ export const FormRegistro = ({ handleValidated }) => {
                                         <option value="1">1</option>
                                         <option value="2">2</option>
                                     </select>
-                                </div></>
+                                </div>
+                                <div className="input-group mb-3">
+                                    <div className="input-group-prepend">
+                                        <span className="input-group-text">Rubro</span>
+                                    </div>
+                                    <select
+                                        className="form-select"
+                                        name="pais"
+                                        value={pais}
+                                        onChange={handleInputChange}
+
+                                    >
+                                        <option value="1">A</option>
+                                        <option value="2">B</option>
+
+                                    </select>
+                                </div>
+                                <div className="input-group mb-3">
+                                    <div className="input-group-prepend">
+                                        <span className="input-group-text">Empresa a postular</span>
+                                    </div>
+                                    <select
+                                        className="form-select"
+                                        name="pais"
+                                        value={pais}
+                                        onChange={handleInputChange}
+
+                                    >
+                                        <option value="1">A</option>
+                                        <option value="2">B</option>
+
+                                    </select>
+                                </div>
+                                <div className="input-group mb-3">
+                                    <div className="input-group-prepend">
+                                        <span className="input-group-text">Comprador responsable</span>
+                                    </div>
+                                    <select
+                                        className="form-select"
+                                        name="pais"
+                                        value={pais}
+                                        onChange={handleInputChange}
+
+                                    >
+                                        <option value="1">A</option>
+                                        <option value="2">B</option>
+
+                                    </select>
+                                </div>
+                                <div className="input-group mb-3">
+                                    <div className="input-group-prepend">
+                                        <span className="input-group-text">Contacto o comentario</span>
+                                    </div>
+                                    <input
+                                        className="form-control"
+                                        type="number"
+                                        name="idFiscal"
+                                        autoComplete="off"
+                                        value={idFiscal}
+                                        onChange={handleInputChange}
+                                    />
+                                </div>
+                            </>
                         ),
                         1: (
                             <>
@@ -843,13 +905,13 @@ export const FormRegistro = ({ handleValidated }) => {
                             <button
                                 type="button"
                                 className="btn btn-next block subtitle"
-                                onClick={ 
-                                    stepIndex < steps.length -1
-                                    ? () => handleStepChange(index => index + 1)
-                                    : handleVerification}
+                                onClick={
+                                    stepIndex < steps.length - 1
+                                        ? () => handleStepChange(index => index + 1)
+                                        : handleVerification}
                             >
                                 {
-                                    stepIndex < steps.length -1 ? 'Siguiente' : 'Enviar'
+                                    stepIndex < steps.length - 1 ? 'Siguiente' : 'Enviar'
                                 }
                             </button>
                         </div>
