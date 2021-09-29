@@ -1,16 +1,8 @@
 import React from "react";
-import { useDispatch } from "react-redux";
 import { Logo } from "../components/atoms/Logo";
-import { startLogout } from "../redux/actions/auth";
 
 export const Proveedores = () => {
-  const dispatch = useDispatch();
-
-  const handleLogout = () => {
-    dispatch(startLogout())
-  };
-
-
+  
   return (
     <>
       <div className="container">
@@ -24,9 +16,7 @@ export const Proveedores = () => {
             <span className="nav-item nav-link-text-info">
             
               
-              <button onClick={handleLogout} className="nav-item nav-link btn">
-                Logout
-              </button>
+              <h1>Proveedores</h1>
             </span>
           </div>
         </div>
