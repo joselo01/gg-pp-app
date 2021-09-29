@@ -3,22 +3,16 @@ import { useForm } from "../../hooks/useForm";
 import ReCAPTCHA from "react-google-recaptcha";
 import { useDispatch, useSelector } from "react-redux";
 import { startLoginEmailPassword } from "../../redux/actions/auth";
-import { Link } from "react-router-dom";
-//import { setError, removeError } from "../../redux/actions/ui";
 export const FormLogin = () => {
   const dispatch = useDispatch();
 
-  const { loading } = useSelector((state) => state.ui)
-
-  //const { msgError } = useSelector((state) => state.ui);
-  //console.log(msgError);
+  const { loading } = useSelector((state) => state.ui);
 
   const [formValues, handleInputChange] = useForm({
-    email: "user@gmail.com",
-    password: "Lima@2021",
-    options: "",
+    email: "",
+    password: "",
   });
-  const { email, password, options } = formValues;
+  const { email, password } = formValues;
 
   let users = [
     { value: "1", label: "Usuario 1" },
@@ -31,10 +25,14 @@ export const FormLogin = () => {
   });
 
   const [captchaValido, cambiarCaptchaValido] = useState(null);
-  //const [usuarioValido, cambiarUsuarioValido] = useState(false);
   const [errorUsuario, setErrorUsuario] = useState(null);
   const [errorPassword, setErrorPasword] = useState(null);
   const [errorSelect, seterrorSelect] = useState("");
+
+  const handleSelectChange = () => (e) => {
+    let val = e.target.value;
+    localStorage.setItem("item_id", `${val}`);
+  };
 
   const captcha = useRef(null);
   const onCaptcha = () => {
@@ -45,12 +43,16 @@ export const FormLogin = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(startLoginEmailPassword(email, password));
+
+    let optForm = document.forms["form"]["options"].selectedIndex;
+    if (optForm === null || optForm === 0) {
+      seterrorSelect("Debe seleccionar una opción en el campo");
+      return false;
+    }
+
     if (captcha.current.getValue()) {
-      //cambiarUsuarioValido(true);
       cambiarCaptchaValido(true);
     } else {
-      //cambiarUsuarioValido(false);
       cambiarCaptchaValido(false);
     }
 
@@ -74,38 +76,17 @@ export const FormLogin = () => {
       return;
     }
 
-    if (options === "") {
-      seterrorSelect("Debe seleccionar una opción");
-      return;
-    }
     setErrorUsuario(null);
     setErrorPasword(null);
-    seterrorSelect("");
+    seterrorSelect(null);
 
-    /* if (isFormValid()) {
-      dispatch(startLoginEmailPassword(email, password));
-    } */
+    dispatch(startLoginEmailPassword(email, password));
   };
-
- /*  const isFormValid = () => {
-    if (email.trim()) {
-      dispatch(setError("Corrreo incorrecto"));
-      return;
-    }
-
-    if (password.trim()) {
-      dispatch(setError("Password incorrecto"));
-      return;
-    }
-    dispatch(removeError());
-    return true;
-  }; */
 
   return (
     <>
       <div>
-        <form onSubmit={handleSubmit}>
-          {/* {msgError && <span className="text-danger">{msgError}</span>} */}
+        <form name="form" onSubmit={handleSubmit}>
           <div className="form-group mb-2">
             <input
               className="form-control"
@@ -140,8 +121,7 @@ export const FormLogin = () => {
             <select
               className="form-select"
               name="options"
-              onChange={handleInputChange}
-              value={options}
+              onChange={handleSelectChange()}
               onBlur={() => seterrorSelect("")}
             >
               {users.map((item) => {
@@ -172,7 +152,11 @@ export const FormLogin = () => {
             <div className="text-danger">Por favor acepta el captcha</div>
           )}
           <div className="d-grid gap-2">
-            <button type="submit" className="btn bg-button block subtitle" disabled={loading}>
+            <button
+              type="submit"
+              className="btn bg-button block subtitle"
+              disabled={loading}
+            >
               INGRESAR
             </button>
           </div>
