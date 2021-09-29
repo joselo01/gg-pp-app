@@ -14,9 +14,6 @@ import { VerificacionProveedor } from "../pages/VerificacionProveedor";
 
 export const DashboardRoutes = () => {
   let item = localStorage.getItem("item_id");
-  console.log(item, "valor item");
-
-  
 
   return (
     <Router>
@@ -49,13 +46,11 @@ export const DashboardRoutes = () => {
                   />
                   {/* <Redirect to="/comprador" /> */}
 
-                  {
-                      item === '1' ? (
-                        <Redirect to="/proveedor"/>
-                       ) : (
-                       <Redirect to="/comprador"/>
-                       )
-                  }
+                  {item === "1" ? (
+                    <Redirect to="/proveedor" />
+                  ) : (
+                    <Redirect to="/comprador" />
+                  )}
                 </Switch>
               </div>
             </main>

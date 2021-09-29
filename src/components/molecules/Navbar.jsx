@@ -11,7 +11,7 @@ export const Navbar = () => {
         dispatch(startLogout())
     };
     return (
-        <div className="col-12 col-sm-3 col-xl-2 px-sm-2 px-0 bg-dark d-flex sticky-top">
+        <div className="col-12 col-sm-3 col-xl-2 px-sm-2 bg-dark d-flex sticky-top">
             <div className="d-flex flex-sm-column flex-row flex-grow-1 align-items-center align-items-sm-start px-3 pt-2 text-white">
                 <Link to="/" className="d-flex align-items-center pb-sm-3 mb-md-0 me-md-auto text-white text-decoration-none">
                     <span className="fs-5">G<span className="d-none d-sm-inline">loria</span></span>
