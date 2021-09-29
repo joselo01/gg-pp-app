@@ -11,7 +11,7 @@ export const DashboardRoutes = () => {
     return (
         <Router>
             <div className="bg-image">
-                <div className="row vh-100 overflow-auto">
+                <div className="row overflow-auto">
                     <Navbar />
                     {/* ${isLoggedIn ? 'card' : ''}` */}
                     <div className="col d-flex flex-column h-sm-100 card">

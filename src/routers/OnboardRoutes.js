@@ -16,7 +16,7 @@ export const OnboardRoutes = () => {
                     <div className="child-login">
                         <div className="fluid-container">
                             <div className="container-fluid overflow-hidden">
-                                <div className="row vh-100 overflow-auto">
+                                <div className="row overflow-auto">
                                     <div className={`col d-flex flex-column h-sm-100`}>
                                         <main className="row overflow-auto">
                                             <div className="col pt-4">
