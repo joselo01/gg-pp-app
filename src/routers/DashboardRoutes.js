@@ -16,13 +16,7 @@ export const DashboardRoutes = () => {
   let item = localStorage.getItem("item_id");
   console.log(item, "valor item");
 
-  <Route exact path="/" render={() => (
-    item === 1 ? (
-      <Redirect to="/proveedor"/>
-    ) : item === 2 (
-        <Redirect to="/comprador"/>
-    )
-  )}/>
+  
 
   return (
     <Router>
@@ -34,9 +28,9 @@ export const DashboardRoutes = () => {
             <main className="row overflow-auto">
               <div className="col pt-0">
                 <Switch>
-                  <Route path="/comprador" component={Compradores} />
+                  <Route exact path="/comprador" component={Compradores} />
 
-                  <Route path="/proveedor" component={Proveedores} />
+                  <Route exact path="/proveedor" component={Proveedores} />
 
                   <Route
                     exact
@@ -53,7 +47,15 @@ export const DashboardRoutes = () => {
                     path="/create_password"
                     component={CreatePassword}
                   />
-                  <Redirect to="/comprador" />
+                  {/* <Redirect to="/comprador" /> */}
+
+                  {
+                      item === '1' ? (
+                        <Redirect to="/proveedor"/>
+                       ) : (
+                       <Redirect to="/comprador"/>
+                       )
+                  }
                 </Switch>
               </div>
             </main>
