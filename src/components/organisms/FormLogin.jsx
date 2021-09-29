@@ -137,9 +137,9 @@ export const FormLogin = () => {
             ) : null}
           </div>
           <div className="text-center mb-2">
-            <a href="/#" className="text-decoration-none text-secondary forgot">
+            <Link to="/#" className="text-decoration-none text-secondary forgot">
               Olvidé mi contraseña
-            </a>
+            </Link>
           </div>
           <div className="recaptcha">
             <ReCAPTCHA
@@ -163,9 +163,9 @@ export const FormLogin = () => {
         </form>
 
         <div className="text-center mt-2">
-          <a href="/#" className="text-decoration questions">
+          <Link to="/#" className="text-decoration questions">
             PREGUNTAS FRECUENTES
-          </a>
+          </Link>
         </div>
       </div>
     </>

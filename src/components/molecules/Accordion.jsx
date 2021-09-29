@@ -28,7 +28,8 @@ export const Accordion = () => {
             description: 'Texto de referencia, con muchas lineas.',
         }
     ]
-    const [accordionList, setAccordionList] = useState(mockData);
+    // setAccordionList
+    const [accordionList] = useState(mockData);
 
     return (
         <div>

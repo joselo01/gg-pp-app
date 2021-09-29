@@ -12,7 +12,7 @@ export const RegisterInfo = () => {
 
   return (
     <>
-       <div className="container">
+      <div className="container">
         <div className="row">
           <div className="col-12 col-md-6">
             <Logo />
@@ -22,22 +22,22 @@ export const RegisterInfo = () => {
           <div className="content-box-register-info mt-4 col-12">
             <form>
               <div className="col-12">
-              <div className="welcome">Gloria da la bienvenida</div>
+                <div className="welcome">Gloria da la bienvenida</div>
               </div>
               <div className="col-12">
-                <Accordion/>
+                <Accordion />
               </div>
-              
+
             </form>
-           
-                  <div className="d-grid gap-2 mt-3">
-                    <button onClick={handleRegister}
-                      type="button"
-                      className="btn bg-button block subtitle"
-                    >
-                      Completar formulario
-                    </button>
-                  </div>
+
+            <div className="d-grid gap-2 mt-3">
+              <button onClick={handleRegister}
+                type="button"
+                className="btn bg-button block subtitle"
+              >
+                Completar formulario
+              </button>
+            </div>
           </div>
         </div>
       </div>
