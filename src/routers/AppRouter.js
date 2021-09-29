@@ -39,7 +39,7 @@ export const AppRouter = () => {
         <div className="spinner-border" role="status">
           <span className="visually-hidden">Loading...</span>
         </div>
-        <h5 className="mt-2">Eseper por favor...</h5>
+        <h5 className="mt-2">Espere por favor...</h5>
       </div>
     );
   }
