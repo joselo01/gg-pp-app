@@ -22,7 +22,7 @@ export const FormLogin = () => {
 
   users.unshift({
     value: "",
-    label: "[ Seleccione una opicón ]",
+    label: "[ Seleccione una opción ]",
   });
 
   const [captchaValido, cambiarCaptchaValido] = useState(null);
