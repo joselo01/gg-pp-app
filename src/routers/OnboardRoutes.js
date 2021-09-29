@@ -19,7 +19,7 @@ export const OnboardRoutes = () => {
                                 <div className="row overflow-auto">
                                     <div className={`col d-flex flex-column h-sm-100`}>
                                         <main className="row overflow-auto">
-                                            <div className="col pt-4">
+                                            <div className="col">
                                                 <Switch>
                                                     <Route exact path="/home" component={Home} />
                                                     <Route
