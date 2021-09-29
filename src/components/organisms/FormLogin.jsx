@@ -10,8 +10,8 @@ export const FormLogin = () => {
   const { loading } = useSelector((state) => state.ui);
 
   const [formValues, handleInputChange] = useForm({
-    email: "",
-    password: "",
+    email: "user@gmail.com",
+    password: "Lima@2021",
   });
   const { email, password } = formValues;
 
@@ -22,7 +22,7 @@ export const FormLogin = () => {
 
   users.unshift({
     value: "",
-    label: "[ Seleccione una opicón ]",
+    label: "[ Seleccione una opción ]",
   });
 
   const [captchaValido, cambiarCaptchaValido] = useState(null);
