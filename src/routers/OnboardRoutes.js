@@ -61,7 +61,7 @@ export const OnboardRoutes = () => {
                                 <ValidateProvider
                                   {...props}
                                   handle={setFooterFlag}
-                                />
+                                /> 
                               );
                             }}
                           />

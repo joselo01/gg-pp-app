@@ -18,6 +18,17 @@ export const CreatePassword = ({handle}) => {
 
           <div className="content-box-internas mt-4 col-12">
             <form>
+            <div className="col-12">
+                <div className="input-group">
+                  <span className="input-group-text">Email de usuario</span>
+                  <input
+                  readOnly
+                    type="password"
+                    aria-label="First name"
+                    className="form-control"
+                  />
+                </div>
+              </div>
               <div className="col-12">
                 <div className="input-group">
                   <span className="input-group-text">Crear contraseña</span>

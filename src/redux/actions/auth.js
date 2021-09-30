@@ -37,6 +37,7 @@ export const login = (uid, displayName) => {
 export const startLogout = () => {
     return async (dispatch) => {
         await firebase.auth().signOut();
+        localStorage.removeItem('id_rol');
 
         dispatch(logout());
     }
