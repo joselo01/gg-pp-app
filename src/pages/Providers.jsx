@@ -14,8 +14,6 @@ export const Proveedores = () => {
 
           <div className="content-box-internas mt-4">
             <span className="nav-item nav-link-text-info">
-            
-              
               <h1>Proveedores</h1>
             </span>
           </div>
