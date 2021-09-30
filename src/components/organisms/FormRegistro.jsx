@@ -873,7 +873,7 @@ export const FormRegistro = ({ handleValidated }) => {
                 }[tabIndex]
             }
             {
-                idRol === "1" || idRol === '' 
+                idRol === "1" || idRol === ''
                     ?
                     <div className="row justify-content-md-center">
                         {/* {
