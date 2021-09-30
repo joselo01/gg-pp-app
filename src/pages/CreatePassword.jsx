@@ -1,7 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Logo } from "../components/atoms/Logo";
 
-export const CreatePassword = () => {
+export const CreatePassword = ({handle}) => {
+
+  useEffect(() => {
+    handle(false);
+    return () => handle(true);
+  }, [handle]);
   return (
     <>
       <div className="container">

@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BoxLogin } from "../components/organisms/BoxLogin";
 import { Logo } from "../components/atoms/Logo";
 
-export const Login = () => {
+export const Login = ({ handle }) => {
+  useEffect(() => {
+    handle(false);
+    return () => handle(true);
+  }, [handle]);
   return (
     <>
       <div className="container">
