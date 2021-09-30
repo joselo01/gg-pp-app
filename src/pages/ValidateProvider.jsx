@@ -2,7 +2,7 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 import { Logo } from "../components/atoms/Logo";
 
-export const VerificacionProveedor = () => {
+export const ValidateProvider = () => {
   const history = useHistory();
 
   function handlePassword() {

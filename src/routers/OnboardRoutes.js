@@ -6,7 +6,7 @@ import { Home } from '../pages/Home';
 import { Login } from '../pages/Login';
 import { Register } from '../pages/Register';
 import { RegisterInfo } from '../pages/RegisterInfo';
-import { VerificacionProveedor } from '../pages/VerificacionProveedor';
+import { ValidateProvider } from '../pages/ValidateProvider';
 
 export const OnboardRoutes = () => {
     return (
@@ -21,24 +21,31 @@ export const OnboardRoutes = () => {
                                         <main className="row overflow-auto">
                                             <div className="col">
                                                 <Switch>
-                                                    <Route exact path="/home" component={Home} />
+                                                    <Route
+                                                        exact
+                                                        path="/home"
+                                                        component={Home} />
                                                     <Route
                                                         exact
                                                         path="/login"
                                                         component={Login}
                                                     />
-                                                    <Route exact path="/register-info" component={RegisterInfo} />
-                                                    <Route exact path="/register" component={Register} />
+                                                    <Route
+                                                        exact
+                                                        path="/register-info"
+                                                        component={RegisterInfo} />
+                                                    <Route
+                                                        exact
+                                                        path="/register"
+                                                        component={Register} />
                                                     <Route
                                                         exact
                                                         path="/supplier_verification"
-                                                        component={VerificacionProveedor}
-                                                    />
+                                                        component={ValidateProvider} />
                                                     <Route
                                                         exact
                                                         path="/create_password"
-                                                        component={CreatePassword}
-                                                    />
+                                                        component={CreatePassword} />
                                                 </Switch>
                                             </div>
                                         </main>

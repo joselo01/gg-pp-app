@@ -16,9 +16,10 @@ export const StepItem = ({ item, selectedTab, index, handleStepChange }) => {
 
             <li className={`step ${index <= selectedTab ? 'active' : ''}`}>
                 <div onClick={() => handleStepChange(index)}>
-                    <img height="20" src={item.icon} alt="" />
+                    {/* <img height="20" src={item.icon} alt="" /> */}
+                    {index +1}
                 </div>
-                {item.name}
+                {/* {item.name} */}
             </li>
 
         </>

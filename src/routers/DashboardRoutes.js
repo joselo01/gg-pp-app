@@ -6,11 +6,11 @@ import {
   Redirect,
 } from "react-router-dom";
 import { Navbar } from "../components/molecules/Navbar";
-import { Compradores } from "../pages/Compradores";
+import { ProviderRequests } from "../pages/ProviderRequests";
 import { CreatePassword } from "../pages/CreatePassword";
-import { Proveedores } from "../pages/Proveedores";
+import { Proveedores } from "../pages/Providers";
 import { ProviderPreview } from "../pages/ProviderPreview";
-import { VerificacionProveedor } from "../pages/VerificacionProveedor";
+import { ValidateProvider } from "../pages/ValidateProvider";
 
 export const DashboardRoutes = () => {
   let item = localStorage.getItem("item_id");
@@ -24,41 +24,36 @@ export const DashboardRoutes = () => {
                 <div className={`col d-flex flex-column h-sm-100`}>
                   <main className="row overflow-auto">
                     <Navbar />
-
                     <div className="col">
-                      {/* ${isLoggedIn ? 'card' : ''}` */}
                       <div className="col d-flex flex-column pb-3 card">
                         <Switch>
                           <Route
                             exact
-                            path="/comprador"
-                            component={Compradores}
-                          />
+                            path="/provider-requests"
+                            component={ProviderRequests} />
                           <Route
                             exact
                             path="/provider-preview"
-                            component={ProviderPreview}
-                          />
+                            component={ProviderPreview} />
                           <Route
                             exact
-                            path="/proveedor"
-                            component={Proveedores}
-                          />
+                            path="/providers"
+                            component={Proveedores} />
                           <Route
                             extac
                             path="/supplier_verification"
-                            component={VerificacionProveedor}
-                          />
+                            component={ValidateProvider} />
                           <Route
                             extac
                             path="/create_password"
-                            component={CreatePassword}
-                          />
+                            component={CreatePassword} />
                           {/* <Redirect to="/comprador" /> */}
                           {item === "1" ? (
-                            <Redirect to="/proveedor" />
+                            <Redirect
+                              to="/providers" />
                           ) : (
-                            <Redirect to="/comprador" />
+                            <Redirect
+                              to="/provider-requests" />
                           )}
                         </Switch>
                       </div>
