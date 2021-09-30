@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { Logo } from "../components/atoms/Logo";
 
-export const ValidateProvider = () => {
+export const ValidateProvider = ({handle}) => {
+
+  useEffect(() => {
+    handle(false);
+    return () => handle(true);
+  }, [handle]);
   const history = useHistory();
 
   function handlePassword() {

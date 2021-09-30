@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Accordion } from "../components/molecules/Accordion";
 import { useHistory } from "react-router-dom";
 import { Logo } from "../components/atoms/Logo";
 
-export const RegisterInfo = () => {
+export const RegisterInfo = ({ handle }) => {
+  useEffect(() => {
+    handle(false);
+    return () => handle(true);
+  }, [handle]);
   const history = useHistory();
 
   function handleRegister() {
@@ -27,11 +31,11 @@ export const RegisterInfo = () => {
               <div className="col-12">
                 <Accordion />
               </div>
-
             </form>
 
             <div className="d-grid gap-2 mt-3">
-              <button onClick={handleRegister}
+              <button
+                onClick={handleRegister}
                 type="button"
                 className="btn bg-button block subtitle"
               >
