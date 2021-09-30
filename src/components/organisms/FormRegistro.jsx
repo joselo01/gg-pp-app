@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import { useForm } from "../../hooks/useForm";
-import { StepItem } from "../atoms/StepItem";
+//import { StepItem } from "../atoms/StepItem";
 import { TabItem } from "../atoms/TabItem";
 
 export const FormRegistro = ({ handleValidated }) => {
@@ -48,7 +48,7 @@ export const FormRegistro = ({ handleValidated }) => {
         tipo: "1",
     });
 
-    const { idFiscal, pais, tipo } = formValues;
+    const { idFiscal, pais, tipo, rubro, empresa, comprador, comentario } = formValues;
 
     const [stepIndex, setStepIndex] = useState(0);
 
@@ -115,8 +115,8 @@ export const FormRegistro = ({ handleValidated }) => {
                                     </div>
                                     <select
                                         className="form-select"
-                                        name="pais"
-                                        value={pais}
+                                        name="rubro"
+                                        value={rubro}
                                         onChange={handleInputChange}
 
                                     >
@@ -131,8 +131,8 @@ export const FormRegistro = ({ handleValidated }) => {
                                     </div>
                                     <select
                                         className="form-select"
-                                        name="pais"
-                                        value={pais}
+                                        name="empresa"
+                                        value={empresa}
                                         onChange={handleInputChange}
 
                                     >
@@ -147,8 +147,8 @@ export const FormRegistro = ({ handleValidated }) => {
                                     </div>
                                     <select
                                         className="form-select"
-                                        name="pais"
-                                        value={pais}
+                                        name="comprador"
+                                        value={comprador}
                                         onChange={handleInputChange}
 
                                     >
@@ -164,9 +164,9 @@ export const FormRegistro = ({ handleValidated }) => {
                                     <input
                                         className="form-control"
                                         type="textarea"
-                                        name="idFiscal"
+                                        name="comentario"
                                         autoComplete="off"
-                                        value={idFiscal}
+                                        value={comentario}
                                         onChange={handleInputChange}
                                     />
                                 </div>

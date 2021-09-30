@@ -6,7 +6,7 @@ import { Home } from "../pages/Home";
 import { Login } from "../pages/Login";
 import { Register } from "../pages/Register";
 import { RegisterInfo } from "../pages/RegisterInfo";
-import { VerificacionProveedor } from "../pages/VerificacionProveedor";
+import { ValidateProvider } from "../pages/ValidateProvider";
 
 export const OnboardRoutes = () => {
   const [footerFlag, setFooterFlag] = React.useState(true);
@@ -58,7 +58,7 @@ export const OnboardRoutes = () => {
                             path="/supplier_verification"
                             render={(props) => {
                               return (
-                                <VerificacionProveedor
+                                <ValidateProvider
                                   {...props}
                                   handle={setFooterFlag}
                                 />
