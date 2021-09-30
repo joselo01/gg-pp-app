@@ -1,9 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Logo } from "../components/atoms/Logo";
 import { FormPreRegistro } from "../components/organisms/FormPreRegistro";
 import { FormRegistro } from "../components/organisms/FormRegistro";
 
-export const Register = () => {
+export const Register = ({ handle }) => {
+  useEffect(() => {
+    handle(false);
+    return () => handle(true);
+  }, [handle]);
+
   const [isValidated, setIsValidated] = useState(false);
 
   const handleValidated = () => {

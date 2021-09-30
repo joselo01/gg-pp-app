@@ -1,11 +1,11 @@
 import React from "react";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { Carousel } from "../organisms/Carousel";
 import c1 from "../../images/logo_empresas/AgroAurora.jpg";
 import c2 from "../../images/logo_empresas/Agroazucar.jpg";
 import c3 from "../../images/logo_empresas/Andina.jpg";
 
-export const Footer = () => {
+export const Footer = ({footerFlag}) => {
   const history = useHistory();
   function handleLogin() {
     history.push("/login");
@@ -17,12 +17,12 @@ export const Footer = () => {
 
   return (
     <>
-      <footer>
+      {
+        (footerFlag) ? <footer>
         <div className="footer-box-top">
           <div className="container">
             <div className="text-center subtitle">
-              Antes de registrarse, ingresar a "
-              <Link to="#" >Requisitos para el registro del proveedor</Link>"
+            Si no estas registrado como proveedor, selecciona en "Crea tu cuenta", si ya tienes una cuenta slecciona "Inicio de sesión
             </div>
             <div className="text-center">
               <button
@@ -61,7 +61,8 @@ export const Footer = () => {
             </Carousel>
           </div>
         </div>
-      </footer>
+      </footer> : null
+      } 
     </>
   );
 };
