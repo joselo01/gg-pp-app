@@ -52,9 +52,13 @@ export const FormRegistro = ({ handleValidated }) => {
         idFiscal: "",
         pais: "1",
         tipo: "1",
+        rubro:"",
+        empresa: "",
+        comprador: "",
+        comentario:""
     });
 
-    const { idFiscal, pais } = formValues;
+    const { idFiscal, pais, rubro, empresa, comprador, comentario } = formValues;
 
     const [tabList] = useState(idRol === "1" || idRol === '' ? tabsProvider : tabsPurchaser);
 
@@ -102,8 +106,8 @@ export const FormRegistro = ({ handleValidated }) => {
                 </div>
                 <select
                     className="form-select"
-                    name="pais"
-                    value={pais}
+                    name="rubro"
+                    value={rubro}
                     onChange={handleInputChange}
 
                 >
@@ -118,8 +122,8 @@ export const FormRegistro = ({ handleValidated }) => {
                 </div>
                 <select
                     className="form-select"
-                    name="pais"
-                    value={pais}
+                    name="empresa"
+                    value={empresa}
                     onChange={handleInputChange}
 
                 >
@@ -134,8 +138,8 @@ export const FormRegistro = ({ handleValidated }) => {
                 </div>
                 <select
                     className="form-select"
-                    name="pais"
-                    value={pais}
+                    name="comprador"
+                    value={comprador}
                     onChange={handleInputChange}
 
                 >
@@ -148,14 +152,14 @@ export const FormRegistro = ({ handleValidated }) => {
                 <div className="input-group-prepend">
                     <span className="input-group-text">Contacto o comentario</span>
                 </div>
-                <input
-                    className="form-control"
-                    type="number"
-                    name="idFiscal"
-                    autoComplete="off"
-                    value={idFiscal}
+                <textarea 
+                    className="form-control" 
+                    name="comentario"
+                    value={comentario}
                     onChange={handleInputChange}
-                />
+                    >
+
+                </textarea>
             </div>
             <ul className="nav nav-tabs nav-justified">
                 {tabList.map((tab, index) => (

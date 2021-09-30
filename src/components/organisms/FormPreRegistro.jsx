@@ -3,10 +3,14 @@ import { useForm } from "../../hooks/useForm";
 export const FormPreRegistro = ({ handleValidated }) => {
     const [formValues, handleInputChange] = useForm({
         idFiscal: "",
-        pais: "1"
+        pais: "1",
+        rubro: "",
+        empresa: "",
+        comprador:"",
+        comentario: ""
     });
 
-    const { idFiscal, pais } = formValues;
+    const { idFiscal, pais, rubro, empresa, comprador, comentario } = formValues;
 
     return (
         <>
@@ -45,12 +49,16 @@ export const FormPreRegistro = ({ handleValidated }) => {
                         <span className="input-group-text">Rubro</span>
                     </div>
                     <select
-                        className="form-select"
-                        name="pais"
-                        value={pais}
+                        className="form-select" multiple size="6" aria-label="size 6 multiple select example"
+                        name="rubro"
+                        value={rubro}
                         onChange={handleInputChange}
 
                     >
+                        <option value="1">A</option>
+                        <option value="2">B</option>
+                        <option value="1">A</option>
+                        <option value="2">B</option>
                         <option value="1">A</option>
                         <option value="2">B</option>
 
@@ -62,8 +70,8 @@ export const FormPreRegistro = ({ handleValidated }) => {
                     </div>
                     <select
                         className="form-select"
-                        name="pais"
-                        value={pais}
+                        name="empresa"
+                        value={empresa}
                         onChange={handleInputChange}
 
                     >
@@ -78,8 +86,8 @@ export const FormPreRegistro = ({ handleValidated }) => {
                     </div>
                     <select
                         className="form-select"
-                        name="pais"
-                        value={pais}
+                        name="comprador"
+                        value={comprador}
                         onChange={handleInputChange}
 
                     >
@@ -92,14 +100,14 @@ export const FormPreRegistro = ({ handleValidated }) => {
                     <div className="input-group-prepend">
                         <span className="input-group-text">Contacto o comentario</span>
                     </div>
-                    <input
-                        className="form-control"
-                        type="number"
-                        name="idFiscal"
-                        autoComplete="off"
-                        value={idFiscal}
-                        onChange={handleInputChange}
-                    />
+                    <textarea 
+                    className="form-control" 
+                    name="comentario"
+                    value={comentario}
+                    onChange={handleInputChange}
+                    >
+
+                </textarea>
                 </div>
                 <div className="d-grid gap-2">
                     <button
