@@ -3,7 +3,6 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 
 export const FormPreRegistro = ({ handleValidated }) => {
-
   let rubros = [
     { value: "1", label: "Rubro 1" },
     { value: "2", label: "Rubro 2" },
@@ -14,7 +13,6 @@ export const FormPreRegistro = ({ handleValidated }) => {
     value: "",
     label: "[ Seleccione Rubro ]",
   });
-  
 
   return (
     <>
@@ -25,11 +23,14 @@ export const FormPreRegistro = ({ handleValidated }) => {
           rubro: [],
           empresa: "",
           comprador: "",
-          comentario: ""
+          comentario: "",
         }}
         validationSchema={Yup.object({
-            rubro: Yup.object().required('EL campo rubro es requerido').nullable()
-          })}
+          rubro: Yup.array()
+            .min(1, "El campo rubro es requerido.")
+            .required("El campo rubro es requerido.")
+            .nullable(),
+        })}
         validate={(valores) => {
           let mistake = {};
 
@@ -57,13 +58,10 @@ export const FormPreRegistro = ({ handleValidated }) => {
 
           return mistake;
         }}
-
-        
-  
         onSubmit={(valores, { resetForm }) => {
           resetForm();
-          //console.log("datos enviados");
-          handleValidated()
+          console.log("datos enviados");
+          handleValidated();
         }}
       >
         {({ errors, handleSubmit }) => (
@@ -106,7 +104,7 @@ export const FormPreRegistro = ({ handleValidated }) => {
                 <span className="input-group-text">Rubro</span>
               </div>
               <Field
-                as="select"
+                component="select"
                 className="form-select height-multiple"
                 name="rubro"
                 multiple={true}
@@ -131,7 +129,7 @@ export const FormPreRegistro = ({ handleValidated }) => {
                 <span className="input-group-text">Empresa a postular</span>
               </div>
               <Field as="select" className="form-select" name="empresa">
-              <option value="">[Seleccione empresa]</option>
+                <option value="">[Seleccione empresa]</option>
                 <option value="1">A</option>
                 <option value="2">B</option>
               </Field>
@@ -147,7 +145,7 @@ export const FormPreRegistro = ({ handleValidated }) => {
                 <span className="input-group-text">Comprador responsable</span>
               </div>
               <Field as="select" className="form-select" name="comprador">
-              <option value="">[Seleccione un comprador]</option>
+                <option value="">[Seleccione un comprador]</option>
                 <option value="1">A</option>
                 <option value="2">B</option>
               </Field>
