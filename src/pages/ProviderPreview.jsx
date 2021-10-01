@@ -107,6 +107,18 @@ export const ProviderPreview = () => {
                                                 </button>
                                             </div>
                                         </div>
+                                        <div className="col-12 col-md-3">
+                                            <div className="d-grid gap-2">
+                                                <button
+                                                    data-bs-toggle="modal"
+                                                    data-bs-target="#approveModal"
+                                                    type="button"
+                                                    className="btn btn-secondary block subtitle"
+                                                >
+                                                    Aprobar
+                                                </button>
+                                            </div>
+                                        </div>
                                     </>
                                     : <></>
                             }
@@ -243,8 +255,32 @@ export const ProviderPreview = () => {
                                 </div>
                             </div>
                         </div>
+                        <div
+                            className="modal fade"
+                            id="approveModal"
+                            aria-labelledby="approveModal"
+                            aria-hidden="true"
+                        >
+                            <div className="modal-dialog modal-dialog-centered">
+                                <div className="modal-content">
+                                    <div className="modal-body">
+                                        <span>Solicitud aprobada con éxito.</span>
+                                    </div>
+                                    <div className="modal-footer">
+                                        <button
+                                            type="button"
+                                            className="btn btn-primary"
+                                            data-bs-dismiss="modal"
+                                            onClick={handleConfirmData}
+                                        >
+                                            Confirmar
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    : <TableHistoric/>
+                    : <TableHistoric />
             }</>
     )
 }
