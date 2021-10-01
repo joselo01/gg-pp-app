@@ -11,7 +11,7 @@ export const Navbar = () => {
         dispatch(startLogout())
     };
     return (
-        <div className="col-12 col-sm-3 col-xl-2 px-sm-2 bg-dark d-flex sticky-top">
+        <div className="col-12 col-sm-3 col-xl-2 px-sm-2 bg-dark d-flex sticky-top nav-align">
             <div className="d-flex flex-sm-column flex-row flex-grow-1 align-items-center align-items-sm-start px-3 pt-2 text-white">
                 <Link to="/" className="d-flex align-items-center pb-sm-3 mb-md-0 me-md-auto text-white text-decoration-none">
                     <span className="fs-5">G<span className="d-none d-sm-inline">loria</span></span>
@@ -30,14 +30,26 @@ export const Navbar = () => {
                         <a href="#" className="nav-link px-sm-0 px-2">
                             <i className="fs-5 bi-table"></i><span className="ms-1 d-none d-sm-inline">Orders</span></a>
                     </li> */}
+                   
                     <li className="dropdown">
                         <Link to="#" className="nav-link dropdown-toggle px-sm-0 px-1 text-white" id="dropdown" data-bs-toggle="dropdown" aria-expanded="false">
                             <i className="fs-5 bi-card-list"></i><span className="ms-1 d-none d-sm-inline">Solicitudes</span>
                         </Link>
                         <ul className="dropdown-menu dropdown-menu-light text-small shadow text-white" aria-labelledby="dropdown">
-                            <li><Link className="dropdown-item" to="#">Solicitud de creación</Link></li>
+                            <li><Link className="dropdown-item" to="./provider-requests">Solicitud de creación</Link></li>
                             {/* <li><a className="dropdown-item" href="#">Settings</a></li>
                             <li><a className="dropdown-item" href="#">Profile</a></li> */}
+                        </ul>
+                    </li>
+                     <li className="dropdown">
+                        <Link to="#" className="nav-link dropdown-toggle px-sm-0 px-1 text-white" id="dropdown" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i className="fs-5 bi-card-list"></i><span className="ms-1 d-none d-sm-inline">Administración</span>
+                        </Link>
+                        <ul className="dropdown-menu dropdown-menu-light text-small shadow text-white" aria-labelledby="dropdown">
+                            <li><Link className="dropdown-item" to="./admin-profile">Mi Perfil de Usuario</Link></li>
+                            <li><Link className="dropdown-item" to="/">Administrar usuarios</Link></li>
+                            <li><Link className="dropdown-item" to="/">Información de empresa</Link></li>
+                            <li><Link className="dropdown-item" to="/">Mis Solicitudes</Link></li>
                         </ul>
                     </li>
                     {/* <li>
