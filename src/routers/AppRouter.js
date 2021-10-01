@@ -22,7 +22,6 @@ export const AppRouter = () => {
       } else {
         setIsLoggedIn(false);
       }
-
       setChecking(false);
     });
   }, [dispatch, setChecking, setIsLoggedIn]);
@@ -46,13 +45,11 @@ export const AppRouter = () => {
             exact
             path="/home"
             component={OnboardRoutes}
-            isAuthenticated={isLoggedIn}
-          />
+            isAuthenticated={isLoggedIn} />
           <PrivateRoute
             path="/"
             component={DashboardRoutes}
-            isAuthenticated={isLoggedIn}
-          />
+            isAuthenticated={isLoggedIn} />
         </Switch>
       </div>
     </Router>

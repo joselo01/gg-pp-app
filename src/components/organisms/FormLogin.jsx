@@ -32,7 +32,7 @@ export const FormLogin = () => {
 
   const handleSelectChange = () => (e) => {
     let val = e.target.value;
-    localStorage.setItem("item_id", `${val}`);
+    localStorage.setItem("id_rol", `${val}`);
   };
 
   const captcha = useRef(null);

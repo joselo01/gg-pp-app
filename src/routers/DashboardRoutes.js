@@ -13,7 +13,7 @@ import { ProviderPreview } from "../pages/ProviderPreview";
 import { ValidateProvider } from "../pages/ValidateProvider";
 
 export const DashboardRoutes = () => {
-  let item = localStorage.getItem("item_id");
+  let idRol = localStorage.getItem("id_rol") ?? '';
   return (
     <Router>
       <div className="bg-image">
@@ -48,7 +48,7 @@ export const DashboardRoutes = () => {
                             path="/create_password"
                             component={CreatePassword} />
                           {/* <Redirect to="/comprador" /> */}
-                          {item === "1" ? (
+                          {idRol === "1" || idRol === '' ? (
                             <Redirect
                               to="/providers" />
                           ) : (
