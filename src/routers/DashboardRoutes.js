@@ -11,54 +11,61 @@ import { CreatePassword } from "../pages/CreatePassword";
 import { Proveedores } from "../pages/Providers";
 import { ProviderPreview } from "../pages/ProviderPreview";
 import { ValidateProvider } from "../pages/ValidateProvider";
+import { AdminProfile } from "../pages/AdminProfile";
 
 export const DashboardRoutes = () => {
   let idRol = localStorage.getItem("id_rol") ?? '';
   return (
     <Router>
       <div className="bg-image">
-        <div className="child-login">
-          <div className="card">
-            <div className="container-fluid overflow-hidden">
-              <div className="row overflow-auto">
-                <div className={`col d-flex flex-column h-sm-100`}>
-                  <main className="row overflow-auto">
-                    <Navbar />
-                    <div className="col">
-                      <div className="col d-flex flex-column pb-3 card">
-                        <Switch>
-                          <Route
-                            exact
-                            path="/provider-requests"
-                            component={ProviderRequests} />
-                          <Route
-                            exact
-                            path="/provider-preview"
-                            component={ProviderPreview} />
-                          <Route
-                            exact
-                            path="/providers"
-                            component={Proveedores} />
-                          <Route
-                            extac
-                            path="/supplier_verification"
-                            component={ValidateProvider} />
-                          <Route
-                            extac
-                            path="/create_password"
-                            component={CreatePassword} />
-                          {/* <Redirect to="/comprador" /> */}
-                          {idRol === "1" || idRol === '' ? (
-                            <Redirect
-                              to="/providers" />
-                          ) : (
-                            <Redirect
-                              to="/provider-requests" />
-                          )}
-                        </Switch>
+        <div className="main-login">
+          <div className="child-login">
+            <div className="fluid-container">
+              <div className="container-fluid overflow-hidden">
+                <div className="row overflow-auto">
+                  <div className={`col d-flex flex-column h-sm-100`}>
+                    <main className="row overflow-auto">
+                      <Navbar />
+                      <div className="col">
+                        <div className="col d-flex flex-column pb-3 card">
+                          <Switch>
+                            <Route
+                              exact
+                              path="/provider-requests"
+                              component={ProviderRequests} />
+                            <Route
+                              exact
+                              path="/provider-preview"
+                              component={ProviderPreview} />
+                            <Route
+                              exact
+                              path="/providers"
+                              component={Proveedores} />
+                            <Route
+                              extac
+                              path="/admin-profile"
+                              component={AdminProfile} />
+                            <Route
+                              extac
+                              path="/supplier_verification"
+                              component={ValidateProvider} />
+                            <Route
+                              extac
+                              path="/create_password"
+                              component={CreatePassword} />
+                            {/* <Redirect to="/comprador" /> */}
+                            {idRol === "1" || idRol === '' ? (
+                              <Redirect
+                                to="/providers" />
+                            ) : (
+                              <Redirect
+                                to="/provider-requests" />
+                            )}
+                          </Switch>
+                        </div>
                       </div>
-                    </div>
-                  </main>
+                    </main>
+                  </div>
                 </div>
               </div>
             </div>

@@ -45,17 +45,21 @@ export const FormRegistro = ({ handleValidated }) => {
         },
         {
             name: "Datos de Compras"
-        }
+        },
+        // PERFIL DATA MASTER
+        {
+            name: "Administrador de datos maestros"
+        },
     ];
 
     const [formValues, handleInputChange] = useForm({
         idFiscal: "",
         pais: "1",
         tipo: "1",
-        rubro:"",
+        rubro: "",
         empresa: "",
         comprador: "",
-        comentario:""
+        comentario: ""
     });
 
     const { idFiscal, pais, rubro, empresa, comprador, comentario } = formValues;
@@ -152,12 +156,12 @@ export const FormRegistro = ({ handleValidated }) => {
                 <div className="input-group-prepend">
                     <span className="input-group-text">Contacto o comentario</span>
                 </div>
-                <textarea 
-                    className="form-control" 
+                <textarea
+                    className="form-control"
                     name="comentario"
                     value={comentario}
                     onChange={handleInputChange}
-                    >
+                >
 
                 </textarea>
             </div>
@@ -873,6 +877,235 @@ export const FormRegistro = ({ handleValidated }) => {
                             </div>
                         </div>
 
+                    ),
+                    5: (
+                        <div className="card mb-3">
+                            <div className="card-body">
+                                <div className="mt-2 mb-2">
+                                    <h5>Gestión de cuenta</h5>
+                                </div>
+                                <div className="input-group mb-3">
+                                    <div className="input-group-prepend">
+                                        <span className="input-group-text">Acreedor</span>
+                                    </div>
+                                    <input
+                                        className="form-control"
+                                        type="number"
+                                        name="idFiscal"
+                                        autoComplete="off"
+                                        value={idFiscal}
+                                        onChange={handleInputChange}
+                                    />
+                                </div>
+                                <div className="input-group mb-3">
+                                    <div className="input-group-prepend">
+                                        <span className="input-group-text">Documentos de identificación fiscal</span>
+                                    </div>
+                                    <input
+                                        className="form-control"
+                                        type="number"
+                                        name="idFiscal"
+                                        autoComplete="off"
+                                        value={idFiscal}
+                                        onChange={handleInputChange}
+                                    />
+                                </div>
+                                <div className="input-group mb-3">
+                                    <div className="input-group-prepend">
+                                        <span className="input-group-text">Grupo de cuentas</span>
+                                    </div>
+                                    <input
+                                        className="form-control"
+                                        type="number"
+                                        name="idFiscal"
+                                        autoComplete="off"
+                                        value={idFiscal}
+                                        onChange={handleInputChange}
+                                    />
+                                </div>
+                                <div className="input-group mb-3">
+                                    <div className="input-group-prepend">
+                                        <span className="input-group-text">Cuenta asociada</span>
+                                    </div>
+                                    <input
+                                        className="form-control"
+                                        type="number"
+                                        name="idFiscal"
+                                        autoComplete="off"
+                                        value={idFiscal}
+                                        onChange={handleInputChange}
+                                    />
+                                </div>
+                                <div className="mt-2 mb-2">
+                                    <h5>Gestión de cuenta</h5>
+                                </div>
+                                <div className="mt-2 mb-2">
+                                    <h5>Datos de pago</h5>
+                                </div>
+                                <div className="input-group mb-3">
+                                    <div className="input-group-prepend">
+                                        <span className="input-group-text">Condición de pago</span>
+                                    </div>
+                                    <input
+                                        className="form-control"
+                                        type="number"
+                                        name="idFiscal"
+                                        autoComplete="off"
+                                        value={idFiscal}
+                                        onChange={handleInputChange}
+                                    />
+                                </div>
+                                <div className="input-group mb-3">
+                                    <div className="input-group-prepend">
+                                        <span className="input-group-text">Verificación de facturas dobles o abonos</span>
+                                    </div>
+                                    <input
+                                        className="form-control"
+                                        type="number"
+                                        name="idFiscal"
+                                        autoComplete="off"
+                                        value={idFiscal}
+                                        onChange={handleInputChange}
+                                    />
+                                </div>
+                                <div className="input-group mb-3">
+                                    <div className="input-group-prepend">
+                                        <span className="input-group-text">Vías de pago</span>
+                                    </div>
+                                    <input
+                                        className="form-control"
+                                        type="number"
+                                        name="idFiscal"
+                                        autoComplete="off"
+                                        value={idFiscal}
+                                        onChange={handleInputChange}
+                                    />
+                                </div>
+                                <div className="input-group mb-3">
+                                    <div className="input-group-prepend">
+                                        <span className="input-group-text">Banco propio</span>
+                                    </div>
+                                    <input
+                                        className="form-control"
+                                        type="number"
+                                        name="idFiscal"
+                                        autoComplete="off"
+                                        value={idFiscal}
+                                        onChange={handleInputChange}
+                                    />
+                                </div>
+                                <div className="input-group mb-3">
+                                    <div className="input-group-prepend">
+                                        <span className="input-group-text">Clave agrup.</span>
+                                    </div>
+                                    <input
+                                        className="form-control"
+                                        type="number"
+                                        name="idFiscal"
+                                        autoComplete="off"
+                                        value={idFiscal}
+                                        onChange={handleInputChange}
+                                    />
+                                </div>
+                                <div className="mt-2 mb-2">
+                                    <h5>Información sobre la retención</h5>
+                                </div>
+                                <div className="input-group mb-3">
+                                    <div className="input-group-prepend">
+                                        <span className="input-group-text">País de retención</span>
+                                    </div>
+                                    <input
+                                        className="form-control"
+                                        type="number"
+                                        name="idFiscal"
+                                        autoComplete="off"
+                                        value={idFiscal}
+                                        onChange={handleInputChange}
+                                    />
+                                </div>
+                                <div className="input-group mb-3">
+                                    <div className="input-group-prepend">
+                                        <span className="input-group-text">Tp. retención</span>
+                                    </div>
+                                    <input
+                                        className="form-control"
+                                        type="number"
+                                        name="idFiscal"
+                                        autoComplete="off"
+                                        value={idFiscal}
+                                        onChange={handleInputChange}
+                                    />
+                                </div>
+                                <div className="input-group mb-3">
+                                    <div className="input-group-prepend">
+                                        <span className="input-group-text">Ind. retención</span>
+                                    </div>
+                                    <input
+                                        className="form-control"
+                                        type="number"
+                                        name="idFiscal"
+                                        autoComplete="off"
+                                        value={idFiscal}
+                                        onChange={handleInputChange}
+                                    />
+                                </div>
+                                <div className="input-group mb-3">
+                                    <div className="input-group-prepend">
+                                        <span className="input-group-text">Sujeto</span>
+                                    </div>
+                                    <input
+                                        className="form-control"
+                                        type="number"
+                                        name="idFiscal"
+                                        autoComplete="off"
+                                        value={idFiscal}
+                                        onChange={handleInputChange}
+                                    />
+                                </div>
+                                <div className="mt-2 mb-2">
+                                    <h5>Condiciones</h5>
+                                </div>
+                                <div className="input-group mb-3">
+                                    <div className="input-group-prepend">
+                                        <span className="input-group-text">Grupo esquema proveedor</span>
+                                    </div>
+                                    <input
+                                        className="form-control"
+                                        type="number"
+                                        name="idFiscal"
+                                        autoComplete="off"
+                                        value={idFiscal}
+                                        onChange={handleInputChange}
+                                    />
+                                </div>
+                                <div className="input-group mb-3">
+                                    <div className="input-group-prepend">
+                                        <span className="input-group-text">Verific.Fact.Base EM</span>
+                                    </div>
+                                    <input
+                                        className="form-control"
+                                        type="number"
+                                        name="idFiscal"
+                                        autoComplete="off"
+                                        value={idFiscal}
+                                        onChange={handleInputChange}
+                                    />
+                                </div>
+                                <div className="input-group mb-3">
+                                    <div className="input-group-prepend">
+                                        <span className="input-group-text">Verific.Fact.Rel.Serv</span>
+                                    </div>
+                                    <input
+                                        className="form-control"
+                                        type="number"
+                                        name="idFiscal"
+                                        autoComplete="off"
+                                        value={idFiscal}
+                                        onChange={handleInputChange}
+                                    />
+                                </div>
+                            </div>
+                        </div>
                     )
                 }[tabIndex]
             }
