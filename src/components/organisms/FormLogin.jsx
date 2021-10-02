@@ -55,6 +55,7 @@ export const FormLogin = () => {
       cambiarCaptchaValido(true);
     } else {
       cambiarCaptchaValido(false);
+      return
     }
 
     if (!email.trim()) {

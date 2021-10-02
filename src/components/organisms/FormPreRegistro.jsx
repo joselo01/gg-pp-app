@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 
 export const FormPreRegistro = ({ handleValidated }) => {
+
+  const [disabled, setDisabled] = useState(false)
   let rubros = [
     { value: "1", label: "Rubro 1" },
     { value: "2", label: "Rubro 2" },
@@ -12,7 +14,7 @@ export const FormPreRegistro = ({ handleValidated }) => {
   rubros.unshift({
     value: "",
     label: "[ Seleccione Rubro ]",
-  });
+  });  
 
   return (
     <>
@@ -23,13 +25,14 @@ export const FormPreRegistro = ({ handleValidated }) => {
           rubro: [],
           empresa: "",
           comprador: "",
-          comentario: "",
+          comentario:""
         }}
         validationSchema={Yup.object({
           rubro: Yup.array()
             .min(1, "El campo rubro es requerido.")
             .required("El campo rubro es requerido.")
             .nullable(),
+            
         })}
         validate={(valores) => {
           let mistake = {};
@@ -48,12 +51,18 @@ export const FormPreRegistro = ({ handleValidated }) => {
             mistake.empresa = "EL campo empresa es requerido";
           }
 
-          if (!valores.comprador) {
-            mistake.comprador = "EL campo comprador es requerido";
+         
+          if (valores.comprador.length === 1) {
+                setDisabled(true)
+          }  else {
+            setDisabled(false)
           }
 
+          if (!valores.comprador) {
+            mistake.comprador = "Debe seleccionar un comprador";
+          } 
           if (!valores.comentario) {
-            mistake.comentario = "EL campo comentario es requerido";
+            mistake.comentario = "EL campo comentario y/o contacto es requerido";
           }
 
           return mistake;
@@ -64,8 +73,8 @@ export const FormPreRegistro = ({ handleValidated }) => {
           handleValidated();
         }}
       >
-        {({ errors, handleSubmit }) => (
-          <Form className="form-group" onSubmit={handleSubmit}>
+        {({ errors, isValid, handleSubmit }) => (
+          <Form name="form" className="form-group" onSubmit={handleSubmit}>
             <div className="input-group mb-3">
               <div className="input-group-prepend">
                 <span className="input-group-text">N° Id. Fiscal</span>
@@ -149,12 +158,7 @@ export const FormPreRegistro = ({ handleValidated }) => {
                 <option value="1">A</option>
                 <option value="2">B</option>
               </Field>
-              <ErrorMessage
-                name="comprador"
-                component={() => (
-                  <span className="text-danger">{errors.comprador}</span>
-                )}
-              />
+              
             </div>
             <div className="input-group mb-3">
               <div className="input-group-prepend">
@@ -164,6 +168,7 @@ export const FormPreRegistro = ({ handleValidated }) => {
                 as="textarea"
                 className="form-control"
                 name="comentario"
+                disabled={disabled}
               ></Field>
               <ErrorMessage
                 name="comentario"
@@ -171,6 +176,12 @@ export const FormPreRegistro = ({ handleValidated }) => {
                   <span className="text-danger">{errors.comentario}</span>
                 )}
               />
+              {/* <ErrorMessage
+                name="comprador"
+                component={() => (
+                  <span className="text-danger">{errors.comprador}</span>
+                )}
+              /> */}
             </div>
             <div className="d-grid gap-2">
               <button
