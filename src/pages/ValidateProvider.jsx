@@ -1,8 +1,22 @@
 import React, { useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { Logo } from "../components/atoms/Logo";
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import * as Yup from "yup";
 
 export const ValidateProvider = ({handle}) => {
+
+
+  const initialValues = {
+    validateProvider: ""
+  }
+
+  const ValidateProviderShema = Yup.object().shape({
+    validateProvider: Yup.string()
+    .required("EL campo código de verifiación es requerido.")
+    .matches(/^[a-z0-9]+$/i, "El campo solo debe contener números y letras"),
+  })
+
 
   useEffect(() => {
     handle(false);
@@ -23,17 +37,34 @@ export const ValidateProvider = ({handle}) => {
           <div className="col-6"></div>
 
           <div className="content-box-internas mt-4">
-            <form>
+            <Formik 
+               initialValues={initialValues}
+               validationSchema={ValidateProviderShema}
+               onSubmit={(valores, { resetForm }) => {
+                handlePassword();
+                 resetForm();
+               }}
+            
+            >
+              {({ errors, handleSubmit }) => (
+            <Form name="form" className="form-group" onSubmit={handleSubmit}>
               <div className="col-12">
                 <div className="input-group">
                   <span className="input-group-text">
                     Ingresar código de verificación
                   </span>
-                  <input
+                  <Field
                     type="text"
                     aria-label="First name"
                     className="form-control"
+                    name="validateProvider"
                   />
+                   <ErrorMessage
+                          name="validateProvider"
+                          component={() => (
+                            <span className="text-danger">{errors.validateProvider}</span>
+                          )}
+                        />
                 </div>
               </div>
               <div className="row mt-4">
@@ -49,8 +80,8 @@ export const ValidateProvider = ({handle}) => {
                 </div>
                 <div className="col-6">
                   <div className="d-grid gap-2">
-                    <button onClick={handlePassword}
-                      type="button"
+                    <button
+                      type="submit"
                       className="btn bg-button block subtitle"
                     >
                       Enviar
@@ -58,7 +89,9 @@ export const ValidateProvider = ({handle}) => {
                   </div>
                 </div>
               </div>
-            </form>
+            </Form>
+             )}
+            </Formik>
           </div>
         </div>
       </div>
