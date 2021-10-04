@@ -262,7 +262,7 @@ export const FormRegistro = ({ handleValidated }) => {
       "El campo incoterms (lugar de entrega) es requerido"
     ),
     //Companydocuments
-    file: Yup.mixed().required("El campo adjunto es requerido"),
+    //file: Yup.mixed().required("El campo adjunto es requerido"),
     /* .test("FILE_SIZE", "Uploaded file is too big.", (value) => !value || (value && value.size <= 1024 * 1024))
     .test("FILE_FORMAT", "Uploaded file has unsupported format.", (value) => !value || (value && SUPPORTED_FORMATS.includes(value?.type))), */
 
