@@ -12,8 +12,9 @@ export const FormLogin = () => {
   const [formValues, handleInputChange] = useForm({
     email: "",
     password: "",
+    options: ""
   });
-  const { email, password } = formValues;
+  const { email, password, options } = formValues;
 
   let users = [
     { value: "1", label: "Usuario 1" },
@@ -30,11 +31,6 @@ export const FormLogin = () => {
   const [errorPassword, setErrorPasword] = useState(null);
   const [errorSelect, seterrorSelect] = useState("");
 
-  const handleSelectChange = () => (e) => {
-    let val = e.target.value;
-    localStorage.setItem("id_rol", `${val}`);
-  };
-
   const captcha = useRef(null);
   const onCaptcha = () => {
     if (captcha.current.getValue()) {
@@ -44,13 +40,15 @@ export const FormLogin = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     let optForm = document.forms["form"]["options"].selectedIndex;
     if (optForm === null || optForm === 0) {
       seterrorSelect("Debe seleccionar una opción en el campo");
       return false;
+    } else if (optForm !== null || optForm !== 0) {
+      console.log(optForm, 'valor')
+      localStorage.setItem("id_rol", optForm);
     }
-
+  
     if (captcha.current.getValue()) {
       cambiarCaptchaValido(true);
     } else {
@@ -123,7 +121,8 @@ export const FormLogin = () => {
             <select
               className="form-select"
               name="options"
-              onChange={handleSelectChange()}
+              value={options}
+              onChange={handleInputChange}
               onBlur={() => seterrorSelect("")}
             >
               {users.map((item) => {
