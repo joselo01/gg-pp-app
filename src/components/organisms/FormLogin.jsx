@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import { Link } from 'react-router-dom';
 import { useForm } from "../../hooks/useForm";
-import ReCAPTCHA from "react-google-recaptcha";
+//import ReCAPTCHA from "react-google-recaptcha";
 import { useDispatch, useSelector } from "react-redux";
 import { startLoginEmailPassword } from "../../redux/actions/auth";
 export const FormLogin = () => {
@@ -49,12 +49,12 @@ export const FormLogin = () => {
       localStorage.setItem("id_rol", optForm);
     }
   
-    if (captcha.current.getValue()) {
+    /* if (captcha.current.getValue()) {
       cambiarCaptchaValido(true);
     } else {
       cambiarCaptchaValido(false);
       return
-    }
+    } */
 
     if (!email.trim()) {
       setErrorUsuario("El campo usuario (email) es requerido");
@@ -143,11 +143,11 @@ export const FormLogin = () => {
             </Link>
           </div>
           <div className="recaptcha">
-            <ReCAPTCHA
+            {/* <ReCAPTCHA
               ref={captcha}
               sitekey="6LebBoUcAAAAAAQrF5ZeUIRn7vGecVJ5FEG5A5Ls"
               onChange={onCaptcha}
-            />
+            /> */}
           </div>
           {captchaValido === false && (
             <div className="text-danger">Por favor acepta el captcha</div>
