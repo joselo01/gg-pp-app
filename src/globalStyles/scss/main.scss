@@ -40,7 +40,11 @@ body {
   min-height: 6rem;
 }
 
-.nav-style{
+.nav-style {
   height: 80vh;
   background-color: $primary !important;
+}
+
+.text-danger {
+  width: 100% !important;
 }

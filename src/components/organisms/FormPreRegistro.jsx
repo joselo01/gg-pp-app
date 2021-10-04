@@ -1,71 +1,67 @@
-import React from "react";
+import React, { useState } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 
 export const FormPreRegistro = ({ handleValidated }) => {
+  const [disabled, setDisabled] = useState(false);
   let rubros = [
     { value: "1", label: "Rubro 1" },
     { value: "2", label: "Rubro 2" },
     { value: "3", label: "Rubro 3" },
   ];
-
   rubros.unshift({
     value: "",
     label: "[ Seleccione Rubro ]",
   });
 
+  const initialValues = {
+    idFiscal: "",
+    pais: "",
+    rubro: [],
+    empresa: "",
+    comprador: "",
+    comentario: "",
+  };
+
+  const PreRegistrationShema = Yup.object().shape({
+    idFiscal: Yup.string()
+      .required("EL campo ID Fiscal es requerido.")
+      .matches(/^[a-z0-9]+$/i, "El campo solo debe contener números y letras"),
+    pais: Yup.string().required("EL campo pais es requerido"),
+    rubro: Yup.array()
+      .min(1, "El campo rubro es requerido.")
+      .required("El campo rubro es requerido.")
+      .nullable(),
+    empresa: Yup.string().required("El campo empresa es requerido"),
+  });
+
   return (
     <>
       <Formik
-        initialValues={{
-          idFiscal: "",
-          pais: "",
-          rubro: [],
-          empresa: "",
-          comprador: "",
-          comentario: "",
-        }}
-        validationSchema={Yup.object({
-          rubro: Yup.array()
-            .min(1, "El campo rubro es requerido.")
-            .required("El campo rubro es requerido.")
-            .nullable(),
-        })}
+        initialValues={initialValues}
+        validationSchema={PreRegistrationShema}
         validate={(valores) => {
           let mistake = {};
-
-          if (!valores.idFiscal) {
-            mistake.idFiscal = "EL campo ID Fiscal es requerido";
-          } else if (!/^[a-z0-9]+$/i.test(valores.idFiscal)) {
-            mistake.idFiscal = "El campo solo debe contener números y letras";
-          }
-
-          if (!valores.pais) {
-            mistake.pais = "EL campo pais es requerido";
-          }
-
-          if (!valores.empresa) {
-            mistake.empresa = "EL campo empresa es requerido";
-          }
-
-          if (!valores.comprador) {
-            mistake.comprador = "EL campo comprador es requerido";
-          }
-
-          if (!valores.comentario) {
-            mistake.comentario = "EL campo comentario es requerido";
+          if (valores.comprador.length === 1) {
+            valores.comentario = "";
+            setDisabled(true);
+          } else if (!valores.comentario) {
+            mistake.comentario =
+              "EL campo comentario y/o contacto es requerido";
+          } else if (valores.comentario === "") {
+            mistake.comentario = "";
+            setDisabled(true);
           }
 
           return mistake;
         }}
         onSubmit={(valores, { resetForm }) => {
           resetForm();
-          console.log("datos enviados");
           handleValidated();
         }}
       >
         {({ errors, handleSubmit }) => (
-          <Form className="form-group" onSubmit={handleSubmit}>
+          <Form name="form" className="form-group" onSubmit={handleSubmit}>
             <div className="input-group mb-3">
               <div className="input-group-prepend">
                 <span className="input-group-text">N° Id. Fiscal</span>
@@ -149,12 +145,6 @@ export const FormPreRegistro = ({ handleValidated }) => {
                 <option value="1">A</option>
                 <option value="2">B</option>
               </Field>
-              <ErrorMessage
-                name="comprador"
-                component={() => (
-                  <span className="text-danger">{errors.comprador}</span>
-                )}
-              />
             </div>
             <div className="input-group mb-3">
               <div className="input-group-prepend">
@@ -164,6 +154,7 @@ export const FormPreRegistro = ({ handleValidated }) => {
                 as="textarea"
                 className="form-control"
                 name="comentario"
+                disabled={disabled}
               ></Field>
               <ErrorMessage
                 name="comentario"
@@ -173,11 +164,7 @@ export const FormPreRegistro = ({ handleValidated }) => {
               />
             </div>
             <div className="d-grid gap-2">
-              <button
-                type="submit"
-                className="btn bg-button block subtitle"
-                /* onClick={handleValidated} */
-              >
+              <button type="submit" className="btn bg-button block subtitle">
                 Validar
               </button>
             </div>
