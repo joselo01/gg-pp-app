@@ -6,7 +6,7 @@ import { useHistory } from "react-router-dom";
 import { TabItem } from "../atoms/TabItem";
 //import PreviewFile from "./PreviewFile";
 
-export const FormRegistro = ({ handleValidated }) => {
+export const FormRegistro = () => {
   let idRol = localStorage.getItem("id_rol") ?? "";
   console.log(idRol);
 
@@ -109,7 +109,7 @@ export const FormRegistro = ({ handleValidated }) => {
     incotermsDos: "",
 
     //Companydocuments
-    file: null,
+    //file: null,
 
     // OrgShopping
     orgCompras: "",
@@ -154,179 +154,77 @@ export const FormRegistro = ({ handleValidated }) => {
     comprador: Yup.string().required("EL campo comprador es requerido"),
     comentario: Yup.string().required("EL campo comentario es requerido"),
 
-    // administrador
-    titulo: Yup.string().required("El campo titulo es requerido"),
-    nombres: Yup.string().required("El campo nombre es requerido"),
-    apellidos: Yup.string().required("El campo apellido es requerido"),
-    email: Yup.string()
-      .required("El campo email es requerido")
-      .matches(/\S+@\S+\.\S+/, "Ingrese un email valido"),
-
     //GeneralData
-    tratamiento: Yup.string().required("El campo tratamiento es requerido"),
-    razonSocial: Yup.string().required("El campo razon social es requerido"),
-    nombreComercial: Yup.string().required(
-      "El campo nombre comercial es requerido"
-    ),
-    calle: Yup.string().required("El campo calle es requerido"),
-    numero: Yup.string()
-      .required("El campo número es requerido")
-      .matches(/^[0-9]+$/, "el campo debe ser númerico"),
-    distrito: Yup.string().required("El campo distrito es requerido"),
-    provincia: Yup.string().required("El campo Provincia es requerido"),
-    codigoPostal: Yup.string()
-      .required("El campo código postal es requerido")
-      .matches(
-        /^[a-z0-9]+$/i,
-        "El campo solo debe contener números y/o letras"
-      ),
-    country: Yup.string().required("El campo país es requerido"),
-    region: Yup.string().required("El campo región es requerido"),
-    idioma: Yup.string().required("El campo idioma es requerido"),
-    telefonoUno: Yup.string()
-      .required("El campo teléfono es requerido")
-      .matches(
-        /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/,
-        "El número de teléfono no es válido"
-      ),
-    telefonoDos: Yup.string()
-      .required("El campo teléfono es requerido")
-      .matches(
-        /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/,
-        "El número de teléfono no es válido"
-      ),
-    telefonoTres: Yup.string()
-      .required("El campo teléfono es requerido")
-      .matches(
-        /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/,
-        "El número de teléfono no es válido"
-      ),
-    telefonoCuatro: Yup.string()
-      .required("El campo teléfono es requerido")
-      .matches(
-        /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/,
-        "El número de teléfono no es válido"
-      ),
-    telefonoCinco: Yup.string()
-      .required("El campo teléfono es requerido")
-      .matches(
-        /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/,
-        "El número de teléfono no es válido"
-      ),
-    emailUno: Yup.string()
-      .required("El campo email es requerido")
-      .matches(/\S+@\S+\.\S+/, "Ingrese un email valido"),
-    emailDos: Yup.string()
-      .required("El campo email es requerido")
-      .matches(/\S+@\S+\.\S+/, "Ingrese un email valido"),
-    emailTres: Yup.string()
-      .required("El campo email es requerido")
-      .matches(/\S+@\S+\.\S+/, "Ingrese un email valido"),
-    emailCuatro: Yup.string()
-      .required("El campo email es requerido")
-      .matches(/\S+@\S+\.\S+/, "Ingrese un email valido"),
-    emailCinco: Yup.string()
-      .required("El campo email es requerido")
-      .matches(/\S+@\S+\.\S+/, "Ingrese un email valido"),
-    rolUno: Yup.string().required("El campo rol 1 es requerido"),
-    rolDos: Yup.string().required("El campo rol 2 es requerido"),
-    rolTres: Yup.string().required("El campo rol 3 es requerido"),
-    rolCuatro: Yup.string().required("El campo rol 4 es requerido"),
-    rolCinco: Yup.string().required("El campo rol 5 es requerido"),
-
-    // BankData
-    idFiscalDos: Yup.string()
-      .required("EL campo ID Fiscal es requerido.")
-      .matches(/^[a-z0-9]+$/i, "El campo solo debe contener números y letras"),
-    tipoDocumento: Yup.string()
-      .required("El campo tipo de documento es requerido")
-      .matches(
-        /^[a-z0-9]+$/i,
-        "El campo solo debe contener números y/o letras"
-      ),
-    vendedorPrincipal: Yup.string().required(
-      "El campo vendedor principal es requerido"
-    ),
-    telefonoVendedor: Yup.string()
-      .required("El campo teléfono vendedor es requerido")
-      .matches(
-        /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/,
-        "El número de teléfono no es válido"
-      ),
-    moneda: Yup.string().required("El campo mneda es requerido"),
-    condicionPago: Yup.string().required(
-      "El campo condición de pago es requerido"
-    ),
-    incoterms: Yup.string().required("El campo incoterms es requerido"),
-    incotermsDos: Yup.string().required(
-      "El campo incoterms (lugar de entrega) es requerido"
-    ),
-    //Companydocuments
-    file: Yup.mixed().required("El campo adjunto es requerido"),
-    /* .test("FILE_SIZE", "Uploaded file is too big.", (value) => !value || (value && value.size <= 1024 * 1024))
-    .test("FILE_FORMAT", "Uploaded file has unsupported format.", (value) => !value || (value && SUPPORTED_FORMATS.includes(value?.type))), */
-
-    // OrgShopping
-
-    orgCompras: Yup.string().required(
-      "El campo organización de compras es requerido"
-    ),
-    sociedad: Yup.string().required("El campo sociedad es requerido"),
-    gpoTesoreria: Yup.string().required(
-      "El campo grupo de tesoreria es requerido"
-    ),
-    respGastosTransferencia: Yup.string().required(
-      "El campo responsable de gastos de transferencia es requerido"
-    ),
-    transporteFrontera: Yup.string().required(
-      "El campo transporte de frontera es requerido"
-    ),
-    condicionPagoCompras: Yup.string().required(
-      "El campo condiciones de pago es requerido"
-    ),
-
-    //AccountManagement
-
-    acreedor: Yup.string().required(
-      "El campo organización de compras es requerido"
-    ),
-    idFiscalTres: Yup.string()
-      .required("EL campo ID Fiscal es requerido.")
-      .matches(/^[a-z0-9]+$/i, "El campo solo debe contener números y letras"),
-    gpoCuentas: Yup.string().required("El campo grupo de cuentas es requerido"),
-    cuentaAsociada: Yup.string()
-      .required("El campo cuenta asociada es requerido")
-      .matches(/^[0-9]+$/),
-    condicionPagoDos: Yup.string().required(
-      "El campo condición de pago es requerido"
-    ),
-    verificacionFacturas: Yup.string().required(
-      "El campo verificacion de facturas es requerido"
-    ),
-    viasPago: Yup.string().required("El campo vias de pago es requerido"),
-    bancoPropio: Yup.string().required("El campo banco propio es requerido"),
-    claveAgrup: Yup.string().required(
-      "El campo clave de agrupación es requerido"
-    ),
-    paisRetencion: Yup.string().required(
-      "El campo país de rtencion es requerido"
-    ),
-    tpRetencion: Yup.string().required(
-      "El campo tipo de retención es requerido"
-    ),
-    indRetencion: Yup.string().required(
-      "El campo indicación de retención es requerido"
-    ),
-    sujeto: Yup.string().required("El campo sujeto es requerido"),
-    grupoEsquemaProveedor: Yup.string().required(
-      "El campo grupo esquema de proveedor es requerido"
-    ),
-    verificacionFactruraBase: Yup.string().required(
-      "El campo verificación de facturas es requerido"
-    ),
-    verificacionFactRelServ: Yup.string().required(
-      "El campo verificación de facturas relacionadas al servicio es requerido"
-    ),
+tratamiento: Yup.string().required("El campo tratamiento es requerido"),
+razonSocial: Yup.string().required("El campo razon social es requerido"),
+nombreComercial: Yup.string().required(
+  "El campo nombre comercial es requerido"
+),
+calle: Yup.string().required("El campo calle es requerido"),
+numero: Yup.string()
+  .required("El campo número es requerido")
+  .matches(/^[0-9]+$/, "el campo debe ser númerico"),
+distrito: Yup.string().required("El campo distrito es requerido"),
+provincia: Yup.string().required("El campo Provincia es requerido"),
+codigoPostal: Yup.string()
+  .required("El campo código postal es requerido")
+  .matches(
+    /^[a-z0-9]+$/i,
+    "El campo solo debe contener números y/o letras"
+  ),
+country: Yup.string().required("El campo país es requerido"),
+region: Yup.string().required("El campo región es requerido"),
+idioma: Yup.string().required("El campo idioma es requerido"),
+telefonoUno: Yup.string()
+  .required("El campo teléfono es requerido")
+  .matches(
+    /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/,
+    "El número de teléfono no es válido"
+  ),
+telefonoDos: Yup.string()
+  .required("El campo teléfono es requerido")
+  .matches(
+    /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/,
+    "El número de teléfono no es válido"
+  ),
+telefonoTres: Yup.string()
+  .required("El campo teléfono es requerido")
+  .matches(
+    /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/,
+    "El número de teléfono no es válido"
+  ),
+telefonoCuatro: Yup.string()
+  .required("El campo teléfono es requerido")
+  .matches(
+    /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/,
+    "El número de teléfono no es válido"
+  ),
+telefonoCinco: Yup.string()
+  .required("El campo teléfono es requerido")
+  .matches(
+    /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/,
+    "El número de teléfono no es válido"
+  ),
+emailUno: Yup.string()
+  .required("El campo email es requerido")
+  .matches(/\S+@\S+\.\S+/, "Ingrese un email valido"),
+emailDos: Yup.string()
+  .required("El campo email es requerido")
+  .matches(/\S+@\S+\.\S+/, "Ingrese un email valido"),
+emailTres: Yup.string()
+  .required("El campo email es requerido")
+  .matches(/\S+@\S+\.\S+/, "Ingrese un email valido"),
+emailCuatro: Yup.string()
+  .required("El campo email es requerido")
+  .matches(/\S+@\S+\.\S+/, "Ingrese un email valido"),
+emailCinco: Yup.string()
+  .required("El campo email es requerido")
+  .matches(/\S+@\S+\.\S+/, "Ingrese un email valido"),
+rolUno: Yup.string().required("El campo rol 1 es requerido"),
+rolDos: Yup.string().required("El campo rol 2 es requerido"),
+rolTres: Yup.string().required("El campo rol 3 es requerido"),
+rolCuatro: Yup.string().required("El campo rol 4 es requerido"),
+rolCinco: Yup.string().required("El campo rol 5 es requerido"),
   });
 
   const [tabList] = useState(
@@ -347,10 +245,11 @@ export const FormRegistro = ({ handleValidated }) => {
         onSubmit={(valores, { resetForm }) => {
           resetForm();
           handleVerification();
-          console.log(valores);
+          //console.log(valores);
+          console.log("envio de formulario");
         }}
       >
-        {({ errors, valores, setFieldValue, handleSubmit }) => (
+        {({ errors, handleSubmit }) => (
           <Form name="form" className="form-group" onSubmit={handleSubmit}>
             <div className="mt-2">
               <h5>Datos del registrador</h5>
@@ -1294,12 +1193,12 @@ export const FormRegistro = ({ handleValidated }) => {
                         }}>
                             Upload
                         </button> */}
-                        <ErrorMessage
+                        {/* <ErrorMessage
                           name="file"
                           component={() => (
                             <span className="text-danger">{errors.file}</span>
                           )}
-                        />
+                        /> */}
                       </div>
                     </div>
                   </div>
