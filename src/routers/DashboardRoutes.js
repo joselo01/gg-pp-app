@@ -12,6 +12,10 @@ import { Proveedores } from "../pages/Providers";
 import { ProviderPreview } from "../pages/ProviderPreview";
 import { ValidateProvider } from "../pages/ValidateProvider";
 import { AdminProfile } from "../pages/AdminProfile";
+import { SecondaryAccounts } from "../pages/SecondaryAccounts";
+import { ReasignAccounts } from "../pages/ReasignAccounts";
+import { CompanyProfile } from "../pages/CompanyProfile";
+import { ChangeDataRequests } from "../pages/ChangeDataRequests";
 
 export const DashboardRoutes = () => {
   let idRol = localStorage.getItem("id_rol") ?? '';
@@ -42,15 +46,31 @@ export const DashboardRoutes = () => {
                               path="/providers"
                               component={Proveedores} />
                             <Route
-                              extac
+                              exact
                               path="/admin-profile"
                               component={AdminProfile} />
                             <Route
-                              extac
+                              exact
+                              path="/secondary-accounts"
+                              component={SecondaryAccounts} />
+                            <Route
+                              exact
+                              path="/reasign-accounts"
+                              component={ReasignAccounts} />
+                            <Route
+                              exact
+                              path="/company-profile"
+                              component={CompanyProfile} />
+                            <Route
+                              exact
+                              path="/change-requests"
+                              component={ChangeDataRequests} />
+                            <Route
+                              exact
                               path="/supplier_verification"
                               component={ValidateProvider} />
                             <Route
-                              extac
+                              exact
                               path="/create_password"
                               component={CreatePassword} />
                             {/* <Redirect to="/comprador" /> */}

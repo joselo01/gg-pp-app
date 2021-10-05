@@ -11,7 +11,7 @@ export const Navbar = () => {
         dispatch(startLogout())
     };
     return (
-        <div className="col-12 col-sm-3 col-xl-2 px-sm-2 bg-dark d-flex sticky-top nav-align">
+        <div className="col-12 col-sm-3 col-xl-2 px-sm-2 bg-dark d-flex sticky-top nav-style">
             <div className="d-flex flex-sm-column flex-row flex-grow-1 align-items-center align-items-sm-start px-3 pt-2 text-white">
                 <Link to="/" className="d-flex align-items-center pb-sm-3 mb-md-0 me-md-auto text-white text-decoration-none">
                     <span className="fs-5">G<span className="d-none d-sm-inline">loria</span></span>
@@ -47,9 +47,10 @@ export const Navbar = () => {
                         </Link>
                         <ul className="dropdown-menu dropdown-menu-light text-small shadow text-white" aria-labelledby="dropdown">
                             <li><Link className="dropdown-item" to="./admin-profile">Mi Perfil de Usuario</Link></li>
-                            <li><Link className="dropdown-item" to="/">Administrar usuarios</Link></li>
-                            <li><Link className="dropdown-item" to="/">Información de empresa</Link></li>
-                            <li><Link className="dropdown-item" to="/">Mis Solicitudes</Link></li>
+                            <li><Link className="dropdown-item" to="./secondary-accounts">Administrar usuarios</Link></li>
+                            <li><Link className="dropdown-item" to="./reasign-accounts">Reasignar usuario administrador</Link></li>
+                            <li><Link className="dropdown-item" to="./company-profile">Información de empresa</Link></li>
+                            <li><Link className="dropdown-item" to="./change-requests">Mis Solicitudes</Link></li>
                         </ul>
                     </li>
                     {/* <li>
