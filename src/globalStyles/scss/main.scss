@@ -39,6 +39,12 @@ body {
 .height-multiple {
   min-height: 6rem;
 }
+
+.nav-style {
+  height: 80vh;
+  background-color: $primary !important;
+}
+
 .text-danger {
   width: 100% !important;
 }
