@@ -348,6 +348,7 @@ export const FormRegistro = ({ handleValidated }) => {
           resetForm();
           handleVerification();
           console.log(valores);
+          console.log('envio de formulario');
         }}
       >
         {({ errors, valores, setFieldValue, handleSubmit }) => (
