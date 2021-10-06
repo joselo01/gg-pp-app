@@ -14,7 +14,6 @@ import { FormDataMasterAdmin } from "./FormDataMasterAdmin";
 //import PreviewFile from "./PreviewFile";
 
 export const FormRegistro = () => {
-  console.log(idRol);
 
   //const fileRef = useRef(null);
 
@@ -327,7 +326,7 @@ export const FormRegistro = () => {
   });
 
   const [tabList] = useState(
-    idRol === "1" || idRol === "" ? tabsProvider : tabsPurchaser
+    tabsProvider
   );
 
   const [tabIndex, setTabIndex] = useState(0);
@@ -468,7 +467,7 @@ export const FormRegistro = () => {
                 ),
               }[tabIndex]
             }
-            {idRol === "1" || idRol === "" ? (
+           
               <div className="row justify-content-md-center">
                 {/* {
                         stepIndex > 0 ?
@@ -497,9 +496,6 @@ export const FormRegistro = () => {
                   </div>
                 </div>
               </div>
-            ) : (
-              <></>
-            )}
           </Form>
         )}
       </Formik>
