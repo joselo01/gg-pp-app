@@ -532,43 +532,7 @@ rolCinco: Yup.string().required("El campo rol 5 es requerido"),
                   <FormDataBank/>
                 ),
                 3: (
-<<<<<<< HEAD
-                  <div className="card mb-3">
-                    <div className="card-body">
-                      <div className="input-group">
-                        {/* <div className="input-group-prepend">
-                                                            <span className="input-group-text">
-                                                                Nombre del Vendedor 1
-                                                            </span>
-                                                        </div> */}
-                        <Field
-                          /* ref={fileRef}
-                          hidden   */
-                          className="form-control"
-                          type="file"
-                          name="file"
-                          /*  onChange={(event) => {
-                            setFieldValue('file', event.currentTarget.files[0]);
-                          }} */
-                        />
-                        {/* {valores.file && <PreviewFile file={valores.file}/>}
-                        <button onClick={() => {
-                            fileRef.current.click();
-                        }}>
-                            Upload
-                        </button> */}
-                        {/* <ErrorMessage
-                          name="file"
-                          component={() => (
-                            <span className="text-danger">{errors.file}</span>
-                          )}
-                        /> */}
-                      </div>
-                    </div>
-                  </div>
-=======
                   <FormDataCompanyDocs/>
->>>>>>> 2f678f111c358d44ef783dc30d043dcd46acb3b9
                 ),
                 4: (
                   <FormDataShopping/>

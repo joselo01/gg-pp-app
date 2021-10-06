@@ -9,10 +9,6 @@ export const Navbar = () => {
   const handleLogout = () => {
     dispatch(startLogout());
   };
-
-    const handleLogout = () => {
-        dispatch(startLogout())
-    };
     return (
         <div className="col-12 col-sm-3 col-xl-2 px-sm-2 bg-dark d-flex sticky-top nav-style">
             <div className="d-flex flex-sm-column flex-row flex-grow-1 align-items-center align-items-sm-start px-3 pt-2 text-white">
