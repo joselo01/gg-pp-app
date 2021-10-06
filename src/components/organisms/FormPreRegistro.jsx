@@ -57,7 +57,7 @@ export const FormPreRegistro = ({ handleValidated }) => {
         }}
         onSubmit={(valores, { resetForm }) => {
           resetForm();
-          handleValidated();
+          //handleValidated();
         }}
       >
         {({ errors, handleSubmit }) => (
@@ -153,7 +153,7 @@ export const FormPreRegistro = ({ handleValidated }) => {
                 />
               </div>
               <div className="d-grid gap-2">
-                <button type="submit" className="btn bg-button block subtitle">
+                <button type="button" onClick={() => handleValidated()} className="btn bg-button block subtitle">
                   Validar
                 </button>
               </div>

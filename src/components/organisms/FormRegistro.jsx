@@ -475,9 +475,9 @@ export const FormRegistro = () => {
               <div className="col-12 col-md-6">
                 <div className="d-grid gap-2">
                   <button
-                    type="submit"
+                    type="button"
                     className="btn btn-next block subtitle"
-                  /* onClick={handleVerification} */
+                  onClick={handleVerification}
                   >
                     Enviar
                   </button>

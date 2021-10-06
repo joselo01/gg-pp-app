@@ -3,7 +3,7 @@ import { Logo } from "../components/atoms/Logo";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 
-export const CreatePassword = ({ handle }) => {
+export const CreatePassword = () => {
   const initialValues = {
     email: "emal@gmail.com",
     password: "",
@@ -20,10 +20,10 @@ export const CreatePassword = ({ handle }) => {
          .matches(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])([A-Za-z\d$@$!%*?&]|[^ ]){8,15}$/, 'Debe incluir números., utilice una combinación de letras mayúsculas y minúsculas., incluya caracteres especiales.'),
   });
 
-  useEffect(() => {
+ /*  useEffect(() => {
     handle(false);
     return () => handle(true);
-  }, [handle]);
+  }, [handle]); */
   return (
     <>
       <div className="container">
