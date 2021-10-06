@@ -82,13 +82,13 @@ export const DashboardRoutes = () => {
                               component={CreatePassword}
                             />
                             {role === "ADMIN_ROLE" && (
-                              <Redirect to="/comprador" />
+                              <Redirect to="/provider-requests" />
                             )}
                             {role === "PROVE_ROLE" && (
-                              <Redirect to="/providers" />
+                              <Redirect to="/provider-requests" />
                             )}
                             {role === "COMP_ROLE" && (
-                              <Redirect to="/provider-requests" />
+                              <Redirect to="/comprador" />
                             )}
                           </Switch>
                         </div>

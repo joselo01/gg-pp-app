@@ -35,10 +35,8 @@ export const FormCompany = () => {
             <div className="mt-2">
                 <h5>Datos del registrador</h5>
             </div>
-            <div className="input-group mb-3">
-                <div className="input-group-prepend">
-                    <span className="input-group-text">N° Id. Fiscal</span>
-                </div>
+            <div className="form-group col-md-6 col-12 mb-3">
+                <label>N° Id. Fiscal</label>
                 <input
                     className="form-control"
                     type="number"
@@ -47,10 +45,8 @@ export const FormCompany = () => {
                     onChange={handleInputChange}
                 />
             </div>
-            <div className="input-group mb-3">
-                <div className="input-group-prepend">
-                    <span className="input-group-text">País</span>
-                </div>
+            <div className="form-group col-md-6 col-12 mb-3">
+                <label>País</label>
                 <select
                     className="form-select"
                     name="pais"
@@ -60,10 +56,8 @@ export const FormCompany = () => {
                     <option value="2">Chile</option>
                 </select>
             </div>
-            <div className="input-group mb-3">
-                <div className="input-group-prepend">
-                    <span className="input-group-text">Rubro</span>
-                </div>
+            <div className="form-group col-md-6 col-12 mb-3">
+                <label>Rubro</label>
                 <select
                     className="form-select"
                     name="rubro"

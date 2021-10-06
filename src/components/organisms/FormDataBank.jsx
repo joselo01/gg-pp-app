@@ -173,7 +173,7 @@ export const FormDataBank = () => {
                             <div className="mt-2 mb-2">
                                 <h5>Condiciones</h5>
                             </div>
-                                <div className="form-group col-md-6 col-12 mb-3">
+                            <div className="form-group col-md-6 col-12 mb-3">
                                 <label for="pais">Moneda de pedido</label>
                                 <Field
                                     className="form-control"
@@ -188,7 +188,7 @@ export const FormDataBank = () => {
                                     )}
                                 />
                             </div>
-                                <div className="form-group col-md-6 col-12 mb-3">
+                            <div className="form-group col-md-6 col-12 mb-3">
                                 <label for="pais">Condiciones de pago</label>
                                 <Field
                                     className="form-control"
@@ -205,7 +205,7 @@ export const FormDataBank = () => {
                                     )}
                                 />
                             </div>
-                                <div className="form-group col-md-6 col-12 mb-3">
+                            <div className="form-group col-md-6 col-12 mb-3">
                                 <label for="pais">INCOTERMS</label>
                                 <Field
                                     className="form-control"
@@ -222,7 +222,7 @@ export const FormDataBank = () => {
                                     )}
                                 />
                             </div>
-                                <div className="form-group col-md-6 col-12 mb-3">
+                            <div className="form-group col-md-6 col-12 mb-3">
                                 <label for="pais">INCOTERMS 2/Lugar de entrega</label>
                                 <Field
                                     className="form-control"

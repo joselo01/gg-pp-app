@@ -19,10 +19,8 @@ export const FormUserProfile = () => {
         <>
             <div>
                 <form name="form" onSubmit={handleSubmit}>
-                    <div className="input-group mb-3">
-                        <div className="input-group-prepend">
-                            <span className="input-group-text">Titulo</span>
-                        </div>
+                    <div className="form-group col-12 mb-3">
+                        <label>Título</label>
                         <select
                             className="form-select"
                             name="pais"
@@ -32,10 +30,8 @@ export const FormUserProfile = () => {
                             <option value="2">Sra.</option>
                         </select>
                     </div>
-                    <div className="input-group mb-3">
-                        <div className="input-group-prepend">
-                            <span className="input-group-text">Nombre:</span>
-                        </div>
+                    <div className="form-group col-12 mb-3">
+                        <label>Nombre</label>
                         <input
                             className="form-control"
                             type="text"
@@ -44,10 +40,8 @@ export const FormUserProfile = () => {
                             onChange={handleInputChange}
                         />
                     </div>
-                    <div className="input-group mb-3">
-                        <div className="input-group-prepend">
-                            <span className="input-group-text">Apellidos:</span>
-                        </div>
+                    <div className="form-group col-12 mb-3">
+                        <label>Apellidos</label>
                         <input
                             className="form-control"
                             type="text"
@@ -56,10 +50,8 @@ export const FormUserProfile = () => {
                             onChange={handleInputChange}
                         />
                     </div>
-                    <div className="input-group mb-3">
-                        <div className="input-group-prepend">
-                            <span className="input-group-text">Tipo de documento</span>
-                        </div>
+                    <div className="form-group col-12 mb-3">
+                        <label>Tipo de documento</label>
                         <select
                             className="form-select"
                             name="pais"
@@ -69,10 +61,8 @@ export const FormUserProfile = () => {
                             <option value="2">RUC.</option>
                         </select>
                     </div>
-                    <div className="input-group mb-3">
-                        <div className="input-group-prepend">
-                            <span className="input-group-text">Doc. Identidad:</span>
-                        </div>
+                    <div className="form-group col-12 mb-3">
+                        <label>Doc. Identidad</label>
                         <input
                             className="form-control"
                             type="text"
@@ -81,10 +71,8 @@ export const FormUserProfile = () => {
                             onChange={handleInputChange}
                         />
                     </div>
-                    <div className="input-group mb-3">
-                        <div className="input-group-prepend">
-                            <span className="input-group-text">Email:</span>
-                        </div>
+                    <div className="form-group col-12 mb-3">
+                        <label>Email</label>
                         <input
                             className="form-control"
                             type="email"

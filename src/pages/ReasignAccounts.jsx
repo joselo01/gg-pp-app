@@ -35,18 +35,18 @@ export const ReasignAccounts = () => {
                 <div className="modal-dialog modal-dialog-centered">
                     <div className="modal-content">
                         <div className="modal-body">
-                            <form className="form-group">
+                            <form className="form-group row">
                                 <span>¿Esta seguro de reasignar al usuario NOMBREUSER como administrador? Este usuario tendrá permisos de administrador.
                                 </span>
                                 <br />
-                                <span>Escoja una opción para su usuario actual.
+                                <span className="pb-3">Escoja una opción para su usuario actual.
                                 </span>
-                                <div className="btn-group" role="group" aria-label="Basic radio toggle button group">
+                                <div className="btn-group pb-3" role="group">
                                     <input type="radio" className="btn-check" name="btnradio" id="btnradio1" autoComplete="off" />
-                                    <label className="btn btn-outline-primary">Eliminar</label>
+                                    <label className="btn btn-outline-primary col-6">Eliminar</label>
 
                                     <input type="radio" className="btn-check" name="btnradio" id="btnradio2" autoComplete="off" />
-                                    <label className="btn btn-outline-primary">Reasignar Rol</label>
+                                    <label className="btn btn-outline-primary col-6">Reasignar Rol</label>
 
                                 </div>
                                 <div className="input-group mb-3">
