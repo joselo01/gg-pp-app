@@ -63,8 +63,8 @@ export const FormPreRegistro = ({ handleValidated }) => {
         {({ errors, handleSubmit }) => (
           <Form name="form" className="form-group" onSubmit={handleSubmit}>
             <div className="row">
-              <div className="form-group col-md-6 col-12 mb-3">
-                <label htmlFor="idFiscal">N° Id. Fiscal</label>
+              <div className="form-group col-12 mb-3">
+                <label for="pais">N° Id. Fiscal</label>
                 <Field
                   className="form-control"
                   type="text"
@@ -78,8 +78,8 @@ export const FormPreRegistro = ({ handleValidated }) => {
                   )}
                 />
               </div>
-              <div className="form-group col-md-6 col-12 mb-3">
-                <label htmlFor="pais">País</label>
+              <div className="form-group col-12 mb-3">
+                <label for="pais">País</label>
                 <Field as="select" className="form-select" name="pais">
                   <option value="">[Seleccione pais]</option>
                   <option value="1">Perú</option>
@@ -115,8 +115,8 @@ export const FormPreRegistro = ({ handleValidated }) => {
                   )}
                 />
               </div>
-              <div className="form-group col-md-6 col-12 mb-3">
-                <label htmlFor="empresa">Empresa a postular</label>
+              <div className="form-group col-12 mb-3">
+                <label for="pais">Empresa a postular</label>
                 <Field as="select" className="form-select" name="empresa">
                   <option value="">[Seleccione empresa]</option>
                   <option value="1">A</option>
@@ -129,16 +129,16 @@ export const FormPreRegistro = ({ handleValidated }) => {
                   )}
                 />
               </div>
-              <div className="form-group col-md-6 col-12 mb-3">
-                <label htmlFor="comprador">Comprador responsable</label>
+              <div className="form-group col-12 mb-3">
+                <label for="pais">Comprador responsable</label>
                 <Field as="select" className="form-select" name="comprador">
                   <option value="">[Seleccione un comprador]</option>
                   <option value="1">A</option>
                   <option value="2">B</option>
                 </Field>
               </div>
-              <div className="form-group col-md-12 col-12 mb-3">
-                <label htmlFor="comentario">Contacto</label>
+              <div className="form-group col-12 mb-3">
+                <label for="pais">Contacto</label>
                 <Field
                   as="textarea"
                   className="form-control"
