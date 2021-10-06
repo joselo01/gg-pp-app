@@ -15,7 +15,7 @@ export const CompanyProfile = () => {
     }
     return (
 
-        <div className="p-3">
+        <>
             <FormCompany />
             <div className="row justify-content-md-center mt-2">
                 {
@@ -82,7 +82,7 @@ export const CompanyProfile = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </>
 
     )
 }

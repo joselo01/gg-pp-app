@@ -31,7 +31,7 @@ export const DashboardRoutes = () => {
                     <main className="row overflow-auto">
                       <Navbar />
                       <div className="col">
-                        <div className="col d-flex flex-column pb-3 card">
+                        <div className="col d-flex flex-column p-3 card">
                           <Switch>
                             <Route
                               exact
