@@ -63,7 +63,7 @@ export const FormPreRegistro = ({ handleValidated }) => {
         {({ errors, handleSubmit }) => (
           <Form name="form" className="form-group" onSubmit={handleSubmit}>
             <div className="row">
-              <div className="form-group col-md-6 col-12 mb-3">
+              <div className="form-group col-12 mb-3">
                 <label for="pais">N° Id. Fiscal</label>
                 <Field
                   className="form-control"
@@ -78,7 +78,7 @@ export const FormPreRegistro = ({ handleValidated }) => {
                   )}
                 />
               </div>
-              <div className="form-group col-md-6 col-12 mb-3">
+              <div className="form-group col-12 mb-3">
                 <label for="pais">País</label>
                 <Field as="select" className="form-select" name="pais">
                   <option value="">[Seleccione pais]</option>
@@ -115,7 +115,7 @@ export const FormPreRegistro = ({ handleValidated }) => {
                   )}
                 />
               </div>
-              <div className="form-group col-md-6 col-12 mb-3">
+              <div className="form-group col-12 mb-3">
                 <label for="pais">Empresa a postular</label>
                 <Field as="select" className="form-select" name="empresa">
                   <option value="">[Seleccione empresa]</option>
@@ -129,7 +129,7 @@ export const FormPreRegistro = ({ handleValidated }) => {
                   )}
                 />
               </div>
-              <div className="form-group col-md-6 col-12 mb-3">
+              <div className="form-group col-12 mb-3">
                 <label for="pais">Comprador responsable</label>
                 <Field as="select" className="form-select" name="comprador">
                   <option value="">[Seleccione un comprador]</option>
@@ -137,7 +137,7 @@ export const FormPreRegistro = ({ handleValidated }) => {
                   <option value="2">B</option>
                 </Field>
               </div>
-              <div className="form-group col-md-12 col-12 mb-3">
+              <div className="form-group col-12 mb-3">
                 <label for="pais">Contacto</label>
                 <Field
                   as="textarea"
