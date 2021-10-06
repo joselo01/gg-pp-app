@@ -1,4 +1,4 @@
-import { Formik, Form, Field, ErrorMessage } from "formik";
+import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
@@ -353,7 +353,7 @@ export const FormRegistro = () => {
               <h5>Datos del registrador</h5>
             </div>
             <div className="form-group col-md-6 col-12 mb-3">
-              <label for="idFiscal">N° Id. Fiscal</label>
+              <label htmlFor="idFiscal">N° Id. Fiscal</label>
               <Field
                 className="form-control"
                 type="text"
@@ -363,7 +363,7 @@ export const FormRegistro = () => {
               />
             </div>
             <div className="form-group col-md-6 col-12 mb-3">
-              <label for="pais">Pais</label>
+              <label htmlFor="pais">Pais</label>
               <Field
                 as="select"
                 className="form-select"
@@ -375,7 +375,7 @@ export const FormRegistro = () => {
               </Field>
             </div>
             <div className="form-group col-md-12 col-12 mb-3">
-              <label for="pais">Rubro</label>
+              <label htmlFor="pais">Rubro</label>
               <Field
                 component="select"
                 className="form-select height-multiple"
@@ -388,7 +388,7 @@ export const FormRegistro = () => {
               </Field>
             </div>
             <div className="form-group col-md-6 col-12 mb-3">
-              <label for="pais">Empresa a postular</label>
+              <label htmlFor="empresa">Empresa a postular</label>
               <Field
                 as="select"
                 className="form-select"
@@ -400,7 +400,7 @@ export const FormRegistro = () => {
               </Field>
             </div>
             <div className="form-group col-md-6 col-12 mb-3">
-              <label for="pais">Comprador responsable</label>
+              <label htmlFor="comprador">Comprador responsable</label>
               <Field
                 as="select"
                 className="form-select"
@@ -412,11 +412,11 @@ export const FormRegistro = () => {
               </Field>
             </div>
             <div className="form-group col-md-12 col-12 mb-3">
-              <label for="pais">Contacto o comentario</label>
+              <label htmlFor="pais">Contacto o comentario</label>
               <Field
                 as="textarea"
                 className="form-control"
-                name="comentario"
+                name="pais"
                 readOnly
               ></Field>
             </div>
@@ -436,22 +436,34 @@ export const FormRegistro = () => {
             {
               {
                 0: (
-                  <FormDataAdmin />
+                  <FormDataAdmin
+                    errors={errors}
+                  />
                 ),
                 1: (
-                  <FormDataGeneral />
+                  <FormDataGeneral
+                    errors={errors}
+                  />
                 ),
                 2: (
-                  <FormDataBank />
+                  <FormDataBank
+                    errors={errors}
+                  />
                 ),
                 3: (
-                  <FormDataCompanyDocs />
+                  <FormDataCompanyDocs
+                    errors={errors}
+                  />
                 ),
                 4: (
-                  <FormDataShopping />
+                  <FormDataShopping
+                    errors={errors}
+                  />
                 ),
                 5: (
-                  <FormDataMasterAdmin />
+                  <FormDataMasterAdmin
+                    errors={errors}
+                  />
                 ),
               }[tabIndex]
             }

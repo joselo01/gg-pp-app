@@ -64,7 +64,7 @@ export const FormPreRegistro = ({ handleValidated }) => {
           <Form name="form" className="form-group" onSubmit={handleSubmit}>
             <div className="row">
               <div className="form-group col-md-6 col-12 mb-3">
-                <label for="pais">N° Id. Fiscal</label>
+                <label htmlFor="idFiscal">N° Id. Fiscal</label>
                 <Field
                   className="form-control"
                   type="text"
@@ -79,7 +79,7 @@ export const FormPreRegistro = ({ handleValidated }) => {
                 />
               </div>
               <div className="form-group col-md-6 col-12 mb-3">
-                <label for="pais">País</label>
+                <label htmlFor="pais">País</label>
                 <Field as="select" className="form-select" name="pais">
                   <option value="">[Seleccione pais]</option>
                   <option value="1">Perú</option>
@@ -93,7 +93,7 @@ export const FormPreRegistro = ({ handleValidated }) => {
                 />
               </div>
               <div className="form-group col-md-12 col-12 mb-3">
-                <label for="pais">Rubro</label>
+                <label htmlFor="rubro">Rubro</label>
                 <Field
                   component="select"
                   className="form-select height-multiple"
@@ -116,7 +116,7 @@ export const FormPreRegistro = ({ handleValidated }) => {
                 />
               </div>
               <div className="form-group col-md-6 col-12 mb-3">
-                <label for="pais">Empresa a postular</label>
+                <label htmlFor="empresa">Empresa a postular</label>
                 <Field as="select" className="form-select" name="empresa">
                   <option value="">[Seleccione empresa]</option>
                   <option value="1">A</option>
@@ -130,7 +130,7 @@ export const FormPreRegistro = ({ handleValidated }) => {
                 />
               </div>
               <div className="form-group col-md-6 col-12 mb-3">
-                <label for="pais">Comprador responsable</label>
+                <label htmlFor="comprador">Comprador responsable</label>
                 <Field as="select" className="form-select" name="comprador">
                   <option value="">[Seleccione un comprador]</option>
                   <option value="1">A</option>
@@ -138,7 +138,7 @@ export const FormPreRegistro = ({ handleValidated }) => {
                 </Field>
               </div>
               <div className="form-group col-md-12 col-12 mb-3">
-                <label for="pais">Contacto</label>
+                <label htmlFor="comentario">Contacto</label>
                 <Field
                   as="textarea"
                   className="form-control"

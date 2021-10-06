@@ -96,9 +96,9 @@ export const FormLogin = () => {
               onChange={handleInputChange}
               onBlur={() => setErrorPasword(null)}
             />
-           {/*  {errorPassword ? (
+            {errorPassword ? (
               <span className="text-danger">{errorPassword}</span>
-            ) : null} */}
+            ) : null}
           </div>
           <div className="text-center mb-2">
             <Link to="/#" className="text-decoration-none text-secondary forgot">

@@ -7,8 +7,6 @@ export const startLogin = (email, password, nombre, role) => {
     const resp = await fetchWithoutToken("login", { email, password, nombre, role }, "POST");
     const body = await resp.json();
 
-    console.log(body, 'en login')
-
     if (body.ok) {
       localStorage.setItem("token", body.token);
       localStorage.setItem("token-init-date", new Date().getTime());
@@ -34,7 +32,6 @@ export const startChecking = () => {
   return async (dispatch) => {
     const resp = await fetchWithToken("usuarios/renew");
     const body = await resp.json();
-    console.log(body, 'renew');
 
     if (body.ok) {
       localStorage.setItem("token", body.token);
