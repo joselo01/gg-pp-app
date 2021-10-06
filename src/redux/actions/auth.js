@@ -1,5 +1,6 @@
 import { fetchWithoutToken, fetchWithToken } from "../helpers/fetch";
 import { types } from "../types/types";
+import Swal from 'sweetalert2'
 
 export const startLogin = (email, password, nombre, role) => {
   return async (dispatch) => {
@@ -20,7 +21,11 @@ export const startLogin = (email, password, nombre, role) => {
         })
       );
     } else {
-      alert("Error", body.msg, "error");
+      Swal.fire({
+        icon: 'error',
+        title: body.msg,
+        text: 'Verifique sus credenciales',
+      })
     }
   };
 };
