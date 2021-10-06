@@ -14,7 +14,6 @@ import { FormDataMasterAdmin } from "./FormDataMasterAdmin";
 //import PreviewFile from "./PreviewFile";
 
 export const FormRegistro = () => {
-  let idRol = localStorage.getItem("id_rol") ?? "";
   console.log(idRol);
 
   //const fileRef = useRef(null);
