@@ -1,10 +1,12 @@
 import React from 'react'
-import { FormAdminProfile } from '../components/organisms/FormAdminProfile'
+import { FormUserProfile } from '../components/organisms/FormUserProfile'
 
 export const AdminProfile = () => {
+
     return (
-        <div className="p-3">
-         <FormAdminProfile/>   
-        </div>
+        <>
+            <FormUserProfile />
+
+        </>
     )
 }

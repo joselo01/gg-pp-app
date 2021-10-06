@@ -12,6 +12,10 @@ import { Proveedores } from "../pages/Providers";
 import { ProviderPreview } from "../pages/ProviderPreview";
 import { ValidateProvider } from "../pages/ValidateProvider";
 import { AdminProfile } from "../pages/AdminProfile";
+import { SecondaryAccounts } from "../pages/SecondaryAccounts";
+import { ReasignAccounts } from "../pages/ReasignAccounts";
+import { CompanyProfile } from "../pages/CompanyProfile";
+import { ChangeDataRequests } from "../pages/ChangeDataRequests";
 import { useSelector } from "react-redux";
 
 export const DashboardRoutes = () => {
@@ -29,7 +33,7 @@ export const DashboardRoutes = () => {
                     <main className="row overflow-auto">
                       <Navbar />
                       <div className="col">
-                        <div className="col d-flex flex-column pb-3 card">
+                        <div className="col d-flex flex-column p-3 card">
                           <Switch>
                             <Route
                               exact
@@ -47,17 +51,33 @@ export const DashboardRoutes = () => {
                               component={Proveedores}
                             />
                             <Route
-                              extac
+                              exact
                               path="/admin-profile"
                               component={AdminProfile}
                             />
                             <Route
-                              extac
+                              exact
+                              path="/secondary-accounts"
+                              component={SecondaryAccounts} />
+                            <Route
+                              exact
+                              path="/reasign-accounts"
+                              component={ReasignAccounts} />
+                            <Route
+                              exact
+                              path="/company-profile"
+                              component={CompanyProfile} />
+                            <Route
+                              exact
+                              path="/change-requests"
+                              component={ChangeDataRequests} />
+                            <Route
+                              exact
                               path="/supplier_verification"
                               component={ValidateProvider}
                             />
                             <Route
-                              extac
+                              exact
                               path="/create_password"
                               component={CreatePassword}
                             />
