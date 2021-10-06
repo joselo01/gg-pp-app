@@ -12,9 +12,11 @@ import { Proveedores } from "../pages/Providers";
 import { ProviderPreview } from "../pages/ProviderPreview";
 import { ValidateProvider } from "../pages/ValidateProvider";
 import { AdminProfile } from "../pages/AdminProfile";
+import { useSelector } from "react-redux";
 
 export const DashboardRoutes = () => {
-  let idRol = localStorage.getItem("id_rol") ?? '';
+
+  const { role } = useSelector((state) => state.auth);
   return (
     <Router>
       <div className="bg-image">
@@ -32,34 +34,41 @@ export const DashboardRoutes = () => {
                             <Route
                               exact
                               path="/provider-requests"
-                              component={ProviderRequests} />
+                              component={ProviderRequests}
+                            />
                             <Route
                               exact
                               path="/provider-preview"
-                              component={ProviderPreview} />
+                              component={ProviderPreview}
+                            />
                             <Route
                               exact
                               path="/providers"
-                              component={Proveedores} />
+                              component={Proveedores}
+                            />
                             <Route
                               extac
                               path="/admin-profile"
-                              component={AdminProfile} />
+                              component={AdminProfile}
+                            />
                             <Route
                               extac
                               path="/supplier_verification"
-                              component={ValidateProvider} />
+                              component={ValidateProvider}
+                            />
                             <Route
                               extac
                               path="/create_password"
-                              component={CreatePassword} />
-                            {/* <Redirect to="/comprador" /> */}
-                            {idRol === "1" || idRol === '' ? (
-                              <Redirect
-                                to="/providers" />
-                            ) : (
-                              <Redirect
-                                to="/provider-requests" />
+                              component={CreatePassword}
+                            />
+                            {role === "ADMIN_ROLE" && (
+                              <Redirect to="/comprador" />
+                            )}
+                            {role === "PROVE_ROLE" && (
+                              <Redirect to="/providers" />
+                            )}
+                            {role === "COMP_ROLE" && (
+                              <Redirect to="/provider-requests" />
                             )}
                           </Switch>
                         </div>
