@@ -59,16 +59,12 @@ export const FormDataBank = () => {
             {({ errors, valores, setFieldValue, handleSubmit }) => (
                 <Form name="form" className="form-group" onSubmit={handleSubmit}>
                     <div className="card mb-3">
-                        <div className="card-body">
+                        <div className="card-body row">
                             <div className="mt-2 mb-2">
                                 <h5>Información fiscal</h5>
                             </div>
-                            <div className="input-group mb-3">
-                                <div className="input-group-prepend">
-                                    <span className="input-group-text">
-                                        Documento de identificación fiscal
-                                    </span>
-                                </div>
+                            <div className="form-group col-md-6 col-12 mb-3">
+                                <label for="pais">Documento de identificación fiscal</label>
                                 <Field
                                     className="form-control"
                                     type="text"
@@ -84,12 +80,8 @@ export const FormDataBank = () => {
                                     )}
                                 />
                             </div>
-                            <div className="input-group mb-3">
-                                <div className="input-group-prepend">
-                                    <span className="input-group-text">
-                                        Tipo de documento
-                                    </span>
-                                </div>
+                            <div className="form-group col-md-6 col-12 mb-3">
+                                <label for="pais">Tipo de documento</label>
                                 <Field
                                     className="form-control"
                                     type="text"
@@ -142,12 +134,8 @@ export const FormDataBank = () => {
                                 <h5>Datos de venta</h5>
                             </div>
 
-                            <div className="input-group mb-3">
-                                <div className="input-group-prepend">
-                                    <span className="input-group-text">
-                                        Nombre del vendedor principal
-                                    </span>
-                                </div>
+                            <div className="form-group col-md-6 col-12 mb-3">
+                                <label for="pais">Nombre del vendedor principal</label>
                                 <Field
                                     className="form-control"
                                     type="text"
@@ -164,12 +152,8 @@ export const FormDataBank = () => {
                                 />
                             </div>
 
-                            <div className="input-group mb-3">
-                                <div className="input-group-prepend">
-                                    <span className="input-group-text">
-                                        Teléfono del vendedor
-                                    </span>
-                                </div>
+                            <div className="form-group col-md-6 col-12 mb-3">
+                                <label for="pais">Teléfono del vendedor</label>
                                 <Field
                                     className="form-control"
                                     type="text"
@@ -189,13 +173,8 @@ export const FormDataBank = () => {
                             <div className="mt-2 mb-2">
                                 <h5>Condiciones</h5>
                             </div>
-
-                            <div className="input-group mb-3">
-                                <div className="input-group-prepend">
-                                    <span className="input-group-text">
-                                        Moneda de pedido
-                                    </span>
-                                </div>
+                                <div className="form-group col-md-6 col-12 mb-3">
+                                <label for="pais">Moneda de pedido</label>
                                 <Field
                                     className="form-control"
                                     type="text"
@@ -209,12 +188,8 @@ export const FormDataBank = () => {
                                     )}
                                 />
                             </div>
-                            <div className="input-group mb-3">
-                                <div className="input-group-prepend">
-                                    <span className="input-group-text">
-                                        Condiciones de pago
-                                    </span>
-                                </div>
+                                <div className="form-group col-md-6 col-12 mb-3">
+                                <label for="pais">Condiciones de pago</label>
                                 <Field
                                     className="form-control"
                                     type="text"
@@ -230,10 +205,8 @@ export const FormDataBank = () => {
                                     )}
                                 />
                             </div>
-                            <div className="input-group mb-3">
-                                <div className="input-group-prepend">
-                                    <span className="input-group-text">INCOTERMS</span>
-                                </div>
+                                <div className="form-group col-md-6 col-12 mb-3">
+                                <label for="pais">INCOTERMS</label>
                                 <Field
                                     className="form-control"
                                     type="text"
@@ -249,12 +222,8 @@ export const FormDataBank = () => {
                                     )}
                                 />
                             </div>
-                            <div className="input-group">
-                                <div className="input-group-prepend">
-                                    <span className="input-group-text">
-                                        INCOTERMS 2/Lugar de entrega
-                                    </span>
-                                </div>
+                                <div className="form-group col-md-6 col-12 mb-3">
+                                <label for="pais">INCOTERMS 2/Lugar de entrega</label>
                                 <Field
                                     className="form-control"
                                     type="text"

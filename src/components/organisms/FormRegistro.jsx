@@ -348,14 +348,12 @@ export const FormRegistro = () => {
         }}
       >
         {({ errors, handleSubmit }) => (
-          <Form name="form" className="form-group" onSubmit={handleSubmit}>
+          <Form name="form" className="form-group row" onSubmit={handleSubmit}>
             <div className="mt-2">
               <h5>Datos del registrador</h5>
             </div>
-            <div className="input-group mb-3">
-              <div className="input-group-prepend">
-                <span className="input-group-text">N° Id. Fiscal</span>
-              </div>
+            <div className="form-group col-md-6 col-12 mb-3">
+              <label for="idFiscal">N° Id. Fiscal</label>
               <Field
                 className="form-control"
                 type="text"
@@ -364,10 +362,8 @@ export const FormRegistro = () => {
                 readOnly
               />
             </div>
-            <div className="input-group mb-3">
-              <div className="input-group-prepend">
-                <span className="input-group-text">País</span>
-              </div>
+            <div className="form-group col-md-6 col-12 mb-3">
+              <label for="pais">Pais</label>
               <Field
                 as="select"
                 className="form-select"
@@ -378,10 +374,8 @@ export const FormRegistro = () => {
                 <option value="2">Chile</option>
               </Field>
             </div>
-            <div className="input-group mb-3">
-              <div className="input-group-prepend">
-                <span className="input-group-text">Rubro</span>
-              </div>
+            <div className="form-group col-md-12 col-12 mb-3">
+              <label for="pais">Rubro</label>
               <Field
                 component="select"
                 className="form-select height-multiple"
@@ -393,10 +387,8 @@ export const FormRegistro = () => {
                 <option value="2">B</option>
               </Field>
             </div>
-            <div className="input-group mb-3">
-              <div className="input-group-prepend">
-                <span className="input-group-text">Empresa a postular</span>
-              </div>
+            <div className="form-group col-md-6 col-12 mb-3">
+              <label for="pais">Empresa a postular</label>
               <Field
                 as="select"
                 className="form-select"
@@ -407,10 +399,8 @@ export const FormRegistro = () => {
                 <option value="2">B</option>
               </Field>
             </div>
-            <div className="input-group mb-3">
-              <div className="input-group-prepend">
-                <span className="input-group-text">Comprador responsable</span>
-              </div>
+            <div className="form-group col-md-6 col-12 mb-3">
+              <label for="pais">Comprador responsable</label>
               <Field
                 as="select"
                 className="form-select"
@@ -421,10 +411,8 @@ export const FormRegistro = () => {
                 <option value="2">B</option>
               </Field>
             </div>
-            <div className="input-group mb-3">
-              <div className="input-group-prepend">
-                <span className="input-group-text">Contacto o comentario</span>
-              </div>
+            <div className="form-group col-md-12 col-12 mb-3">
+              <label for="pais">Contacto o comentario</label>
               <Field
                 as="textarea"
                 className="form-control"
@@ -451,25 +439,25 @@ export const FormRegistro = () => {
                   <FormDataAdmin />
                 ),
                 1: (
-                  <FormDataGeneral/> 
+                  <FormDataGeneral />
                 ),
                 2: (
-                  <FormDataBank/>
+                  <FormDataBank />
                 ),
                 3: (
-                  <FormDataCompanyDocs/>
+                  <FormDataCompanyDocs />
                 ),
                 4: (
-                  <FormDataShopping/>
+                  <FormDataShopping />
                 ),
                 5: (
-                  <FormDataMasterAdmin/>
+                  <FormDataMasterAdmin />
                 ),
               }[tabIndex]
             }
-           
-              <div className="row justify-content-md-center">
-                {/* {
+
+            <div className="row justify-content-md-center">
+              {/* {
                         stepIndex > 0 ?
                             <div className="col-12 col-md-6 mb-3">
                                 <div className="d-grid gap-2">
@@ -484,18 +472,18 @@ export const FormRegistro = () => {
                             </div>
                             : <></>
                     } */}
-                <div className="col-12 col-md-6">
-                  <div className="d-grid gap-2">
-                    <button
-                      type="submit"
-                      className="btn btn-next block subtitle"
-                    /* onClick={handleVerification} */
-                    >
-                      Enviar
-                    </button>
-                  </div>
+              <div className="col-12 col-md-6">
+                <div className="d-grid gap-2">
+                  <button
+                    type="submit"
+                    className="btn btn-next block subtitle"
+                  /* onClick={handleVerification} */
+                  >
+                    Enviar
+                  </button>
                 </div>
               </div>
+            </div>
           </Form>
         )}
       </Formik>
