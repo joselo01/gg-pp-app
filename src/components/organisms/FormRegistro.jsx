@@ -13,9 +13,7 @@ import { FormDataMasterAdmin } from "./FormDataMasterAdmin";
 
 //import PreviewFile from "./PreviewFile";
 
-export const FormRegistro = ({ handleValidated }) => {
-  let idRol = localStorage.getItem("id_rol") ?? "";
-  console.log(idRol);
+export const FormRegistro = () => {
 
   //const fileRef = useRef(null);
 
@@ -116,7 +114,7 @@ export const FormRegistro = ({ handleValidated }) => {
     incotermsDos: "",
 
     //Companydocuments
-    file: null,
+    //file: null,
 
     // OrgShopping
     orgCompras: "",
@@ -160,14 +158,6 @@ export const FormRegistro = ({ handleValidated }) => {
     empresa: Yup.string().required("EL campo empresa es requerido"),
     comprador: Yup.string().required("EL campo comprador es requerido"),
     comentario: Yup.string().required("EL campo comentario es requerido"),
-
-    // administrador
-    titulo: Yup.string().required("El campo titulo es requerido"),
-    nombres: Yup.string().required("El campo nombre es requerido"),
-    apellidos: Yup.string().required("El campo apellido es requerido"),
-    email: Yup.string()
-      .required("El campo email es requerido")
-      .matches(/\S+@\S+\.\S+/, "Ingrese un email valido"),
 
     //GeneralData
     tratamiento: Yup.string().required("El campo tratamiento es requerido"),
@@ -336,7 +326,7 @@ export const FormRegistro = ({ handleValidated }) => {
   });
 
   const [tabList] = useState(
-    idRol === "1" || idRol === "" ? tabsProvider : tabsPurchaser
+    tabsProvider
   );
 
   const [tabIndex, setTabIndex] = useState(0);
@@ -353,10 +343,11 @@ export const FormRegistro = ({ handleValidated }) => {
         onSubmit={(valores, { resetForm }) => {
           resetForm();
           handleVerification();
-          console.log(valores);
+          //console.log(valores);
+          console.log("envio de formulario");
         }}
       >
-        {({ errors, valores, setFieldValue, handleSubmit }) => (
+        {({ errors, handleSubmit }) => (
           <Form name="form" className="form-group" onSubmit={handleSubmit}>
             <div className="mt-2">
               <h5>Datos del registrador</h5>
@@ -476,7 +467,7 @@ export const FormRegistro = ({ handleValidated }) => {
                 ),
               }[tabIndex]
             }
-            {idRol === "1" || idRol === "" ? (
+           
               <div className="row justify-content-md-center">
                 {/* {
                         stepIndex > 0 ?
@@ -505,9 +496,6 @@ export const FormRegistro = ({ handleValidated }) => {
                   </div>
                 </div>
               </div>
-            ) : (
-              <></>
-            )}
           </Form>
         )}
       </Formik>
