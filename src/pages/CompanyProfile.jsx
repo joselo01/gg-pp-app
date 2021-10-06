@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { FormCompany } from '../components/organisms/FormCompany';
-import { FormRegistro } from '../components/organisms/FormRegistro'
+import { FormDataAdmin } from '../components/organisms/FormDataAdmin';
 
 export const CompanyProfile = () => {
     const [isEditing, setIsEditing] = useState(false);
@@ -16,7 +16,7 @@ export const CompanyProfile = () => {
     return (
 
         <>
-            <FormCompany />
+            <FormDataAdmin />
             <div className="row justify-content-md-center mt-2">
                 {
                     isEditing

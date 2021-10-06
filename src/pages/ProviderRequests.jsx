@@ -8,7 +8,7 @@ import { TableProviders } from "../components/organisms/TableProveedores";
 export const ProviderRequests = () => {
     const history = useHistory();
 
-    const handleInputChange = () =>{
+    const handleInputChange = () => {
 
     }
 
@@ -43,10 +43,8 @@ export const ProviderRequests = () => {
                     <div className="modal-content">
                         <div className="modal-body">
                             <form className="form-group">
-                                <div className="input-group mb-3">
-                                    <div className="input-group-prepend">
-                                        <span className="input-group-text in-modal">Dirección de correo:</span>
-                                    </div>
+                                <div className="form-group col-12 mb-3">
+                                    <label>Dirección de correo:</label>
                                     <input
                                         className="form-control"
                                         type="email"
@@ -56,10 +54,8 @@ export const ProviderRequests = () => {
                                         onChange={handleInputChange}
                                     />
                                 </div>
-                                <div className="input-group mb-3">
-                                    <div className="input-group-prepend">
-                                        <span className="input-group-text in-modal">CC:</span>
-                                    </div>
+                                <div className="form-group col-12 mb-3">
+                                    <label>CC:</label>
                                     <input
                                         className="form-control"
                                         type="email"
