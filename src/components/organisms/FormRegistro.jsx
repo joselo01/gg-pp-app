@@ -162,78 +162,6 @@ export const FormRegistro = () => {
     comentario: Yup.string().required("EL campo comentario es requerido"),
 
     //GeneralData
-<<<<<<< HEAD
-tratamiento: Yup.string().required("El campo tratamiento es requerido"),
-razonSocial: Yup.string().required("El campo razon social es requerido"),
-nombreComercial: Yup.string().required(
-  "El campo nombre comercial es requerido"
-),
-calle: Yup.string().required("El campo calle es requerido"),
-numero: Yup.string()
-  .required("El campo número es requerido")
-  .matches(/^[0-9]+$/, "el campo debe ser númerico"),
-distrito: Yup.string().required("El campo distrito es requerido"),
-provincia: Yup.string().required("El campo Provincia es requerido"),
-codigoPostal: Yup.string()
-  .required("El campo código postal es requerido")
-  .matches(
-    /^[a-z0-9]+$/i,
-    "El campo solo debe contener números y/o letras"
-  ),
-country: Yup.string().required("El campo país es requerido"),
-region: Yup.string().required("El campo región es requerido"),
-idioma: Yup.string().required("El campo idioma es requerido"),
-telefonoUno: Yup.string()
-  .required("El campo teléfono es requerido")
-  .matches(
-    /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/,
-    "El número de teléfono no es válido"
-  ),
-telefonoDos: Yup.string()
-  .required("El campo teléfono es requerido")
-  .matches(
-    /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/,
-    "El número de teléfono no es válido"
-  ),
-telefonoTres: Yup.string()
-  .required("El campo teléfono es requerido")
-  .matches(
-    /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/,
-    "El número de teléfono no es válido"
-  ),
-telefonoCuatro: Yup.string()
-  .required("El campo teléfono es requerido")
-  .matches(
-    /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/,
-    "El número de teléfono no es válido"
-  ),
-telefonoCinco: Yup.string()
-  .required("El campo teléfono es requerido")
-  .matches(
-    /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/,
-    "El número de teléfono no es válido"
-  ),
-emailUno: Yup.string()
-  .required("El campo email es requerido")
-  .matches(/\S+@\S+\.\S+/, "Ingrese un email valido"),
-emailDos: Yup.string()
-  .required("El campo email es requerido")
-  .matches(/\S+@\S+\.\S+/, "Ingrese un email valido"),
-emailTres: Yup.string()
-  .required("El campo email es requerido")
-  .matches(/\S+@\S+\.\S+/, "Ingrese un email valido"),
-emailCuatro: Yup.string()
-  .required("El campo email es requerido")
-  .matches(/\S+@\S+\.\S+/, "Ingrese un email valido"),
-emailCinco: Yup.string()
-  .required("El campo email es requerido")
-  .matches(/\S+@\S+\.\S+/, "Ingrese un email valido"),
-rolUno: Yup.string().required("El campo rol 1 es requerido"),
-rolDos: Yup.string().required("El campo rol 2 es requerido"),
-rolTres: Yup.string().required("El campo rol 3 es requerido"),
-rolCuatro: Yup.string().required("El campo rol 4 es requerido"),
-rolCinco: Yup.string().required("El campo rol 5 es requerido"),
-=======
     tratamiento: Yup.string().required("El campo tratamiento es requerido"),
     razonSocial: Yup.string().required("El campo razon social es requerido"),
     nombreComercial: Yup.string().required(
@@ -397,7 +325,6 @@ rolCinco: Yup.string().required("El campo rol 5 es requerido"),
     verificacionFactRelServ: Yup.string().required(
       "El campo verificación de facturas relacionadas al servicio es requerido"
     ),
->>>>>>> 2f678f111c358d44ef783dc30d043dcd46acb3b9
   });
 
   const [tabList] = useState(
