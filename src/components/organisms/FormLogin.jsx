@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useForm } from "../../hooks/useForm";
 //import ReCAPTCHA from "react-google-recaptcha";
 import { useDispatch, useSelector } from "react-redux";
-import { startLoginEmailPassword } from "../../redux/actions/auth";
+import { startLogin } from '../../redux/actions/auth'
 export const FormLogin = () => {
   const dispatch = useDispatch();
 
@@ -12,24 +12,13 @@ export const FormLogin = () => {
   const [formValues, handleInputChange] = useForm({
     email: "",
     password: "",
-    options: ""
+   
   });
-  const { email, password, options } = formValues;
-
-  let users = [
-    { value: "1", label: "Usuario 1" },
-    { value: "2", label: "Usuario 2" },
-  ];
-
-  users.unshift({
-    value: "",
-    label: "[ Seleccione una opción ]",
-  });
+  const { email, password } = formValues;
 
   const [captchaValido, cambiarCaptchaValido] = useState(null);
   const [errorUsuario, setErrorUsuario] = useState(null);
   const [errorPassword, setErrorPasword] = useState(null);
-  const [errorSelect, seterrorSelect] = useState("");
 
   const captcha = useRef(null);
   const onCaptcha = () => {
@@ -40,14 +29,9 @@ export const FormLogin = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    let optForm = document.forms["form"]["options"].selectedIndex;
-    if (optForm === null || optForm === 0) {
-      seterrorSelect("Debe seleccionar una opción en el campo");
-      return false;
-    } else if (optForm !== null || optForm !== 0) {
-      console.log(optForm, 'valor')
-      localStorage.setItem("id_rol", optForm);
-    }
+
+    dispatch(startLogin(email, password));
+    
   
     /* if (captcha.current.getValue()) {
       cambiarCaptchaValido(true);
@@ -78,9 +62,8 @@ export const FormLogin = () => {
 
     setErrorUsuario(null);
     setErrorPasword(null);
-    seterrorSelect(null);
 
-    dispatch(startLoginEmailPassword(email, password));
+    
   };
 
   return (
@@ -115,26 +98,6 @@ export const FormLogin = () => {
             />
             {errorPassword ? (
               <span className="text-danger">{errorPassword}</span>
-            ) : null}
-          </div>
-          <div className="form-group mb-2">
-            <select
-              className="form-select"
-              name="options"
-              value={options}
-              onChange={handleInputChange}
-              onBlur={() => seterrorSelect("")}
-            >
-              {users.map((item) => {
-                return (
-                  <option key={item.value} value={item.value}>
-                    {item.label}
-                  </option>
-                );
-              })}
-            </select>
-            {errorSelect ? (
-              <span className="text-danger">{errorSelect}</span>
             ) : null}
           </div>
           <div className="text-center mb-2">

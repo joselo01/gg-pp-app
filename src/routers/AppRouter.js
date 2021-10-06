@@ -1,30 +1,20 @@
-import React, { useEffect, useState } from "react";
-import { firebase } from "../firebase/firebaseConfig";
+import React, { useEffect } from "react";
 import { BrowserRouter as Router, Switch } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { login } from "../redux/actions/auth";
+import { useDispatch, useSelector } from "react-redux";
 import { PrivateRoute } from "./PrivateRoute";
 import { PublicRoute } from "./PublicRoute";
 import { DashboardRoutes } from "./DashboardRoutes";
 import { OnboardRoutes } from "./OnboardRoutes";
+import { startChecking } from "../redux/actions/auth";
 
 export const AppRouter = () => {
   const dispatch = useDispatch();
 
-  const [checking, setChecking] = useState(true);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const { checking, uid } = useSelector(state => state.auth);
 
   useEffect(() => {
-    firebase.auth().onAuthStateChanged((user) => {
-      if (user?.uid) {
-        dispatch(login(user.uid, user.displayName));
-        setIsLoggedIn(true);
-      } else {
-        setIsLoggedIn(false);
-      }
-      setChecking(false);
-    });
-  }, [dispatch, setChecking, setIsLoggedIn]);
+    dispatch(startChecking())
+  }, [dispatch]);
 
   if (checking) {
     return (
@@ -45,11 +35,13 @@ export const AppRouter = () => {
             exact
             path="/home"
             component={OnboardRoutes}
-            isAuthenticated={isLoggedIn} />
+            isAuthenticated={!!uid}
+             />
           <PrivateRoute
             path="/"
             component={DashboardRoutes}
-            isAuthenticated={isLoggedIn} />
+            isAuthenticated={!!uid}
+             />
         </Switch>
       </div>
     </Router>
