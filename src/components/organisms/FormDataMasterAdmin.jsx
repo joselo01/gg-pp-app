@@ -85,10 +85,8 @@ export const FormDataMasterAdmin = () => {
                             <div className="mt-2 mb-2">
                                 <h5>Gestión de cuenta</h5>
                             </div>
-                            <div className="input-group mb-3">
-                                <div className="input-group-prepend">
-                                    <span className="input-group-text">Acreedor</span>
-                                </div>
+                            <div className="form-group col-md-12 col-12 mb-3">
+                                <label for="pais">Acreedor</label>
                                 <Field
                                     className="form-control"
                                     type="text"
@@ -104,12 +102,8 @@ export const FormDataMasterAdmin = () => {
                                     )}
                                 />
                             </div>
-                            <div className="input-group mb-3">
-                                <div className="input-group-prepend">
-                                    <span className="input-group-text">
-                                        Documentos de identificación fiscal
-                                    </span>
-                                </div>
+                            <div className="form-group col-md-12 col-12 mb-3">
+                                <label for="pais">Documentos de identificación fiscal</label>
                                 <Field
                                     className="form-control"
                                     type="text"
@@ -125,12 +119,8 @@ export const FormDataMasterAdmin = () => {
                                     )}
                                 />
                             </div>
-                            <div className="input-group mb-3">
-                                <div className="input-group-prepend">
-                                    <span className="input-group-text">
-                                        Grupo de cuentas
-                                    </span>
-                                </div>
+                            <div className="form-group col-md-12 col-12 mb-3">
+                                <label for="pais">Grupo de cuentas</label>
                                 <Field
                                     className="form-control"
                                     type="text"
@@ -146,12 +136,9 @@ export const FormDataMasterAdmin = () => {
                                     )}
                                 />
                             </div>
-                            <div className="input-group mb-3">
-                                <div className="input-group-prepend">
-                                    <span className="input-group-text">
-                                        Cuenta asociada
-                                    </span>
-                                </div>
+
+                            <div className="form-group col-md-12 col-12 mb-3">
+                                <label for="pais"> Cuenta asociada</label>
                                 <Field
                                     className="form-control"
                                     type="text"
@@ -168,17 +155,13 @@ export const FormDataMasterAdmin = () => {
                                 />
                             </div>
                             <div className="mt-2 mb-2">
-                                <h5>Gestión de cuenta</h5>
+                                <h5>Pagos Cotab. Financ</h5>
                             </div>
                             <div className="mt-2 mb-2">
                                 <h5>Datos de pago</h5>
                             </div>
-                            <div className="input-group mb-3">
-                                <div className="input-group-prepend">
-                                    <span className="input-group-text">
-                                        Condición de pago
-                                    </span>
-                                </div>
+                            <div className="form-group col-md-6 col-12 mb-3">
+                                <label for="pais">Condición de pago</label>
                                 <Field
                                     className="form-control"
                                     type="text"
@@ -194,12 +177,8 @@ export const FormDataMasterAdmin = () => {
                                     )}
                                 />
                             </div>
-                            <div className="input-group mb-3">
-                                <div className="input-group-prepend">
-                                    <span className="input-group-text">
-                                        Verificación de facturas dobles o abonos
-                                    </span>
-                                </div>
+                            <div className="form-group col-md-6 col-12 mb-3">
+                                <label for="pais"> Verificación de facturas dobles o abonos</label>
                                 <Field
                                     className="form-control"
                                     type="text"
@@ -215,10 +194,8 @@ export const FormDataMasterAdmin = () => {
                                     )}
                                 />
                             </div>
-                            <div className="input-group mb-3">
-                                <div className="input-group-prepend">
-                                    <span className="input-group-text">Vías de pago</span>
-                                </div>
+                            <div className="form-group col-md-6 col-12 mb-3">
+                                <label for="pais">Vías de pago</label>
                                 <Field
                                     className="form-control"
                                     type="text"
@@ -234,10 +211,8 @@ export const FormDataMasterAdmin = () => {
                                     )}
                                 />
                             </div>
-                            <div className="input-group mb-3">
-                                <div className="input-group-prepend">
-                                    <span className="input-group-text">Banco propio</span>
-                                </div>
+                            <div className="form-group col-md-6 col-12 mb-3">
+                                <label for="pais">Banco Propio</label>
                                 <Field
                                     className="form-control"
                                     type="text"
@@ -253,10 +228,8 @@ export const FormDataMasterAdmin = () => {
                                     )}
                                 />
                             </div>
-                            <div className="input-group mb-3">
-                                <div className="input-group-prepend">
-                                    <span className="input-group-text">Clave agrup.</span>
-                                </div>
+                            <div className="form-group col-md-6 offset-md-6 col-12 mb-3">
+                                <label for="pais">Clave agrup.</label>
                                 <Field
                                     className="form-control"
                                     type="text"
@@ -275,12 +248,8 @@ export const FormDataMasterAdmin = () => {
                             <div className="mt-2 mb-2">
                                 <h5>Información sobre la retención</h5>
                             </div>
-                            <div className="input-group mb-3">
-                                <div className="input-group-prepend">
-                                    <span className="input-group-text">
-                                        País de retención
-                                    </span>
-                                </div>
+                            <div className="form-group col-md-6 col-12 mb-3">
+                                <label for="pais">País de retención</label>
                                 <Field
                                     className="form-control"
                                     type="text"
@@ -296,12 +265,8 @@ export const FormDataMasterAdmin = () => {
                                     )}
                                 />
                             </div>
-                            <div className="input-group mb-3">
-                                <div className="input-group-prepend">
-                                    <span className="input-group-text">
-                                        Tp. retención
-                                    </span>
-                                </div>
+                            <div className="form-group col-md-6 col-12 mb-3">
+                                <label for="pais">Tp.retención</label>
                                 <Field
                                     className="form-control"
                                     type="text"
@@ -317,12 +282,8 @@ export const FormDataMasterAdmin = () => {
                                     )}
                                 />
                             </div>
-                            <div className="input-group mb-3">
-                                <div className="input-group-prepend">
-                                    <span className="input-group-text">
-                                        Ind. retención
-                                    </span>
-                                </div>
+                            <div className="form-group col-md-6 col-12 mb-3">
+                                <label for="pais">Ind.retención</label>
                                 <Field
                                     className="form-control"
                                     type="text"
@@ -338,10 +299,8 @@ export const FormDataMasterAdmin = () => {
                                     )}
                                 />
                             </div>
-                            <div className="input-group mb-3">
-                                <div className="input-group-prepend">
-                                    <span className="input-group-text">Sujeto</span>
-                                </div>
+                            <div className="form-group col-md-6 col-12 mb-3">
+                                <label for="pais">Sujeto</label>
                                 <Field
                                     className="form-control"
                                     type="text"
@@ -358,12 +317,8 @@ export const FormDataMasterAdmin = () => {
                             <div className="mt-2 mb-2">
                                 <h5>Condiciones</h5>
                             </div>
-                            <div className="input-group mb-3">
-                                <div className="input-group-prepend">
-                                    <span className="input-group-text">
-                                        Grupo esquema proveedor
-                                    </span>
-                                </div>
+                            <div className="form-group col-md-6 col-12 mb-3">
+                                <label for="pais">Grupo esquema proveedor</label>
                                 <Field
                                     className="form-control"
                                     type="text"
@@ -379,12 +334,8 @@ export const FormDataMasterAdmin = () => {
                                     )}
                                 />
                             </div>
-                            <div className="input-group mb-3">
-                                <div className="input-group-prepend">
-                                    <span className="input-group-text">
-                                        Verific.Fact.Base EM
-                                    </span>
-                                </div>
+                            <div className="form-group col-md-6 col-12 mb-3">
+                                <label for="pais">Verific.Fact.Base EM</label>
                                 <Field
                                     className="form-control"
                                     type="text"
@@ -400,12 +351,8 @@ export const FormDataMasterAdmin = () => {
                                     )}
                                 />
                             </div>
-                            <div className="input-group mb-3">
-                                <div className="input-group-prepend">
-                                    <span className="input-group-text">
-                                        Verific.Fact.Rel.Serv
-                                    </span>
-                                </div>
+                            <div className="form-group col-md-6 col-12 mb-3">
+                                <label for="pais">Verific.Fact.Rel.Serv</label>
                                 <Field
                                     className="form-control"
                                     type="text"

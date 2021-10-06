@@ -122,14 +122,12 @@ export const FormDataGeneral = () => {
             {({ errors, valores, setFieldValue, handleSubmit }) => (
                 <Form name="form" className="form-group" onSubmit={handleSubmit}>
                     <div className="card mb-3">
-                        <div className="card-body">
+                        <div className="card-body row">
                             <div className="mt-2">
                                 <h5>Nombre</h5>
                             </div>
-                            <div className="input-group mb-3">
-                                <div className="input-group-prepend">
-                                    <span className="input-group-text">Tratamiento</span>
-                                </div>
+                            <div className="form-group col-md-6 col-12 mb-3">
+                                <label for="pais">Tratamiento</label>
                                 <Field
                                     className="form-control"
                                     type="text"
@@ -145,10 +143,8 @@ export const FormDataGeneral = () => {
                                     )}
                                 />
                             </div>
-                            <div className="input-group mb-3">
-                                <div className="input-group-prepend">
-                                    <span className="input-group-text">Razon Social</span>
-                                </div>
+                            <div className="form-group col-md-6 col-12 mb-3">
+                                <label for="pais">Razon Social</label>
                                 <Field
                                     className="form-control"
                                     type="text"
@@ -167,12 +163,8 @@ export const FormDataGeneral = () => {
                             <div className="mt-2 mb-2">
                                 <h5>Concepto de búsqueda</h5>
                             </div>
-                            <div className="input-group mb-3">
-                                <div className="input-group-prepend">
-                                    <span className="input-group-text">
-                                        Nombre Comercial
-                                    </span>
-                                </div>
+                            <div className="form-group col-md-12 col-12 mb-3">
+                                <label for="pais">Nombre Comercial</label>
                                 <Field
                                     className="form-control"
                                     type="text"
@@ -191,10 +183,8 @@ export const FormDataGeneral = () => {
                             <div className="mt-2 mb-2">
                                 <h5>Dirección de Calle</h5>
                             </div>
-                            <div className="input-group mb-3">
-                                <div className="input-group-prepend">
-                                    <span className="input-group-text">Calle</span>
-                                </div>
+                            <div className="form-group col-md-6 col-12 mb-3">
+                                <label for="pais">Calle</label>
                                 <Field
                                     className="form-control"
                                     type="text"
@@ -208,10 +198,8 @@ export const FormDataGeneral = () => {
                                     )}
                                 />
                             </div>
-                            <div className="input-group mb-3">
-                                <div className="input-group-prepend">
-                                    <span className="input-group-text">Número</span>
-                                </div>
+                            <div className="form-group col-md-6 col-12 mb-3">
+                                <label for="pais">Número</label>
                                 <Field
                                     className="form-control"
                                     type="text"
@@ -225,12 +213,8 @@ export const FormDataGeneral = () => {
                                     )}
                                 />
                             </div>
-                            <div className="input-group mb-3">
-                                <div className="input-group-prepend">
-                                    <span className="input-group-text">
-                                        Distrito/Barrio/Urb/Zona
-                                    </span>
-                                </div>
+                            <div className="form-group col-md-6 col-12 mb-3">
+                                <label for="pais">Distrito/Barrio/Urb/Zona</label>
                                 <Field
                                     className="form-control"
                                     type="text"
@@ -246,13 +230,8 @@ export const FormDataGeneral = () => {
                                     )}
                                 />
                             </div>
-
-                            <div className="input-group mb-3">
-                                <div className="input-group-prepend">
-                                    <span className="input-group-text">
-                                        Provincia/Comarca/Condado
-                                    </span>
-                                </div>
+                            <div className="form-group col-md-6 col-12 mb-3">
+                                <label for="pais">Provincia/Comarca/Condado</label>
                                 <Field
                                     className="form-control"
                                     type="text"
@@ -268,12 +247,8 @@ export const FormDataGeneral = () => {
                                     )}
                                 />
                             </div>
-                            <div className="input-group mb-3">
-                                <div className="input-group-prepend">
-                                    <span className="input-group-text">
-                                        Código Postal
-                                    </span>
-                                </div>
+                            <div className="form-group col-md-6 col-12 mb-3">
+                                <label for="pais"> Código Postal</label>
                                 <Field
                                     className="form-control"
                                     type="text"
@@ -289,10 +264,8 @@ export const FormDataGeneral = () => {
                                     )}
                                 />
                             </div>
-                            <div className="input-group mb-3">
-                                <div className="input-group-prepend">
-                                    <span className="input-group-text">País</span>
-                                </div>
+                            <div className="form-group col-md-6 col-12 mb-3">
+                                <label for="pais">País</label>
                                 <Field
                                     className="form-control"
                                     type="text"
@@ -308,10 +281,8 @@ export const FormDataGeneral = () => {
                                     )}
                                 />
                             </div>
-                            <div className="input-group">
-                                <div className="input-group-prepend">
-                                    <span className="input-group-text">Región</span>
-                                </div>
+                            <div className="form-group col-md-6 col-12 mb-3">
+                                <label for="pais">Región</label>
                                 <Field
                                     className="form-control"
                                     type="text"
@@ -329,10 +300,8 @@ export const FormDataGeneral = () => {
                             <div className="mt-2 mb-2">
                                 <h5>Comunicación</h5>
                             </div>
-                            <div className="input-group mb-3">
-                                <div className="input-group-prepend">
-                                    <span className="input-group-text">Idioma</span>
-                                </div>
+                            <div className="form-group col-md-6 col-12 mb-3">
+                                <label for="pais">Idioma</label>
                                 <Field
                                     className="form-control"
                                     type="text"
@@ -346,10 +315,8 @@ export const FormDataGeneral = () => {
                                     )}
                                 />
                             </div>
-                            <div className="input-group mb-3">
-                                <div className="input-group-prepend">
-                                    <span className="input-group-text">Teléfono 1</span>
-                                </div>
+                            <div className="form-group col-md-6 col-12 mb-3">
+                                <label for="pais">Teléfono 1</label>
                                 <Field
                                     className="form-control"
                                     type="text"
@@ -365,10 +332,8 @@ export const FormDataGeneral = () => {
                                     )}
                                 />
                             </div>
-                            <div className="input-group mb-3">
-                                <div className="input-group-prepend">
-                                    <span className="input-group-text">Teléfono 2</span>
-                                </div>
+                            <div className="form-group col-md-6 col-12 mb-3">
+                                <label for="pais">Teléfono 2</label>
                                 <Field
                                     className="form-control"
                                     type="text"
@@ -384,10 +349,8 @@ export const FormDataGeneral = () => {
                                     )}
                                 />
                             </div>
-                            <div className="input-group mb-3">
-                                <div className="input-group-prepend">
-                                    <span className="input-group-text">Teléfono 3</span>
-                                </div>
+                            <div className="form-group col-md-6 col-12 mb-3">
+                                <label for="pais">Teléfono 3</label>
                                 <Field
                                     className="form-control"
                                     type="text"
@@ -403,10 +366,8 @@ export const FormDataGeneral = () => {
                                     )}
                                 />
                             </div>
-                            <div className="input-group mb-3">
-                                <div className="input-group-prepend">
-                                    <span className="input-group-text">Teléfono 4</span>
-                                </div>
+                            <div className="form-group col-md-6 col-12 mb-3">
+                                <label for="pais">Teléfono 4</label>
                                 <Field
                                     className="form-control"
                                     type="text"
@@ -422,10 +383,8 @@ export const FormDataGeneral = () => {
                                     )}
                                 />
                             </div>
-                            <div className="input-group mb-3">
-                                <div className="input-group-prepend">
-                                    <span className="input-group-text">Teléfono 5</span>
-                                </div>
+                            <div className="form-group col-md-6 col-12 mb-3">
+                                <label for="pais">Teléfono 5</label>
                                 <Field
                                     className="form-control"
                                     type="text"
@@ -441,12 +400,8 @@ export const FormDataGeneral = () => {
                                     )}
                                 />
                             </div>
-                            <div className="input-group mb-3">
-                                <div className="input-group-prepend">
-                                    <span className="input-group-text">
-                                        Correo Electrónico 1
-                                    </span>
-                                </div>
+                            <div className="form-group col-md-6 col-12 mb-3">
+                                <label for="pais">Correo Electrónico 1</label>
                                 <Field
                                     className="form-control"
                                     type="text"
@@ -462,12 +417,8 @@ export const FormDataGeneral = () => {
                                     )}
                                 />
                             </div>
-                            <div className="input-group mb-3">
-                                <div className="input-group-prepend">
-                                    <span className="input-group-text">
-                                        Correo Electrónico 2
-                                    </span>
-                                </div>
+                            <div className="form-group col-md-6 col-12 mb-3">
+                                <label for="pais">Correo Electrónico 2</label>
                                 <Field
                                     className="form-control"
                                     type="text"
@@ -483,12 +434,8 @@ export const FormDataGeneral = () => {
                                     )}
                                 />
                             </div>
-                            <div className="input-group mb-3">
-                                <div className="input-group-prepend">
-                                    <span className="input-group-text">
-                                        Correo Electrónico 3
-                                    </span>
-                                </div>
+                            <div className="form-group col-md-6 col-12 mb-3">
+                                <label for="pais">Correo Electrónico 3</label>
                                 <Field
                                     className="form-control"
                                     type="text"
@@ -504,12 +451,8 @@ export const FormDataGeneral = () => {
                                     )}
                                 />
                             </div>
-                            <div className="input-group mb-3">
-                                <div className="input-group-prepend">
-                                    <span className="input-group-text">
-                                        Correo Electrónico 4
-                                    </span>
-                                </div>
+                            <div className="form-group col-md-6 col-12 mb-3">
+                                <label for="pais">Correo Electrónico 4</label>
                                 <Field
                                     className="form-control"
                                     type="text"
@@ -525,12 +468,8 @@ export const FormDataGeneral = () => {
                                     )}
                                 />
                             </div>
-                            <div className="input-group mb-3">
-                                <div className="input-group-prepend">
-                                    <span className="input-group-text">
-                                        Correo Electrónico 5
-                                    </span>
-                                </div>
+                            <div className="form-group col-md-6 col-12 mb-3">
+                                <label for="pais">Correo Electrónico 5</label>
                                 <Field
                                     className="form-control"
                                     type="text"
@@ -546,10 +485,8 @@ export const FormDataGeneral = () => {
                                     )}
                                 />
                             </div>
-                            <div className="input-group mb-3">
-                                <div className="input-group-prepend">
-                                    <span className="input-group-text">Rol 1</span>
-                                </div>
+                            <div className="form-group col-md-6 col-12 mb-3">
+                                <label for="pais">Rol 1</label>
                                 <Field
                                     className="form-control"
                                     type="text"
@@ -563,10 +500,8 @@ export const FormDataGeneral = () => {
                                     )}
                                 />
                             </div>
-                            <div className="input-group mb-3">
-                                <div className="input-group-prepend">
-                                    <span className="input-group-text">Rol 2</span>
-                                </div>
+                            <div className="form-group col-md-6 col-12 mb-3">
+                                <label for="pais">Rol 2</label>
                                 <Field
                                     className="form-control"
                                     type="text"
@@ -580,10 +515,8 @@ export const FormDataGeneral = () => {
                                     )}
                                 />
                             </div>
-                            <div className="input-group mb-3">
-                                <div className="input-group-prepend">
-                                    <span className="input-group-text">Rol 3</span>
-                                </div>
+                            <div className="form-group col-md-6 col-12 mb-3">
+                                <label for="pais">Rol 3</label>
                                 <Field
                                     className="form-control"
                                     type="text"
@@ -599,10 +532,8 @@ export const FormDataGeneral = () => {
                                     )}
                                 />
                             </div>
-                            <div className="input-group mb-3">
-                                <div className="input-group-prepend">
-                                    <span className="input-group-text">Rol 4</span>
-                                </div>
+                            <div className="form-group col-md-6 col-12 mb-3">
+                                <label for="pais">Rol 4</label>
                                 <Field
                                     className="form-control"
                                     type="text"
@@ -618,10 +549,8 @@ export const FormDataGeneral = () => {
                                     )}
                                 />
                             </div>
-                            <div className="input-group">
-                                <div className="input-group-prepend">
-                                    <span className="input-group-text">Rol 5</span>
-                                </div>
+                            <div className="form-group col-md-6 col-12 mb-3">
+                                <label for="pais">Rol 5</label>
                                 <Field
                                     className="form-control"
                                     type="text"

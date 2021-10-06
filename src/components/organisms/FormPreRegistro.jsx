@@ -62,111 +62,101 @@ export const FormPreRegistro = ({ handleValidated }) => {
       >
         {({ errors, handleSubmit }) => (
           <Form name="form" className="form-group" onSubmit={handleSubmit}>
-            <div className="input-group mb-3">
-              <div className="input-group-prepend">
-                <span className="input-group-text">N° Id. Fiscal</span>
+            <div className="row">
+              <div className="form-group col-md-6 col-12 mb-3">
+                <label for="pais">N° Id. Fiscal</label>
+                <Field
+                  className="form-control"
+                  type="text"
+                  name="idFiscal"
+                  autoComplete="off"
+                />
+                <ErrorMessage
+                  name="idFiscal"
+                  component={() => (
+                    <span className="text-danger">{errors.idFiscal}</span>
+                  )}
+                />
               </div>
-              <Field
-                className="form-control"
-                type="text"
-                name="idFiscal"
-                autoComplete="off"
-              />
-              <ErrorMessage
-                name="idFiscal"
-                component={() => (
-                  <span className="text-danger">{errors.idFiscal}</span>
-                )}
-              />
-            </div>
-            <div className="input-group mb-3">
-              <div className="input-group-prepend">
-                <span className="input-group-text">País</span>
+              <div className="form-group col-md-6 col-12 mb-3">
+                <label for="pais">País</label>
+                <Field as="select" className="form-select" name="pais">
+                  <option value="">[Seleccione pais]</option>
+                  <option value="1">Perú</option>
+                  <option value="2">Chile</option>
+                </Field>
+                <ErrorMessage
+                  name="pais"
+                  component={() => (
+                    <span className="text-danger">{errors.pais}</span>
+                  )}
+                />
               </div>
-              <Field as="select" className="form-select" name="pais">
-                <option value="">[Seleccione pais]</option>
-                <option value="1">Perú</option>
-                <option value="2">Chile</option>
-              </Field>
-              <ErrorMessage
-                name="pais"
-                component={() => (
-                  <span className="text-danger">{errors.pais}</span>
-                )}
-              />
-            </div>
-            <div className="input-group mb-3">
-              <div className="input-group-prepend">
-                <span className="input-group-text">Rubro</span>
+              <div className="form-group col-md-12 col-12 mb-3">
+                <label for="pais">Rubro</label>
+                <Field
+                  component="select"
+                  className="form-select height-multiple"
+                  name="rubro"
+                  multiple={true}
+                >
+                  {rubros.map((item) => {
+                    return (
+                      <option key={item.value} value={item.value}>
+                        {item.label}
+                      </option>
+                    );
+                  })}
+                </Field>
+                <ErrorMessage
+                  name="rubro"
+                  component={() => (
+                    <span className="text-danger">{errors.rubro}</span>
+                  )}
+                />
               </div>
-              <Field
-                component="select"
-                className="form-select height-multiple"
-                name="rubro"
-                multiple={true}
-              >
-                {rubros.map((item) => {
-                  return (
-                    <option key={item.value} value={item.value}>
-                      {item.label}
-                    </option>
-                  );
-                })}
-              </Field>
-              <ErrorMessage
-                name="rubro"
-                component={() => (
-                  <span className="text-danger">{errors.rubro}</span>
-                )}
-              />
-            </div>
-            <div className="input-group mb-3">
-              <div className="input-group-prepend">
-                <span className="input-group-text">Empresa a postular</span>
+              <div className="form-group col-md-6 col-12 mb-3">
+                <label for="pais">Empresa a postular</label>
+                <Field as="select" className="form-select" name="empresa">
+                  <option value="">[Seleccione empresa]</option>
+                  <option value="1">A</option>
+                  <option value="2">B</option>
+                </Field>
+                <ErrorMessage
+                  name="empresa"
+                  component={() => (
+                    <span className="text-danger">{errors.empresa}</span>
+                  )}
+                />
               </div>
-              <Field as="select" className="form-select" name="empresa">
-                <option value="">[Seleccione empresa]</option>
-                <option value="1">A</option>
-                <option value="2">B</option>
-              </Field>
-              <ErrorMessage
-                name="empresa"
-                component={() => (
-                  <span className="text-danger">{errors.empresa}</span>
-                )}
-              />
-            </div>
-            <div className="input-group mb-3">
-              <div className="input-group-prepend">
-                <span className="input-group-text">Comprador responsable</span>
+              <div className="form-group col-md-6 col-12 mb-3">
+                <label for="pais">Comprador responsable</label>
+                <Field as="select" className="form-select" name="comprador">
+                  <option value="">[Seleccione un comprador]</option>
+                  <option value="1">A</option>
+                  <option value="2">B</option>
+                </Field>
               </div>
-              <Field as="select" className="form-select" name="comprador">
-                <option value="">[Seleccione un comprador]</option>
-                <option value="1">A</option>
-                <option value="2">B</option>
-              </Field>
-            </div>
-            <div className="input-group mb-3">
-              <div className="input-group-prepend">
-                <span className="input-group-text">Contacto</span>
+              <div className="form-group col-md-12 col-12 mb-3">
+                <label for="pais">Contacto</label>
+                <Field
+                  as="textarea"
+                  className="form-control"
+                  name="comentario"
+                  disabled={disabled}
+                ></Field>
+                <ErrorMessage
+                  name="comentario"
+                  component={() => (
+                    <span className="text-danger">{errors.comentario}</span>
+                  )}
+                />
               </div>
-              <Field
-                as="textarea"
-                className="form-control"
-                name="comentario"
-                disabled={disabled}
-              ></Field>
-              <ErrorMessage
-                name="comentario"
-                component={() => (
-                  <span className="text-danger">{errors.comentario}</span>
-                )}
-              />
-            </div>
-            <div className="d-grid gap-2">
-              <button type="submit" className="btn bg-button block subtitle">
-                Validar
-              </button>
+              <div className="d-grid gap-2">
+                <button type="submit" className="btn bg-button block subtitle">
+                  Validar
+                </button>
+              </div>
             </div>
           </Form>
         )}

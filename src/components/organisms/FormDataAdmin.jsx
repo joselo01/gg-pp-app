@@ -37,14 +37,12 @@ export const FormDataAdmin = () => {
 
 
                     <div className="card mb-3">
-                        <div className="card-body">
+                        <div className="card-body row">
                             <div className="mt-2 mb-2">
                                 <h5>Datos del registrador</h5>
                             </div>
-                            <div className="input-group mb-3">
-                                <div className="input-group-prepend">
-                                    <span className="input-group-text">Título</span>
-                                </div>
+                            <div className="form-group col-md-6 col-12 mb-3">
+                                <label for="pais">Título</label>
                                 <Field
                                     className="form-control"
                                     type="text"
@@ -58,10 +56,8 @@ export const FormDataAdmin = () => {
                                     )}
                                 />
                             </div>
-                            <div className="input-group mb-3">
-                                <div className="input-group-prepend">
-                                    <span className="input-group-text">Nombres</span>
-                                </div>
+                            <div className="form-group col-md-6 col-12 mb-3">
+                                <label for="pais">Nombres</label>
                                 <Field
                                     className="form-control"
                                     type="text"
@@ -77,10 +73,8 @@ export const FormDataAdmin = () => {
                                     )}
                                 />
                             </div>
-                            <div className="input-group mb-3">
-                                <div className="input-group-prepend">
-                                    <span className="input-group-text">Apellidos</span>
-                                </div>
+                            <div className="form-group col-md-6 col-12 mb-3">
+                                <label for="pais">Apellidos</label>
                                 <Field
                                     className="form-control"
                                     type="text"
@@ -96,12 +90,8 @@ export const FormDataAdmin = () => {
                                     )}
                                 />
                             </div>
-                            <div className="input-group mb-3">
-                                <div className="input-group-prepend">
-                                    <span className="input-group-text">
-                                        Email de usuario administrador:
-                                    </span>
-                                </div>
+                            <div className="form-group col-md-6 col-12 mb-3">
+                                <label for="pais"> Email de usuario administrador:</label>
                                 <Field
                                     className="form-control"
                                     type="text"

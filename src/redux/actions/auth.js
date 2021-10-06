@@ -1,6 +1,6 @@
 import { fetchWithoutToken, fetchWithToken } from "../helpers/fetch";
 import { types } from "../types/types";
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2';
 
 export const startLogin = (email, password, nombre, role) => {
   return async (dispatch) => {

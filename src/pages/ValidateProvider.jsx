@@ -6,7 +6,6 @@ import * as Yup from "yup";
 
 export const ValidateProvider = ({handle}) => {
 
-
   const initialValues = {
     validateProvider: ""
   }
@@ -15,18 +14,19 @@ export const ValidateProvider = ({handle}) => {
     validateProvider: Yup.string()
     .required("EL campo código de verifiación es requerido.")
     .matches(/^[a-z0-9]+$/i, "El campo solo debe contener números y letras"),
-  })
-
+  });
 
   useEffect(() => {
     handle(false);
     return () => handle(true);
   }, [handle]);
+
   const history = useHistory();
 
   function handlePassword() {
     history.push("/create_password");
   }
+  
   return (
     <>
       <div className="container">
