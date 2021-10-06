@@ -4,7 +4,7 @@ import { Logo } from "../components/atoms/Logo";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 
-export const ValidateProvider = ({handle}) => {
+export const ValidateProvider = () => {
 
   const initialValues = {
     validateProvider: ""
@@ -16,10 +16,10 @@ export const ValidateProvider = ({handle}) => {
     .matches(/^[a-z0-9]+$/i, "El campo solo debe contener números y letras"),
   });
 
-  useEffect(() => {
+  /* useEffect(() => {
     handle(false);
     return () => handle(true);
-  }, [handle]);
+  }, [handle]); */
 
   const history = useHistory();
 
@@ -81,7 +81,8 @@ export const ValidateProvider = ({handle}) => {
                 <div className="col-6">
                   <div className="d-grid gap-2">
                     <button
-                      type="submit"
+                      onClick={() => handlePassword()}
+                      type="button"
                       className="btn bg-button block subtitle"
                     >
                       Enviar
