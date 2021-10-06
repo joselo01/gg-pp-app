@@ -17,8 +17,8 @@ export const FormUserProfile = () => {
     }
     return (
         <>
-            <div>
-                <form name="form" onSubmit={handleSubmit}>
+            <form name="form" onSubmit={handleSubmit}>
+                <div className="row">
                     <div className="form-group col-12 mb-3">
                         <label>Título</label>
                         <select
@@ -50,7 +50,7 @@ export const FormUserProfile = () => {
                             onChange={handleInputChange}
                         />
                     </div>
-                    <div className="form-group col-12 mb-3">
+                    <div className="form-group col-md-6 col-12 mb-3">
                         <label>Tipo de documento</label>
                         <select
                             className="form-select"
@@ -61,7 +61,7 @@ export const FormUserProfile = () => {
                             <option value="2">RUC.</option>
                         </select>
                     </div>
-                    <div className="form-group col-12 mb-3">
+                    <div className="form-group col-md-6 col-12 mb-3">
                         <label>Doc. Identidad</label>
                         <input
                             className="form-control"
@@ -71,7 +71,7 @@ export const FormUserProfile = () => {
                             onChange={handleInputChange}
                         />
                     </div>
-                    <div className="form-group col-12 mb-3">
+                    <div className="form-group col-md-6 col-12 mb-3">
                         <label>Email</label>
                         <input
                             className="form-control"
@@ -115,8 +115,8 @@ export const FormUserProfile = () => {
                         </div>
 
                     </div>
-                </form>
-            </div>
+                </div>
+            </form>
         </>
     )
 }
