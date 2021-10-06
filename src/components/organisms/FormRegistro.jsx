@@ -374,51 +374,56 @@ export const FormRegistro = () => {
                 <option value="2">Chile</option>
               </Field>
             </div>
-            <div className="form-group col-md-12 col-12 mb-3">
-              <label for="pais">Rubro</label>
-              <Field
-                component="select"
-                className="form-select height-multiple"
-                name="rubro"
-                multiple={true}
-                disabled={true}
-              >
-                <option value="1">A</option>
-                <option value="2">B</option>
-              </Field>
+
+            <div className="col-md-6 col-12">
+              <div className="form-group col-md-12 col-12 mb-3">
+                <label for="pais">Rubro</label>
+                <Field
+                  component="select"
+                  className="form-select height-multiple"
+                  name="rubro"
+                  multiple={true}
+                  disabled={true}
+                >
+                  <option value="1">A</option>
+                  <option value="2">B</option>
+                </Field>
+              </div>
             </div>
-            <div className="form-group col-md-6 col-12 mb-3">
-              <label for="pais">Empresa a postular</label>
-              <Field
-                as="select"
-                className="form-select"
-                name="empresa"
-                disabled={true}
-              >
-                <option value="1">A</option>
-                <option value="2">B</option>
-              </Field>
-            </div>
-            <div className="form-group col-md-6 col-12 mb-3">
-              <label for="pais">Comprador responsable</label>
-              <Field
-                as="select"
-                className="form-select"
-                name="comprador"
-                disabled={true}
-              >
-                <option value="1">A</option>
-                <option value="2">B</option>
-              </Field>
-            </div>
-            <div className="form-group col-md-12 col-12 mb-3">
-              <label for="pais">Contacto o comentario</label>
-              <Field
-                as="textarea"
-                className="form-control"
-                name="comentario"
-                readOnly
-              ></Field>
+            <div className="col-md-6 col-12">
+              <div className="form-group col-md-12 col-12 mb-3">
+                <label for="pais">Empresa a postular</label>
+                <Field
+                  as="select"
+                  className="form-select"
+                  name="empresa"
+                  disabled={true}
+                >
+                  <option value="1">A</option>
+                  <option value="2">B</option>
+                </Field>
+              </div>
+              <div className="form-group col-md-12 col-12 mb-3">
+                <label for="pais">Comprador responsable</label>
+                <Field
+                  as="select"
+                  className="form-select"
+                  name="comprador"
+                  disabled={true}
+                >
+                  <option value="1">A</option>
+                  <option value="2">B</option>
+                </Field>
+              </div>
+              {/* <div className="form-group col-md-12 col-12 mb-3">
+                <label for="pais">Contacto o comentario</label>
+                <Field
+                  as="textarea"
+                  className="form-control"
+                  name="comentario"
+                  readOnly
+                ></Field>
+              </div> */}
             </div>
 
             <ul className="nav nav-tabs nav-justified">
@@ -477,7 +482,7 @@ export const FormRegistro = () => {
                   <button
                     type="button"
                     className="btn btn-next block subtitle"
-                  onClick={handleVerification}
+                    onClick={handleVerification}
                   >
                     Enviar
                   </button>
