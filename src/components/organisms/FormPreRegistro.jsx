@@ -96,7 +96,7 @@ export const FormPreRegistro = ({ handleValidated }) => {
                 <label htmlFor="rubro">Rubro</label>
                 <Field
                   component="select"
-                  className="form-select height-multiple"
+                  className="form-select height-multiple select"
                   name="rubro"
                   multiple={true}
                 >
