@@ -40,7 +40,7 @@ export const FormCompany = () => {
                 <input
                     className="form-control"
                     type="number"
-                    name="idFiscal"
+                    name="idFiscal___"
                     autoComplete="off"
                     onChange={handleInputChange}
                 />

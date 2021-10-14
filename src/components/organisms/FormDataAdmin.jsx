@@ -1,7 +1,7 @@
 import { ErrorMessage, Field } from "formik";
 import React from "react";
 
-export const FormDataAdmin = ({errors}) => {
+export const FormDataAdmin = ({ errors, values, handleChange }) => {
   return (
     <div className="card mb-3">
       <div className="card-body row">
@@ -9,12 +9,14 @@ export const FormDataAdmin = ({errors}) => {
           <h5>Datos del registrador</h5>
         </div>
         <div className="form-group col-md-6 col-12 mb-3">
-          <label htmlFor="pais">Título</label>
+          <label htmlFor="titulo">Título</label>
           <Field
             className="form-control"
             type="text"
             name="titulo"
             autoComplete="off"
+            value={values.titulo}
+            onChange={handleChange}
           />
           <ErrorMessage
             name="titulo"
@@ -24,12 +26,14 @@ export const FormDataAdmin = ({errors}) => {
           />
         </div>
         <div className="form-group col-md-6 col-12 mb-3">
-          <label htmlFor="pais">Nombres</label>
+          <label htmlFor="nombres">Nombres</label>
           <Field
             className="form-control"
             type="text"
             name="nombres"
             autoComplete="off"
+            value={values.nombres}
+            onChange={handleChange}
           />
           <ErrorMessage
             name="nombres"
@@ -39,12 +43,14 @@ export const FormDataAdmin = ({errors}) => {
           />
         </div>
         <div className="form-group col-md-6 col-12 mb-3">
-          <label htmlFor="pais">Apellidos</label>
+          <label htmlFor="apellidos">Apellidos</label>
           <Field
             className="form-control"
             type="text"
             name="apellidos"
             autoComplete="off"
+            value={values.apellidos}
+            onChange={handleChange}
           />
           <ErrorMessage
             name="apellidos"
@@ -54,12 +60,14 @@ export const FormDataAdmin = ({errors}) => {
           />
         </div>
         <div className="form-group col-md-6 col-12 mb-3">
-          <label htmlFor="pais"> Email de usuario administrador:</label>
+          <label htmlFor="email"> Email de usuario administrador:</label>
           <Field
             className="form-control"
             type="text"
             name="email"
             autoComplete="off"
+            value={values.email}
+            onChange={handleChange}
           />
           <ErrorMessage
             name="email"

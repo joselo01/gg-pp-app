@@ -1,7 +1,7 @@
 import { ErrorMessage, Field } from "formik";
 import React from "react";
 
-export const FormDataGeneral = ({ errors }) => {
+export const FormDataGeneral = ({ errors, values, handleChange }) => {
   return (
     <div className="card mb-3">
       <div className="card-body row">
@@ -9,12 +9,14 @@ export const FormDataGeneral = ({ errors }) => {
           <h5>Nombre</h5>
         </div>
         <div className="form-group col-md-6 col-12 mb-3">
-          <label for="pais">Tratamiento</label>
+          <label htmlFor="tratamiento">Tratamiento</label>
           <Field
             className="form-control"
             type="text"
             name="tratamiento"
             autoComplete="off"
+            value={values.tratamiento}
+            onChange={handleChange}
           />
           <ErrorMessage
             name="tratamiento"
@@ -24,12 +26,14 @@ export const FormDataGeneral = ({ errors }) => {
           />
         </div>
         <div className="form-group col-md-6 col-12 mb-3">
-          <label for="pais">Razon Social</label>
+          <label htmlFor="razonSocial">Razon Social</label>
           <Field
             className="form-control"
             type="text"
             name="razonSocial"
             autoComplete="off"
+            value={values.razonSocial}
+            onChange={handleChange}
           />
           <ErrorMessage
             name="razonSocial"
@@ -42,12 +46,14 @@ export const FormDataGeneral = ({ errors }) => {
           <h5>Concepto de búsqueda</h5>
         </div>
         <div className="form-group col-md-12 col-12 mb-3">
-          <label for="pais">Nombre Comercial</label>
+          <label htmlFor="nombreComercial">Nombre Comercial</label>
           <Field
             className="form-control"
             type="text"
             name="nombreComercial"
             autoComplete="off"
+            value={values.nombreComercial}
+            onChange={handleChange}
           />
           <ErrorMessage
             name="nombreComercial"
@@ -60,12 +66,14 @@ export const FormDataGeneral = ({ errors }) => {
           <h5>Dirección de Calle</h5>
         </div>
         <div className="form-group col-md-6 col-12 mb-3">
-          <label for="pais">Calle</label>
+          <label htmlFor="calle">Calle</label>
           <Field
             className="form-control"
             type="text"
             name="calle"
             autoComplete="off"
+            value={values.calle}
+            onChange={handleChange}
           />
           <ErrorMessage
             name="calle"
@@ -75,12 +83,14 @@ export const FormDataGeneral = ({ errors }) => {
           />
         </div>
         <div className="form-group col-md-6 col-12 mb-3">
-          <label for="pais">Número</label>
+          <label htmlFor="numero">Número</label>
           <Field
             className="form-control"
             type="text"
             name="numero"
             autoComplete="off"
+            value={values.numero}
+            onChange={handleChange}
           />
           <ErrorMessage
             name="numero"
@@ -90,12 +100,14 @@ export const FormDataGeneral = ({ errors }) => {
           />
         </div>
         <div className="form-group col-md-6 col-12 mb-3">
-          <label for="pais">Distrito/Barrio/Urb/Zona</label>
+          <label htmlFor="distrito">Distrito/Barrio/Urb/Zona</label>
           <Field
             className="form-control"
             type="text"
             name="distrito"
             autoComplete="off"
+            value={values.distrito}
+            onChange={handleChange}
           />
           <ErrorMessage
             name="distrito"
@@ -105,12 +117,14 @@ export const FormDataGeneral = ({ errors }) => {
           />
         </div>
         <div className="form-group col-md-6 col-12 mb-3">
-          <label for="pais">Provincia/Comarca/Condado</label>
+          <label htmlFor="provincia">Provincia/Comarca/Condado</label>
           <Field
             className="form-control"
             type="text"
             name="provincia"
             autoComplete="off"
+            value={values.provincia}
+            onChange={handleChange}
           />
           <ErrorMessage
             name="provincia"
@@ -120,12 +134,14 @@ export const FormDataGeneral = ({ errors }) => {
           />
         </div>
         <div className="form-group col-md-6 col-12 mb-3">
-          <label for="pais"> Código Postal</label>
+          <label htmlFor="codigoPostal"> Código Postal</label>
           <Field
             className="form-control"
             type="text"
             name="codigoPostal"
             autoComplete="off"
+            value={values.codigoPostal}
+            onChange={handleChange}
           />
           <ErrorMessage
             name="codigoPostal"
@@ -135,12 +151,14 @@ export const FormDataGeneral = ({ errors }) => {
           />
         </div>
         <div className="form-group col-md-6 col-12 mb-3">
-          <label for="pais">País</label>
+          <label htmlFor="country">País</label>
           <Field
             className="form-control"
             type="text"
             name="country"
             autoComplete="off"
+            value={values.country}
+            onChange={handleChange}
           />
           <ErrorMessage
             name="country"
@@ -150,12 +168,14 @@ export const FormDataGeneral = ({ errors }) => {
           />
         </div>
         <div className="form-group col-md-6 col-12 mb-3">
-          <label for="pais">Región</label>
+          <label htmlFor="region">Región</label>
           <Field
             className="form-control"
             type="text"
             name="region"
             autoComplete="off"
+            value={values.region}
+            onChange={handleChange}
           />
           <ErrorMessage
             name="region"
@@ -169,12 +189,14 @@ export const FormDataGeneral = ({ errors }) => {
           <h5>Comunicación</h5>
         </div>
         <div className="form-group col-md-6 col-12 mb-3">
-          <label for="pais">Idioma</label>
+          <label htmlFor="idioma">Idioma</label>
           <Field
             className="form-control"
             type="text"
             name="idioma"
             autoComplete="off"
+            value={values.idioma}
+            onChange={handleChange}
           />
           <ErrorMessage
             name="idioma"
@@ -184,12 +206,14 @@ export const FormDataGeneral = ({ errors }) => {
           />
         </div>
         <div className="form-group col-md-6 col-12 mb-3">
-          <label for="pais">Teléfono 1</label>
+          <label htmlFor="telefonoUno">Teléfono 1</label>
           <Field
             className="form-control"
             type="text"
             name="telefonoUno"
             autoComplete="off"
+            value={values.telefonoUno}
+            onChange={handleChange}
           />
           <ErrorMessage
             name="telefonoUno"
@@ -199,12 +223,14 @@ export const FormDataGeneral = ({ errors }) => {
           />
         </div>
         <div className="form-group col-md-6 col-12 mb-3">
-          <label for="pais">Teléfono 2</label>
+          <label htmlFor="telefonoDos">Teléfono 2</label>
           <Field
             className="form-control"
             type="text"
             name="telefonoDos"
             autoComplete="off"
+            value={values.telefonoDos}
+            onChange={handleChange}
           />
           <ErrorMessage
             name="telefonoDos"
@@ -214,12 +240,14 @@ export const FormDataGeneral = ({ errors }) => {
           />
         </div>
         <div className="form-group col-md-6 col-12 mb-3">
-          <label for="pais">Teléfono 3</label>
+          <label htmlFor="telefonoTres">Teléfono 3</label>
           <Field
             className="form-control"
             type="text"
             name="telefonoTres"
             autoComplete="off"
+            value={values.telefonoTres}
+            onChange={handleChange}
           />
           <ErrorMessage
             name="telefonoTres"
@@ -229,12 +257,14 @@ export const FormDataGeneral = ({ errors }) => {
           />
         </div>
         <div className="form-group col-md-6 col-12 mb-3">
-          <label for="pais">Teléfono 4</label>
+          <label htmlFor="telefonoCuatro">Teléfono 4</label>
           <Field
             className="form-control"
             type="text"
             name="telefonoCuatro"
             autoComplete="off"
+            value={values.telefonoCuatro}
+            onChange={handleChange}
           />
           <ErrorMessage
             name="telefonoCuatro"
@@ -244,12 +274,14 @@ export const FormDataGeneral = ({ errors }) => {
           />
         </div>
         <div className="form-group col-md-6 col-12 mb-3">
-          <label for="pais">Teléfono 5</label>
+          <label htmlFor="telefonoCinco">Teléfono 5</label>
           <Field
             className="form-control"
             type="text"
             name="telefonoCinco"
             autoComplete="off"
+            value={values.telefonoCinco}
+            onChange={handleChange}
           />
           <ErrorMessage
             name="telefonoCinco"
@@ -259,12 +291,14 @@ export const FormDataGeneral = ({ errors }) => {
           />
         </div>
         <div className="form-group col-md-6 col-12 mb-3">
-          <label for="pais">Correo Electrónico 1</label>
+          <label htmlFor="emailUno">Correo Electrónico 1</label>
           <Field
             className="form-control"
             type="text"
             name="emailUno"
             autoComplete="off"
+            value={values.emailUno}
+            onChange={handleChange}
           />
           <ErrorMessage
             name="emailUno"
@@ -274,12 +308,14 @@ export const FormDataGeneral = ({ errors }) => {
           />
         </div>
         <div className="form-group col-md-6 col-12 mb-3">
-          <label for="pais">Correo Electrónico 2</label>
+          <label htmlFor="emailDos">Correo Electrónico 2</label>
           <Field
             className="form-control"
             type="text"
             name="emailDos"
             autoComplete="off"
+            value={values.emailDos}
+            onChange={handleChange}
           />
           <ErrorMessage
             name="emailDos"
@@ -289,12 +325,14 @@ export const FormDataGeneral = ({ errors }) => {
           />
         </div>
         <div className="form-group col-md-6 col-12 mb-3">
-          <label for="pais">Correo Electrónico 3</label>
+          <label htmlFor="emailTres">Correo Electrónico 3</label>
           <Field
             className="form-control"
             type="text"
             name="emailTres"
             autoComplete="off"
+            value={values.emailTres}
+            onChange={handleChange}
           />
           <ErrorMessage
             name="emailTres"
@@ -304,12 +342,14 @@ export const FormDataGeneral = ({ errors }) => {
           />
         </div>
         <div className="form-group col-md-6 col-12 mb-3">
-          <label for="pais">Correo Electrónico 4</label>
+          <label htmlFor="emailCuatro">Correo Electrónico 4</label>
           <Field
             className="form-control"
             type="text"
             name="emailCuatro"
             autoComplete="off"
+            value={values.emailCuatro}
+            onChange={handleChange}
           />
           <ErrorMessage
             name="emailCuatro"
@@ -319,12 +359,14 @@ export const FormDataGeneral = ({ errors }) => {
           />
         </div>
         <div className="form-group col-md-6 col-12 mb-3">
-          <label for="pais">Correo Electrónico 5</label>
+          <label htmlFor="emailCinco">Correo Electrónico 5</label>
           <Field
             className="form-control"
             type="text"
             name="emailCinco"
             autoComplete="off"
+            value={values.emailCinco}
+            onChange={handleChange}
           />
           <ErrorMessage
             name="emailCinco"
@@ -334,12 +376,14 @@ export const FormDataGeneral = ({ errors }) => {
           />
         </div>
         <div className="form-group col-md-6 col-12 mb-3">
-          <label for="pais">Rol 1</label>
+          <label htmlFor="rolUno">Rol 1</label>
           <Field
             className="form-control"
             type="text"
             name="rolUno"
             autoComplete="off"
+            value={values.rolUno}
+            onChange={handleChange}
           />
           <ErrorMessage
             name="rolUno"
@@ -349,12 +393,14 @@ export const FormDataGeneral = ({ errors }) => {
           />
         </div>
         <div className="form-group col-md-6 col-12 mb-3">
-          <label for="pais">Rol 2</label>
+          <label htmlFor="rolDos">Rol 2</label>
           <Field
             className="form-control"
             type="text"
             name="rolDos"
             autoComplete="off"
+            value={values.rolDos}
+            onChange={handleChange}
           />
           <ErrorMessage
             name="rolDos"
@@ -364,12 +410,14 @@ export const FormDataGeneral = ({ errors }) => {
           />
         </div>
         <div className="form-group col-md-6 col-12 mb-3">
-          <label for="pais">Rol 3</label>
+          <label htmlFor="rolTres">Rol 3</label>
           <Field
             className="form-control"
             type="text"
             name="rolTres"
             autoComplete="off"
+            value={values.rolTres}
+            onChange={handleChange}
           />
           <ErrorMessage
             name="rolTres"
@@ -379,12 +427,14 @@ export const FormDataGeneral = ({ errors }) => {
           />
         </div>
         <div className="form-group col-md-6 col-12 mb-3">
-          <label for="pais">Rol 4</label>
+          <label htmlFor="rolCuatro">Rol 4</label>
           <Field
             className="form-control"
             type="text"
             name="rolCuatro"
             autoComplete="off"
+            value={values.rolCuatro}
+            onChange={handleChange}
           />
           <ErrorMessage
             name="rolCuatro"
@@ -394,12 +444,14 @@ export const FormDataGeneral = ({ errors }) => {
           />
         </div>
         <div className="form-group col-md-6 col-12 mb-3">
-          <label for="pais">Rol 5</label>
+          <label htmlFor="rolCinco">Rol 5</label>
           <Field
             className="form-control"
             type="text"
             name="rolCinco"
             autoComplete="off"
+            value={values.rolCinco}
+            onChange={handleChange}
           />
           <ErrorMessage
             name="rolCinco"

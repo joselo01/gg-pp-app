@@ -2,9 +2,9 @@ import { fetchWithoutToken, fetchWithToken } from "../helpers/fetch";
 import { types } from "../types/types";
 import Swal from 'sweetalert2';
 
-export const startLogin = (email, password, nombre, role) => {
+export const startLogin = (email, password) => {
   return async (dispatch) => {
-    const resp = await fetchWithoutToken("login", { email, password, nombre, role }, "POST");
+    const resp = await fetchWithoutToken("auth", { email, password }, "POST");
     const body = await resp.json();
 
     if (body.ok) {
@@ -22,15 +22,44 @@ export const startLogin = (email, password, nombre, role) => {
       Swal.fire({
         icon: 'error',
         title: body.msg,
-        text: 'Verifique sus credenciales',
       })
     }
   };
 };
 
+export const startRegister = (email, password, nombre) => {
+
+  return async (dispatch) => {
+    const resp = await fetchWithoutToken("auth/new", { email, password, nombre}, "POST");
+    const body = await resp.json();
+
+    console.log(body);
+
+    if (body.ok) {
+      localStorage.setItem("token", body.token);
+      localStorage.setItem("token-init-date", new Date().getTime());
+
+      dispatch(
+        login({
+          uid: body.uid,
+          nombre: body.nombre
+        })
+      );
+    } else {
+      Swal.fire({
+        icon: 'error',
+        title: body.msg
+      })
+      
+    }
+
+  }
+
+}
+
 export const startChecking = () => {
   return async (dispatch) => {
-    const resp = await fetchWithToken("usuarios/renew");
+    const resp = await fetchWithToken("auth/renew");
     const body = await resp.json();
 
     if (body.ok) {
@@ -39,7 +68,8 @@ export const startChecking = () => {
 
       dispatch(
         login({
-          uid: body.uid
+          uid: body.uid,
+          nombre: body.nombre
         })
       );
     } else {

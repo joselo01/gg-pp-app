@@ -10,7 +10,7 @@ export const FormDataShopping = (errors) => {
                                 </div> */}
 
         <div className="form-group col-md-6 col-12 mb-3">
-          <label for="pais">Org. de Compras</label>
+          <label htmlFor="orgCompras">Org. de Compras</label>
           <Field
             className="form-control"
             type="text"
@@ -25,7 +25,7 @@ export const FormDataShopping = (errors) => {
           />
         </div>
         <div className="form-group col-md-6 col-12 mb-3">
-          <label for="pais">Sociedad</label>
+          <label htmlFor="sociedad">Sociedad</label>
           <Field
             className="form-control"
             type="text"
@@ -40,7 +40,7 @@ export const FormDataShopping = (errors) => {
           />
         </div>
         <div className="form-group col-md-6 col-12 mb-3">
-          <label for="pais">Grupo de Tesoreria</label>
+          <label htmlFor="grpoTesoreria">Grupo de Tesoreria</label>
           <Field
             className="form-control"
             type="text"
@@ -55,7 +55,7 @@ export const FormDataShopping = (errors) => {
           />
         </div>
         <div className="form-group col-md-12 col-12 mb-3">
-          <label for="pais">Responsable de gastos transferencia</label>
+          <label htmlFor="respGastosTransferencia">Responsable de gastos transferencia</label>
           <Field
             className="form-control"
             type="text"
@@ -72,7 +72,7 @@ export const FormDataShopping = (errors) => {
           />
         </div>
         <div className="form-group col-md-6 col-12 mb-3">
-          <label for="pais">Modo de transporte frontera</label>
+          <label htmlFor="transporteFrontera">Modo de transporte frontera</label>
           <Field
             className="form-control"
             type="text"
@@ -87,7 +87,7 @@ export const FormDataShopping = (errors) => {
           />
         </div>
         <div className="form-group col-md-6 col-12 mb-3">
-          <label for="pais">Condicion de pago compras</label>
+          <label htmlFor="condicionPagoCompras">Condicion de pago compras</label>
           <Field
             className="form-control"
             type="text"

@@ -1,7 +1,9 @@
-import { ErrorMessage, Field } from "formik";
+import { ErrorMessage } from "formik";
 import React from "react";
+//import PreviewFile from "./PreviewFile";
+import { Input } from "reactstrap";
 
-export const FormDataCompanyDocs = ({ errors }) => {
+export const FormDataCompanyDocs = ({ errors, setFieldValue, file }) => {
   return (
     <div className="card mb-3">
       <div className="card-body">
@@ -11,26 +13,34 @@ export const FormDataCompanyDocs = ({ errors }) => {
                                                                 Nombre del Vendedor 1
                                                             </span>
                                                         </div> */}
-          <Field
-            /* ref={fileRef}
-                                    hidden   */
-            className="form-control"
+          <Input
             type="file"
             name="file"
-            /*  onChange={(event) => {
-                                  setFieldValue('file', event.currentTarget.files[0]);
-                                }} */
+            value={file}
+            onChange={(event) => {
+              setFieldValue("file", event.currentTarget.files[0]);
+            }}
           />
-          {/* {valores.file && <PreviewFile file={valores.file}/>}
+
+          <ErrorMessage
+            name="file"
+            component={() => <span className="text-danger">{errors.file}</span>}
+          />
+
+          {/*  <Input
+            ref={fileRef}
+            hidden
+            className="form-control"
+            type="file"
+            onChange={(event) => {
+            setFieldValue('file', event.currentTarget.files[0])}}
+          />
+          {valores.file && <PreviewFile file={valores.file}/>}
                         <button onClick={() => {
                             fileRef.current.click();
                         }}>
                             Upload
                         </button> */}
-          <ErrorMessage
-            name="file"
-            component={() => <span className="text-danger">{errors.file}</span>}
-          />
         </div>
       </div>
     </div>

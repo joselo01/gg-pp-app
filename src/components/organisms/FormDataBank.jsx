@@ -1,7 +1,7 @@
 import { ErrorMessage, Field } from "formik";
 import React from "react";
 
-export const FormDataBank = ({ errors }) => {
+export const FormDataBank = ({ errors, values, handleChange }) => {
   return (
     <div className="card mb-3">
       <div className="card-body row">
@@ -9,12 +9,16 @@ export const FormDataBank = ({ errors }) => {
           <h5>Información fiscal</h5>
         </div>
         <div className="form-group col-md-6 col-12 mb-3">
-          <label for="pais">Documento de identificación fiscal</label>
+          <label htmlFor="idFiscalDos">
+            Documento de identificación fiscal
+          </label>
           <Field
             className="form-control"
             type="text"
             name="idFiscalDos"
             autoComplete="off"
+            value={values.idFiscalDos}
+            onChange={handleChange}
           />
           <ErrorMessage
             name="idFiscalDos"
@@ -24,12 +28,14 @@ export const FormDataBank = ({ errors }) => {
           />
         </div>
         <div className="form-group col-md-6 col-12 mb-3">
-          <label for="pais">Tipo de documento</label>
+          <label htmlFor="tipoDocumento">Tipo de documento</label>
           <Field
             className="form-control"
             type="text"
             name="tipoDocumento"
             autoComplete="off"
+            value={values.tipoDocumento}
+            onChange={handleChange}
           />
           <ErrorMessage
             name="tipoDocumento"
@@ -76,12 +82,16 @@ export const FormDataBank = ({ errors }) => {
         </div>
 
         <div className="form-group col-md-6 col-12 mb-3">
-          <label for="pais">Nombre del vendedor principal</label>
+          <label htmlFor="vendedorPrincipal">
+            Nombre del vendedor principal
+          </label>
           <Field
             className="form-control"
             type="text"
             name="vendedorPrincipal"
             autoComplete="off"
+            value={values.vendedorPrincipal}
+            onChange={handleChange}
           />
           <ErrorMessage
             name="vendedorPrincipal"
@@ -92,12 +102,14 @@ export const FormDataBank = ({ errors }) => {
         </div>
 
         <div className="form-group col-md-6 col-12 mb-3">
-          <label for="pais">Teléfono del vendedor</label>
+          <label htmlFor="telefonoVendedor">Teléfono del vendedor</label>
           <Field
             className="form-control"
             type="text"
             name="telefonoVendedor"
             autoComplete="off"
+            value={values.telefonoVendedor}
+            onChange={handleChange}
           />
           <ErrorMessage
             name="telefonoVendedor"
@@ -111,12 +123,14 @@ export const FormDataBank = ({ errors }) => {
           <h5>Condiciones</h5>
         </div>
         <div className="form-group col-md-6 col-12 mb-3">
-          <label for="pais">Moneda de pedido</label>
+          <label htmlFor="moneda">Moneda de pedido</label>
           <Field
             className="form-control"
             type="text"
             name="moneda"
             autoComplete="off"
+            value={values.moneda}
+            onChange={handleChange}
           />
           <ErrorMessage
             name="moneda"
@@ -126,12 +140,14 @@ export const FormDataBank = ({ errors }) => {
           />
         </div>
         <div className="form-group col-md-6 col-12 mb-3">
-          <label for="pais">Condiciones de pago</label>
+          <label htmlFor="condicionPago">Condiciones de pago</label>
           <Field
             className="form-control"
             type="text"
             name="condicionPago"
             autoComplete="off"
+            value={values.condicionPago}
+            onChange={handleChange}
           />
           <ErrorMessage
             name="condicionPago"
@@ -141,12 +157,14 @@ export const FormDataBank = ({ errors }) => {
           />
         </div>
         <div className="form-group col-md-6 col-12 mb-3">
-          <label for="pais">INCOTERMS</label>
+          <label htmlFor="incoterms">INCOTERMS</label>
           <Field
             className="form-control"
             type="text"
             name="incoterms"
             autoComplete="off"
+            value={values.incoterms}
+            onChange={handleChange}
           />
           <ErrorMessage
             name="incoterms"
@@ -156,12 +174,14 @@ export const FormDataBank = ({ errors }) => {
           />
         </div>
         <div className="form-group col-md-6 col-12 mb-3">
-          <label for="pais">INCOTERMS 2/Lugar de entrega</label>
+          <label htmlFor="incotermsDos">INCOTERMS 2/Lugar de entrega</label>
           <Field
             className="form-control"
             type="text"
             name="incotermsDos"
             autoComplete="off"
+            value={values.incotermsDos}
+            onChange={handleChange}
           />
           <ErrorMessage
             name="incotermsDos"

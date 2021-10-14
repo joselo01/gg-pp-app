@@ -9,7 +9,7 @@ export const FormDataMasterAdmin = ({ errors }) => {
           <h5>Gestión de cuenta</h5>
         </div>
         <div className="form-group col-md-12 col-12 mb-3">
-          <label for="pais">Acreedor</label>
+          <label htmlFor="pais">Acreedor</label>
           <Field
             className="form-control"
             type="text"
@@ -24,7 +24,7 @@ export const FormDataMasterAdmin = ({ errors }) => {
           />
         </div>
         <div className="form-group col-md-12 col-12 mb-3">
-          <label for="pais">Documentos de identificación fiscal</label>
+          <label htmlFor="pais">Documentos de identificación fiscal</label>
           <Field
             className="form-control"
             type="text"
@@ -39,7 +39,7 @@ export const FormDataMasterAdmin = ({ errors }) => {
           />
         </div>
         <div className="form-group col-md-12 col-12 mb-3">
-          <label for="pais">Grupo de cuentas</label>
+          <label htmlFor="pais">Grupo de cuentas</label>
           <Field
             className="form-control"
             type="text"
@@ -55,7 +55,7 @@ export const FormDataMasterAdmin = ({ errors }) => {
         </div>
 
         <div className="form-group col-md-12 col-12 mb-3">
-          <label for="pais"> Cuenta asociada</label>
+          <label htmlFor="pais"> Cuenta asociada</label>
           <Field
             className="form-control"
             type="text"
@@ -76,7 +76,7 @@ export const FormDataMasterAdmin = ({ errors }) => {
           <h5>Datos de pago</h5>
         </div>
         <div className="form-group col-md-6 col-12 mb-3">
-          <label for="pais">Condición de pago</label>
+          <label htmlFor="pais">Condición de pago</label>
           <Field
             className="form-control"
             type="text"
@@ -91,7 +91,7 @@ export const FormDataMasterAdmin = ({ errors }) => {
           />
         </div>
         <div className="form-group col-md-6 col-12 mb-3">
-          <label for="pais"> Verificación de facturas dobles o abonos</label>
+          <label htmlFor="pais"> Verificación de facturas dobles o abonos</label>
           <Field
             className="form-control"
             type="text"
@@ -106,7 +106,7 @@ export const FormDataMasterAdmin = ({ errors }) => {
           />
         </div>
         <div className="form-group col-md-6 col-12 mb-3">
-          <label for="pais">Vías de pago</label>
+          <label htmlFor="pais">Vías de pago</label>
           <Field
             className="form-control"
             type="text"
@@ -121,7 +121,7 @@ export const FormDataMasterAdmin = ({ errors }) => {
           />
         </div>
         <div className="form-group col-md-6 col-12 mb-3">
-          <label for="pais">Banco Propio</label>
+          <label htmlFor="pais">Banco Propio</label>
           <Field
             className="form-control"
             type="text"
@@ -136,7 +136,7 @@ export const FormDataMasterAdmin = ({ errors }) => {
           />
         </div>
         <div className="form-group col-md-6 offset-md-6 col-12 mb-3">
-          <label for="pais">Clave agrup.</label>
+          <label htmlFor="pais">Clave agrup.</label>
           <Field
             className="form-control"
             type="text"
@@ -154,7 +154,7 @@ export const FormDataMasterAdmin = ({ errors }) => {
           <h5>Información sobre la retención</h5>
         </div>
         <div className="form-group col-md-6 col-12 mb-3">
-          <label for="pais">País de retención</label>
+          <label htmlFor="pais">País de retención</label>
           <Field
             className="form-control"
             type="text"
@@ -169,7 +169,7 @@ export const FormDataMasterAdmin = ({ errors }) => {
           />
         </div>
         <div className="form-group col-md-6 col-12 mb-3">
-          <label for="pais">Tp.retención</label>
+          <label htmlFor="pais">Tp.retención</label>
           <Field
             className="form-control"
             type="text"
@@ -184,7 +184,7 @@ export const FormDataMasterAdmin = ({ errors }) => {
           />
         </div>
         <div className="form-group col-md-6 col-12 mb-3">
-          <label for="pais">Ind.retención</label>
+          <label htmlFor="pais">Ind.retención</label>
           <Field
             className="form-control"
             type="text"
@@ -199,7 +199,7 @@ export const FormDataMasterAdmin = ({ errors }) => {
           />
         </div>
         <div className="form-group col-md-6 col-12 mb-3">
-          <label for="pais">Sujeto</label>
+          <label htmlFor="pais">Sujeto</label>
           <Field
             className="form-control"
             type="text"
@@ -217,7 +217,7 @@ export const FormDataMasterAdmin = ({ errors }) => {
           <h5>Condiciones</h5>
         </div>
         <div className="form-group col-md-6 col-12 mb-3">
-          <label for="pais">Grupo esquema proveedor</label>
+          <label htmlFor="pais">Grupo esquema proveedor</label>
           <Field
             className="form-control"
             type="text"
@@ -234,7 +234,7 @@ export const FormDataMasterAdmin = ({ errors }) => {
           />
         </div>
         <div className="form-group col-md-6 col-12 mb-3">
-          <label for="pais">Verific.Fact.Base EM</label>
+          <label htmlFor="pais">Verific.Fact.Base EM</label>
           <Field
             className="form-control"
             type="text"
@@ -251,7 +251,7 @@ export const FormDataMasterAdmin = ({ errors }) => {
           />
         </div>
         <div className="form-group col-md-6 col-12 mb-3">
-          <label for="pais">Verific.Fact.Rel.Serv</label>
+          <label htmlFor="pais">Verific.Fact.Rel.Serv</label>
           <Field
             className="form-control"
             type="text"

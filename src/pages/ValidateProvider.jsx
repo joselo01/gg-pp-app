@@ -3,8 +3,10 @@ import { useHistory } from "react-router-dom";
 import { Logo } from "../components/atoms/Logo";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
+import { useForm } from "../hooks/useForm";
 
-export const ValidateProvider = () => {
+export const ValidateProvider = ({handle}) => {
+
 
   const initialValues = {
     validateProvider: ""
@@ -16,10 +18,10 @@ export const ValidateProvider = () => {
     .matches(/^[a-z0-9]+$/i, "El campo solo debe contener números y letras"),
   });
 
-  /* useEffect(() => {
+  useEffect(() => {
     handle(false);
     return () => handle(true);
-  }, [handle]); */
+  }, [handle]);
 
   const history = useHistory();
 
@@ -46,7 +48,7 @@ export const ValidateProvider = () => {
                }}
             
             >
-              {({ errors, handleSubmit }) => (
+              {({ errors, values, handleSubmit, handleChange  }) => (
             <Form name="form" className="form-group" onSubmit={handleSubmit}>
               <div className="col-12">
                 <div className="input-group">
@@ -58,6 +60,8 @@ export const ValidateProvider = () => {
                     aria-label="First name"
                     className="form-control"
                     name="validateProvider"
+                    value={values.validateProvider}
+                    onChange={handleChange}
                   />
                    <ErrorMessage
                           name="validateProvider"
@@ -81,8 +85,7 @@ export const ValidateProvider = () => {
                 <div className="col-6">
                   <div className="d-grid gap-2">
                     <button
-                      onClick={() => handlePassword()}
-                      type="button"
+                      type="submit"
                       className="btn bg-button block subtitle"
                     >
                       Enviar
