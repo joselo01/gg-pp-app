@@ -78,6 +78,7 @@ export const OnboardRoutes = () => {
                               );
                             }}
                           />
+                          
                         </Switch>
                       </div>
                     </main>

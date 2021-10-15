@@ -6,6 +6,8 @@ export const types = {
     authStartRegister: '[auth] Start Register',
     authStartTokenRenew: '[auth] Start token renew',
     authLogout: '[auth] Logout',
+    
+    preRegisterAddNewStart: '[preRegister] Add new',
 
     uiSetError: '[UI] Set Error',
     uiRemoveError: '[UI] Remove Error',

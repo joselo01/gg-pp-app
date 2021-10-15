@@ -1,6 +1,4 @@
-import React, { useState } from 'react'
-import { FormCompany } from '../components/organisms/FormCompany';
-import { FormDataAdmin } from '../components/organisms/FormDataAdmin';
+import React, { useState } from 'react';
 import { FormUserProfile } from '../components/organisms/FormUserProfile';
 
 export const CompanyProfile = () => {

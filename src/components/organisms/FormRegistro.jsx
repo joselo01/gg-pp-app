@@ -1,22 +1,16 @@
-import { Formik, Form, Field, ErrorMessage } from "formik";
+import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
-//import { StepItem } from "../atoms/StepItem";
 import { TabItem } from "../atoms/TabItem";
 import { FormDataAdmin } from "./FormDataAdmin";
 import { FormDataGeneral } from "./FormDataGeneral";
 import { FormDataBank } from "./FormDataBank";
 import { FormDataCompanyDocs } from "./FormDataCompanyDocs";
-import { FormDataShopping } from "./FormDataShopping";
-import { FormDataMasterAdmin } from "./FormDataMasterAdmin";
-
-//import PreviewFile from "./PreviewFile";
+//import { FormDataShopping } from "./FormDataShopping";
+//import { FormDataMasterAdmin } from "./FormDataMasterAdmin";
 
 export const FormRegistro = () => {
-
-  //const fileRef = useRef(null);
-
   const history = useHistory();
 
   function handleVerification() {
@@ -61,13 +55,12 @@ export const FormRegistro = () => {
   ];
 
   const initialValues = {
-    idFiscal: "0000000000",
-    pais: "Perú",
-    tipo: "1",
-    rubro: ["rubro", "rubro 2"],
-    empresa: "empresa",
-    comprador: "comprador",
-    comentario: "comentarios",
+    idFiscal: "",
+    pais: "",
+    rubro: [],
+    empresa: "",
+    comprador: "",
+    comentario: "",
 
     // administrador
     titulo: "",
@@ -114,36 +107,10 @@ export const FormRegistro = () => {
     incotermsDos: "",
 
     //Companydocuments
-    //file: null,
-
-    // OrgShopping
-    orgCompras: "",
-    sociedad: "",
-    gpoTesoreria: "",
-    respGastosTransferencia: "",
-    transporteFrontera: "",
-    condicionPagoCompras: "",
-
-    //AccountManagement
-    acreedor: "",
-    idFiscalTres: "",
-    gpoCuentas: "",
-    cuentaAsociada: "",
-    condicionPagoDos: "",
-    verificacionFacturas: "",
-    viasPago: "",
-    bancoPropio: "",
-    claveAgrup: "",
-    paisRetencion: "",
-    tpRetencion: "",
-    indRetencion: "",
-    sujeto: "",
-    grupoEsquemaProveedor: "",
-    verificacionFactruraBase: "",
-    verificacionFactRelServ: "",
+    file: null,
   };
 
-  //const SUPPORTED_FORMATS = ['image/jpg', 'image/jpeg', 'image/png'];
+  const SUPPORTED_FORMATS = ["image/jpg", "image/jpeg", "image/png"];
 
   const RegisterShema = Yup.object().shape({
     // initialValue
@@ -158,6 +125,15 @@ export const FormRegistro = () => {
     empresa: Yup.string().required("EL campo empresa es requerido"),
     comprador: Yup.string().required("EL campo comprador es requerido"),
     comentario: Yup.string().required("EL campo comentario es requerido"),
+
+    // Datos del registrador
+
+    titulo: Yup.string().required("El campo titulo es requerido"),
+    nombres: Yup.string().required("El campo nombre es requerido"),
+    apellidos: Yup.string().required("El campo apellidos es requerido"),
+    email: Yup.string()
+      .email("Ingrese un email valido")
+      .required("El campo email es requerido"),
 
     //GeneralData
     tratamiento: Yup.string().required("El campo tratamiento es requerido"),
@@ -250,7 +226,7 @@ export const FormRegistro = () => {
         /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/,
         "El número de teléfono no es válido"
       ),
-    moneda: Yup.string().required("El campo mneda es requerido"),
+    moneda: Yup.string().required("El campo moneda es requerido"),
     condicionPago: Yup.string().required(
       "El campo condición de pago es requerido"
     ),
@@ -258,76 +234,23 @@ export const FormRegistro = () => {
     incotermsDos: Yup.string().required(
       "El campo incoterms (lugar de entrega) es requerido"
     ),
+
     //Companydocuments
-    //file: Yup.mixed().required("El campo adjunto es requerido"),
-    /* .test("FILE_SIZE", "Uploaded file is too big.", (value) => !value || (value && value.size <= 1024 * 1024))
-    .test("FILE_FORMAT", "Uploaded file has unsupported format.", (value) => !value || (value && SUPPORTED_FORMATS.includes(value?.type))), */
-
-    // OrgShopping
-
-    orgCompras: Yup.string().required(
-      "El campo organización de compras es requerido"
-    ),
-    sociedad: Yup.string().required("El campo sociedad es requerido"),
-    gpoTesoreria: Yup.string().required(
-      "El campo grupo de tesoreria es requerido"
-    ),
-    respGastosTransferencia: Yup.string().required(
-      "El campo responsable de gastos de transferencia es requerido"
-    ),
-    transporteFrontera: Yup.string().required(
-      "El campo transporte de frontera es requerido"
-    ),
-    condicionPagoCompras: Yup.string().required(
-      "El campo condiciones de pago es requerido"
-    ),
-
-    //AccountManagement
-    acreedor: Yup.string().required(
-      "El campo organización de compras es requerido"
-    ),
-    idFiscalTres: Yup.string()
-      .required("EL campo ID Fiscal es requerido.")
-      .matches(/^[a-z0-9]+$/i, "El campo solo debe contener números y letras"),
-    gpoCuentas: Yup.string().required("El campo grupo de cuentas es requerido"),
-    cuentaAsociada: Yup.string()
-      .required("El campo cuenta asociada es requerido")
-      .matches(/^[0-9]+$/),
-    condicionPagoDos: Yup.string().required(
-      "El campo condición de pago es requerido"
-    ),
-    verificacionFacturas: Yup.string().required(
-      "El campo verificacion de facturas es requerido"
-    ),
-    viasPago: Yup.string().required("El campo vias de pago es requerido"),
-    bancoPropio: Yup.string().required("El campo banco propio es requerido"),
-    claveAgrup: Yup.string().required(
-      "El campo clave de agrupación es requerido"
-    ),
-    paisRetencion: Yup.string().required(
-      "El campo país de rtencion es requerido"
-    ),
-    tpRetencion: Yup.string().required(
-      "El campo tipo de retención es requerido"
-    ),
-    indRetencion: Yup.string().required(
-      "El campo indicación de retención es requerido"
-    ),
-    sujeto: Yup.string().required("El campo sujeto es requerido"),
-    grupoEsquemaProveedor: Yup.string().required(
-      "El campo grupo esquema de proveedor es requerido"
-    ),
-    verificacionFactruraBase: Yup.string().required(
-      "El campo verificación de facturas es requerido"
-    ),
-    verificacionFactRelServ: Yup.string().required(
-      "El campo verificación de facturas relacionadas al servicio es requerido"
-    ),
+    file: Yup.mixed()
+      .required("El campo adjunto es requerido")
+      .test(
+        "FILE_SIZE",
+        "Uploaded file is too big.",
+        (value) => !value || (value && value.size <= 1024 * 1024)
+      )
+      .test(
+        "FILE_FORMAT",
+        "Uploaded file has unsupported format.",
+        (value) => !value || (value && SUPPORTED_FORMATS.includes(value?.type))
+      ),
   });
 
-  const [tabList] = useState(
-    tabsProvider
-  );
+  const [tabList] = useState(tabsProvider);
 
   const [tabIndex, setTabIndex] = useState(0);
 
@@ -339,35 +262,39 @@ export const FormRegistro = () => {
     <>
       <Formik
         initialValues={initialValues}
-        validationSchema={RegisterShema}
+        /* validationSchema={RegisterShema} */
         onSubmit={(valores, { resetForm }) => {
           resetForm();
           handleVerification();
-          //console.log(valores);
-          console.log("envio de formulario");
+          console.log(valores);
+          console.log('enviar formulario')
         }}
       >
-        {({ errors, handleSubmit }) => (
+        {({ errors, values, setFieldValue, handleSubmit, handleChange }) => (
           <Form name="form" className="form-group row" onSubmit={handleSubmit}>
             <div className="mt-2">
               <h5>Datos del registrador</h5>
             </div>
             <div className="form-group col-md-6 col-12 mb-3">
-              <label for="idFiscal">N° Id. Fiscal</label>
+              <label htmlFor="idFiscal">N° Id. Fiscal</label>
               <Field
                 className="form-control"
                 type="text"
                 name="idFiscal"
                 autoComplete="off"
+                value={values.idFiscal}
+                onChange={handleChange}
                 readOnly
               />
             </div>
             <div className="form-group col-md-6 col-12 mb-3">
-              <label for="pais">Pais</label>
+              <label htmlFor="pais">Pais</label>
               <Field
                 as="select"
                 className="form-select"
                 name="pais"
+                value={values.pais}
+                onChange={handleChange}
                 disabled={true}
               >
                 <option value="1">Perú</option>
@@ -377,12 +304,14 @@ export const FormRegistro = () => {
 
             <div className="col-md-6 col-12">
               <div className="form-group col-md-12 col-12 mb-3">
-                <label for="pais">Rubro</label>
+                <label htmlFor="rubro">Rubro</label>
                 <Field
-                  component="select"
+                  as="select"
                   className="form-select height-multiple"
                   name="rubro"
+                  value={values.rubro}
                   multiple={true}
+                  onChange={handleChange}
                   disabled={true}
                 >
                   <option value="1">A</option>
@@ -392,11 +321,13 @@ export const FormRegistro = () => {
             </div>
             <div className="col-md-6 col-12">
               <div className="form-group col-md-12 col-12 mb-3">
-                <label for="pais">Empresa a postular</label>
+                <label htmlFor="empresa">Empresa a postular</label>
                 <Field
                   as="select"
                   className="form-select"
                   name="empresa"
+                  value={values.empresa}
+                  onChange={handleChange}
                   disabled={true}
                 >
                   <option value="1">A</option>
@@ -404,26 +335,30 @@ export const FormRegistro = () => {
                 </Field>
               </div>
               <div className="form-group col-md-12 col-12 mb-3">
-                <label for="pais">Comprador responsable</label>
+                <label htmlFor="comprador">Comprador responsable</label>
                 <Field
                   as="select"
                   className="form-select"
                   name="comprador"
+                  value={values.comprador}
+                  onChange={handleChange}
                   disabled={true}
                 >
                   <option value="1">A</option>
                   <option value="2">B</option>
                 </Field>
               </div>
-              {/* <div className="form-group col-md-12 col-12 mb-3">
-                <label for="pais">Contacto o comentario</label>
+              <div className="form-group col-md-12 col-12 mb-3">
+                <label htmlFor="comentario">Contacto o comentario</label>
                 <Field
                   as="textarea"
                   className="form-control"
                   name="comentario"
+                  value={values.comentario}
+                  onChange={handleChange}
                   readOnly
                 ></Field>
-              </div> */}
+              </div>
             </div>
 
             <ul className="nav nav-tabs nav-justified">
@@ -441,23 +376,36 @@ export const FormRegistro = () => {
             {
               {
                 0: (
-                  <FormDataAdmin />
+                  <FormDataAdmin
+                    errors={errors}
+                    values={values}
+                    handleChange={handleChange}
+                  />
                 ),
                 1: (
-                  <FormDataGeneral />
+                  <FormDataGeneral
+                    errors={errors}
+                    values={values}
+                    handleChange={handleChange}
+                  />
                 ),
                 2: (
-                  <FormDataBank />
+                  <FormDataBank
+                    errors={errors}
+                    values={values}
+                    handleChange={handleChange}
+                  />
                 ),
                 3: (
-                  <FormDataCompanyDocs />
+                  <FormDataCompanyDocs
+                    errors={errors}
+                    setFieldValue={setFieldValue}
+                    values={values}
+                    
+                  />
                 ),
-                4: (
-                  <FormDataShopping />
-                ),
-                5: (
-                  <FormDataMasterAdmin />
-                ),
+              /*   4: <FormDataShopping />,
+                5: <FormDataMasterAdmin />, */
               }[tabIndex]
             }
 
@@ -477,16 +425,12 @@ export const FormRegistro = () => {
                             </div>
                             : <></>
                     } */}
-              <div className="col-12 col-md-6">
-                <div className="d-grid gap-2">
-                  <button
-                    type="button"
-                    className="btn btn-next block subtitle"
-                    onClick={handleVerification}
-                  >
-                    Enviar
-                  </button>
-                </div>
+            </div>
+            <div className="col-12">
+              <div className="d-grid gap-2">
+                <button type="submit" className="btn btn-next block subtitle">
+                  Enviar
+                </button>
               </div>
             </div>
           </Form>

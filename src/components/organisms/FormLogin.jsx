@@ -10,8 +10,8 @@ export const FormLogin = () => {
   const { loading } = useSelector((state) => state.ui);
 
   const [formValues, handleInputChange] = useForm({
-    email: "",
-    password: "",
+    email: "admin@gmail.com",
+    password: "123456",
    
   });
   const { email, password } = formValues;
@@ -48,7 +48,7 @@ export const FormLogin = () => {
       return;
     }
 
-    if (!password.trim()) {
+   /*  if (!password.trim()) {
       setErrorPasword("El campo password es requerido");
       return;
     } else if (
@@ -58,7 +58,7 @@ export const FormLogin = () => {
     ) {
       setErrorPasword("Ingrese un formato Valido");
       return;
-    }
+    } */
 
     setErrorUsuario(null);
     setErrorPasword(null);
