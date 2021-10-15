@@ -67,14 +67,14 @@ useEffect(() => {
 
   const { idFiscal, pais, empresa, comprador, comentario } = formValues;
 
-  const [ rubro ] = isChecked;
+  
 
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(preRegisterAddNew(
       idFiscal, 
       pais, 
-      rubro, 
+      isChecked, 
       empresa, 
       comprador, 
       comentario
@@ -138,7 +138,6 @@ useEffect(() => {
                   }}
                   type="checkbox"
                   checked={d.select}
-                  name="rubro"
                 ></input>
              </span>
              <span>{d.value}</span>
