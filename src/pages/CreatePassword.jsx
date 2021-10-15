@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Logo } from "../components/atoms/Logo";
 import { useDispatch } from "react-redux";
 import { startRegister } from "../redux/actions/auth";
@@ -21,10 +21,10 @@ export const CreatePassword = ({handle}) => {
   const [errorUsuario, setErrorUsuario] = useState(null);
   const [errorPassword, setErrorPasword] = useState(null);
 
-/*   useEffect(() => {
+  useEffect(() => {
     handle(false);
     return () => handle(true);
-  }, [handle]); */
+  }, [handle]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -135,9 +135,9 @@ export const CreatePassword = ({handle}) => {
                     <div className="col-6">
                       <div className="d-grid gap-2">
                         <button
-                          /* data-bs-toggle="modal"
-                          data-bs-target="#exampleModal" */
-                          type="submit"
+                          data-bs-toggle="modal"
+                          data-bs-target="#exampleModal"
+                          type="button"
                           className="btn btn-next block subtitle"
                         >
                           Enviar
@@ -150,7 +150,7 @@ export const CreatePassword = ({handle}) => {
         </div>
       </div>
 
-      {/* <div
+      <div
         className="modal fade"
         id="exampleModal"
         aria-labelledby="exampleModalLabel"
@@ -174,7 +174,7 @@ export const CreatePassword = ({handle}) => {
             </div>
           </div>
         </div>
-      </div> */}
+      </div>
     </>
   );
 };

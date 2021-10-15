@@ -85,7 +85,8 @@ export const ValidateProvider = ({handle}) => {
                 <div className="col-6">
                   <div className="d-grid gap-2">
                     <button
-                      type="submit"
+                      type="button"
+                      onClick={() => handlePassword()}
                       className="btn bg-button block subtitle"
                     >
                       Enviar
