@@ -17,6 +17,7 @@ import { ReasignAccounts } from "../pages/ReasignAccounts";
 import { CompanyProfile } from "../pages/CompanyProfile";
 import { ChangeDataRequests } from "../pages/ChangeDataRequests";
 import { useSelector } from "react-redux";
+import { MainMenu } from "../components/molecules/MainMenu";
 
 export const DashboardRoutes = () => {
 
@@ -31,7 +32,8 @@ export const DashboardRoutes = () => {
                 <div className="row overflow-auto">
                   <div className={`col d-flex flex-column h-sm-100`}>
                     <main className="row overflow-auto">
-                      <Navbar />
+                      {/* <Navbar /> */}
+                      <MainMenu/>
                       <div className="col">
                         <div className="col d-flex flex-column p-3 card">
                           <Switch>
