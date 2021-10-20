@@ -12,6 +12,14 @@
     font-size: 0.84rem;
     width: 13rem;
   }
+
+  @media (max-width: 768px) {
+    span {
+      
+      width: 100%;
+      margin-bottom: 0.5rem;
+    }
+  }
 }
 
 .logo {
