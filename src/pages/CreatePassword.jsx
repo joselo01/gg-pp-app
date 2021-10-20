@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Logo } from "../components/atoms/Logo";
 import { useDispatch } from "react-redux";
 import { startRegister } from "../redux/actions/auth";
-import { useForm } from "../hooks/useForm";
+import { useForm } from "../hooks/useForm001";
 
 export const CreatePassword = ({handle}) => {
 
