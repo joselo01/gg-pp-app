@@ -9,6 +9,7 @@
 @import "../scss/custom/register-info";
 @import "../scss/custom/register";
 @import "../scss/custom/fonts";
+@import "../scss/custom/main-menu";
 
 html,
 body {
@@ -103,4 +104,27 @@ body {
 
 .checkboxes label:hover {
   background-color: rgba(20, 146, 136, 0.5);
+}
+
+.owl-prev {
+  width: 15px;
+  position: absolute;
+  top: 40%;
+  margin-left: -20px !important;
+  display: block !important;
+  border:0px solid black;
+}
+
+.owl-next {
+  width: 15px;
+  position: absolute;
+  top: 40%;
+  right: -25px;
+  display: block !important;
+  border:0px solid black;
+}
+.owl-prev i, .owl-next i {transform : scale(2); color: #ccc;}
+
+.owl-theme .owl-nav {
+  margin-top: 0 !important;
 }
