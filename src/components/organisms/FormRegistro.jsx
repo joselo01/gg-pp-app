@@ -7,12 +7,16 @@ import { FormDataAdmin } from "./FormDataAdmin";
 import { FormDataGeneral } from "./FormDataGeneral";
 import { FormDataBank } from "./FormDataBank";
 import { FormDataCompanyDocs } from "./FormDataCompanyDocs";
-//import { FormDataShopping } from "./FormDataShopping";
-//import { FormDataMasterAdmin } from "./FormDataMasterAdmin";
+import { FormDataShopping } from "./FormDataShopping";
+import { FormDataMasterAdmin } from "./FormDataMasterAdmin";
+import { useSelector } from "react-redux";
 
 export const FormRegistro = () => {
   const history = useHistory();
 
+  const isLogged = localStorage.getItem("isLogged") === "true";
+  console.log(isLogged);
+  
   function handleVerification() {
     history.push("/supplier_verification");
   }
@@ -250,7 +254,7 @@ export const FormRegistro = () => {
       ),
   });
 
-  const [tabList] = useState(tabsProvider);
+  const [tabList] = useState(tabsPurchaser);
 
   const [tabIndex, setTabIndex] = useState(0);
 
@@ -260,6 +264,7 @@ export const FormRegistro = () => {
 
   return (
     <>
+    
       <Formik
         initialValues={initialValues}
         /* validationSchema={RegisterShema} */
@@ -272,6 +277,7 @@ export const FormRegistro = () => {
       >
         {({ errors, values, setFieldValue, handleSubmit, handleChange }) => (
           <Form name="form" className="form-group row" onSubmit={handleSubmit}>
+            
             <div className="mt-2">
               <h5>Datos del registrador</h5>
             </div>
@@ -401,11 +407,11 @@ export const FormRegistro = () => {
                     errors={errors}
                     setFieldValue={setFieldValue}
                     values={values}
-                    
+
                   />
                 ),
-              /*   4: <FormDataShopping />,
-                5: <FormDataMasterAdmin />, */
+                4: (<FormDataShopping />),
+                5: <FormDataMasterAdmin />
               }[tabIndex]
             }
 
@@ -426,6 +432,8 @@ export const FormRegistro = () => {
                             : <></>
                     } */}
             </div>
+
+            {!isLogged && (
             <div className="col-12">
               <div className="d-grid gap-2">
                 <button type="submit" className="btn btn-next block subtitle">
@@ -433,6 +441,7 @@ export const FormRegistro = () => {
                 </button>
               </div>
             </div>
+            )}
           </Form>
         )}
       </Formik>

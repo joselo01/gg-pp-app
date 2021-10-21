@@ -11,6 +11,8 @@ export const ProviderPreview = () => {
         history.push("/provider-requests");
     }
 
+    const isLogged = localStorage.getItem("isLogged") === "true";
+
     const tabList = [
         {
             name: "Visión general",
@@ -39,6 +41,9 @@ export const ProviderPreview = () => {
 
     return (
         <>
+        {
+              isLogged && <h3>Solicitudes de Creación</h3>
+            }
             <ul className="nav nav-tabs nav-justified">
                 {tabList.map((tab, index) => (
                     <TabItem
@@ -95,7 +100,7 @@ export const ProviderPreview = () => {
                                                 </button>
                                             </div>
                                         </div>
-                                        <div className="col-12 col-md-3">
+                                        {/* <div className="col-12 col-md-3">
                                             <div className="d-grid gap-2">
                                                 <button
                                                     data-bs-toggle="modal"
@@ -106,7 +111,7 @@ export const ProviderPreview = () => {
                                                     Enviar
                                                 </button>
                                             </div>
-                                        </div>
+                                        </div> */}
                                         <div className="col-12 col-md-3">
                                             <div className="d-grid gap-2">
                                                 <button

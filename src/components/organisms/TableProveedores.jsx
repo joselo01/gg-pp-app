@@ -43,7 +43,7 @@ export const TableProviders = () => {
     }
 
     return (
-        <div className="table-responsive-md">
+        <div className="table-responsive">
             <table className="table">
                 <thead className="thead-dark">
                     <tr>

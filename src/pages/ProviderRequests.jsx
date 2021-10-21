@@ -7,6 +7,7 @@ import { TableProviders } from "../components/organisms/TableProveedores";
 
 export const ProviderRequests = () => {
     const history = useHistory();
+    const isLogged = localStorage.getItem("isLogged") === "true";
 
     const handleInputChange = () => {
 
@@ -18,6 +19,9 @@ export const ProviderRequests = () => {
 
     return (
         <>
+            {
+                isLogged && <h3>Solicitudes de Creación</h3>
+            }
             <TableProviders />
             <div className="row justify-content-md-center mt-2">
                 <div className="col-12 col-md-3">
