@@ -20,6 +20,7 @@ import { useSelector } from "react-redux";
 import { InitPage } from "../pages/InitPage";
 
 export const DashboardRoutes = () => {
+  const [navFlag, setNavFlag] = React.useState(true);
 
   const { role } = useSelector((state) => state.auth);
   console.log(role);
@@ -30,20 +31,25 @@ export const DashboardRoutes = () => {
           <div className="child-login">
             <div className="fluid-container">
               <Switch>
-              <Route
-                    exact
-                    path="/init"
-                    component={InitPage}
-                  />
                 <>
-                  
                   <div className="container-fluid overflow-hidden">
                     <div className="row overflow-auto">
                       <div className={`col d-flex flex-column h-sm-100`}>
                         <main className="row overflow-auto">
-                          <Navbar />
+                          <Navbar navFlag={navFlag} />
+                          <Route
+                                exact
+                                path="/init"
+                                render={(props) => {
+                                  return (
+                                    <InitPage {...props} handle={setNavFlag} />
+                                  );
+                                }}
+                              />
                           <div className="col-sm-9 col-xs-12">
+                         
                             <div className="col d-flex flex-column p-3 card">
+                              
                               <Route
                                 exact
                                 path="/provider-requests"
@@ -67,19 +73,23 @@ export const DashboardRoutes = () => {
                               <Route
                                 exact
                                 path="/secondary-accounts"
-                                component={SecondaryAccounts} />
+                                component={SecondaryAccounts}
+                              />
                               <Route
                                 exact
                                 path="/reasign-accounts"
-                                component={ReasignAccounts} />
+                                component={ReasignAccounts}
+                              />
                               <Route
                                 exact
                                 path="/company-profile"
-                                component={CompanyProfile} />
+                                component={CompanyProfile}
+                              />
                               <Route
                                 exact
                                 path="/change-requests"
-                                component={ChangeDataRequests} />
+                                component={ChangeDataRequests}
+                              />
                               <Route
                                 exact
                                 path="/supplier_verification"
@@ -90,24 +100,16 @@ export const DashboardRoutes = () => {
                                 path="/create_password"
                                 component={CreatePassword}
                               />
-
                             </div>
                           </div>
                         </main>
                       </div>
                     </div>
                   </div>
-                  {role === "ADMIN_ROLE" && (
-                    <Redirect to="/init" />
-                  )}
-                  {role === "PROVE_ROLE" && (
-                    <Redirect to="/init" />
-                  )}
-                  {role === "COMP_ROLE" && (
-                    <Redirect to="/comprador" />
-                  )}
+                  {role === "ADMIN_ROLE" && <Redirect to="/init" />}
+                  {role === "PROVE_ROLE" && <Redirect to="/init" />}
+                  {role === "COMP_ROLE" && <Redirect to="/comprador" />}
                 </>
-
               </Switch>
             </div>
           </div>

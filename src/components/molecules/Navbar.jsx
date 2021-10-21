@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { startLogout } from "../../redux/actions/auth";
 
-export const Navbar = () => {
+export const Navbar = ({navFlag}) => {
   const dispatch = useDispatch();
 
   const { nombre } = useSelector(state => state.auth);
@@ -12,14 +12,17 @@ export const Navbar = () => {
     dispatch(startLogout());
   };
   return (
-    <div className="col-sm-3 col-xs-12 nav-style">
+    <>
+    {
+      (navFlag) ?
+      <div className="col-sm-3 col-xs-12 nav-style">
       <div className="d-flex flex-sm-column  flex-grow-1 align-items-center align-items-sm-start px-3 pt-2 text-white">
         <Link to="/" className=" align-items-center pb-sm-3 mb-md-0 me-md-auto text-white text-decoration-none">
           <span className="fs-5">G<span className="d-none d-sm-inline">loria,</span> Hola {nombre}</span>
         </Link>
         <ul className="nav nav-pills flex-sm-column flex-nowrap flex-shrink-1 flex-sm-grow-0 flex-grow-1 mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
           <li className="nav-item">
-            <Link to="#" className="nav-link px-sm-0 px-2 text-white">
+            <Link to="/init" className="nav-link px-sm-0 px-2 text-white">
               <i className="fs-5 bi-house"></i><span className="ms-1 d-none d-sm-inline">Inicio</span>
             </Link>
           </li>
@@ -113,5 +116,9 @@ export const Navbar = () => {
                 </div> */}
       </div>
     </div>
+    : null
+
+    }
+    </>
   );
 };

@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useHistory } from 'react-router-dom';
 import { Logo } from '../components/atoms/Logo'
 
-export const InitPage = () => {
+export const InitPage = ({handle}) => {
 
     const history = useHistory();
 
@@ -10,8 +10,13 @@ export const InitPage = () => {
         console.log('REGISTRANDO');
         history.push(`/${page}`);
     }
+
+    useEffect(() => {
+        handle(false);
+        return () => handle(true);
+      }, [handle]);
     return (
-        <div className="main-login">
+        <>
             <div style={{ height: 180, padding: 20, backgroundColor: '#04003f' }}>
                 <Logo />
             </div>
@@ -72,7 +77,7 @@ export const InitPage = () => {
 
                 </div>
             </div>
-        </div>
+        </>
 
 
     )
