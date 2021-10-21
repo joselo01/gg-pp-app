@@ -34,7 +34,7 @@ export const DashboardRoutes = () => {
                 <>
                   <div className="container-fluid overflow-hidden">
                     <div className="row overflow-auto">
-                      <div className={`col d-flex flex-column h-sm-100`}>
+                      <div className={`col d-flex flex-column`}>
                         <main className="row overflow-auto">
                           <Navbar navFlag={navFlag} />
                           <Route
