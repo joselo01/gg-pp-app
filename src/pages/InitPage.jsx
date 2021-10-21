@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { useHistory } from 'react-router-dom';
 import { Logo } from '../components/atoms/Logo'
 
-export const InitPage = ({handle}) => {
+export const InitPage = ({ handle }) => {
 
     const history = useHistory();
 
@@ -14,20 +14,18 @@ export const InitPage = ({handle}) => {
     useEffect(() => {
         handle(false);
         return () => handle(true);
-      }, [handle]);
+    }, [handle]);
     return (
         <>
             <div style={{ height: 180, padding: 20, backgroundColor: '#04003f' }}>
                 <Logo />
             </div>
-            <div className="container" style={{ height: "calc(100vh - 180px)", width: "100vh", alignItems: "center", display: "flex", justifyContent: "center" }}>
-                <div className="row m-2 p-2 card">
-                    <div className="col-12">
-                        <h2>Bienvenido al portal de proveedores del Grupo Gloria</h2>
-                        <p>Selecciona la casilla para iniciar con la solicitud</p>
-                    </div>
-                    <div className="row justify-content-center">
-                        <div className="col-md-12 col-lg-2 pb-2">
+            <div style={{ height: "calc(100vh - 180px)"}}>
+                <div className="m-2 p-2 card">
+                    <h2>Bienvenido al portal de proveedores del Grupo Gloria</h2>
+                    <p>Selecciona la casilla para iniciar con la solicitud</p>
+                    <div className="row" style={{ justifyContent: "center", textAlign:"center" }}>
+                        <div className="col-md-12 col-lg-2 pb-2 mr-1">
                             <button
                                 type="button"
                                 className="btn btn-primary btn-block"
@@ -37,7 +35,7 @@ export const InitPage = ({handle}) => {
                                 Mi bandeja
                             </button>
                         </div>
-                        <div className="col-md-12 col-lg-2 pb-2">
+                        <div className="col-md-12 col-lg-2 pb-2 mx-1">
                             <button
                                 type="button"
                                 className="btn btn-primary btn-block"
@@ -46,7 +44,7 @@ export const InitPage = ({handle}) => {
                                 Comunicaciones
                             </button>
                         </div>
-                        <div className="col-md-12 col-lg-2 pb-2">
+                        <div className="col-md-12 col-lg-2 pb-2 mx-1">
                             <button
                                 type="button"
                                 className="btn btn-primary btn-block"
@@ -55,7 +53,7 @@ export const InitPage = ({handle}) => {
                                 Logística
                             </button>
                         </div>
-                        <div className="col-md-12 col-lg-2 pb-2">
+                        <div className="col-md-12 col-lg-2 pb-2 mx-1">
                             <button
                                 type="button"
                                 className="btn btn-primary btn-block"
@@ -64,7 +62,7 @@ export const InitPage = ({handle}) => {
                                 Finanzas
                             </button>
                         </div>
-                        <div className="col-md-12 col-lg-2 pb-2">
+                        <div className="col-md-12 col-lg-2 pb-2 mx-1">
                             <button
                                 type="button"
                                 className="btn btn-primary btn-block"
