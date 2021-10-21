@@ -35,6 +35,8 @@ body {
 
 .card {
   border: none;
+  border-radius: 0;
+  margin-top:  0.75rem;
 }
 
 .height-multiple {
@@ -104,6 +106,36 @@ body {
 
 .checkboxes label:hover {
   background-color: rgba(20, 146, 136, 0.5);
+}
+
+.fs-5 {
+  padding-right: 6px;
+}
+table {
+  font-size: 0.9rem;
+}
+
+.owl-prev {
+  width: 15px;
+  position: absolute;
+  top: 40%;
+  margin-left: -20px !important;
+  display: block !important;
+  border:0px solid black;
+}
+
+.owl-next {
+  width: 15px;
+  position: absolute;
+  top: 40%;
+  right: -25px;
+  display: block !important;
+  border:0px solid black;
+}
+.owl-prev i, .owl-next i {transform : scale(2); color: #ccc;}
+
+.owl-theme .owl-nav {
+  margin-top: 0 !important;
 }
 
 

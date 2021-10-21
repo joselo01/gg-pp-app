@@ -1,57 +1,143 @@
-import React from 'react'
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
+import { startLogout } from "../../redux/actions/auth";
 export const MainMenu = () => {
+  const dispatch = useDispatch();
+  const { nombre } = useSelector((state) => state.auth);
+  const handleLogout = () => {
+    dispatch(startLogout());
+  };
+  const history = useHistory();
 
-    return (
-        <div className="d-flex" id="wrapper">
-            
-            <div className="border-end bg-white" id="sidebar-wrapper">
-                <div className="sidebar-heading border-bottom bg-light">Start Bootstrap</div>
-                <div className="list-group list-group-flush">
-                    <a className="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Dashboard</a>
-                    <a className="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Shortcuts</a>
-                    <a className="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Overview</a>
-                    <a className="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Events</a>
-                    <a className="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Profile</a>
-                    <a className="list-group-item list-group-item-action list-group-item-light p-3" href="#!">Status</a>
-                </div>
-            </div>
-            
-            <div id="page-content-wrapper">
-                
-                <nav className="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-                    <div className="container-fluid">
-                        <button className="btn btn-primary" id="sidebarToggle">Toggle Menu</button>
-                        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span className="navbar-toggler-icon"></span></button>
-                        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                            <ul className="navbar-nav ms-auto mt-2 mt-lg-0">
-                                <li className="nav-item active"><a className="nav-link" href="#!">Home</a></li>
-                                <li className="nav-item"><a className="nav-link" href="#!">Link</a></li>
-                                <li className="nav-item dropdown">
-                                    <a className="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                                    <div className="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                        <a className="dropdown-item" href="#!">Action</a>
-                                        <a className="dropdown-item" href="#!">Another action</a>
-                                        <div className="dropdown-divider"></div>
-                                        <a className="dropdown-item" href="#!">Something else here</a>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </nav>
-               
-                <div className="container-fluid">
-                    <h1 className="mt-4">Simple Sidebar</h1>
-                    <p>The starting state of the menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will change.</p>
-                    <p>
-                        Make sure to keep all page content within the
-                        <code>#page-content-wrapper</code>
-                        . The top navbar is optional, and just for demonstration. Just create an element with the
-                        <code>#sidebarToggle</code>
-                        ID which will toggle the menu when clicked.
-                    </p>
-                </div>
-            </div>
+  const handleInicio = () => {
+    history.push("/");
+  };
+
+  const handleProvider = () => {
+    history.push("/provider-requests");
+  };
+  const handleProfile = () => {
+    history.push("/admin-profile");
+  };
+  const handleSecundary = () => {
+    history.push("/secondary-accounts");
+  };
+  const handleReasing = () => {
+    history.push("/reasign-accounts");
+  };
+  const handleCompany = () => {
+    history.push("/company-profile");
+  };
+  const handleChangeRequests = () => {
+    history.push("/change-requests");
+  };
+  return (
+    <div className="border-end bg-white" id="sidebar-wrapper">
+      <div className="sidebar-heading border-bottom bg-light">
+        Hola {nombre}
+      </div>
+      <div className="list-group list-group-flush">
+        <button
+          onClick={() => console.log("Inicio Dashboard")}
+          className="list-group-item list-group-item-action list-group-item-light p-3"
+        >
+          <i className="fs-5 bi-house"></i>
+          Inicio
+        </button>
+
+        <div className="dropdown">
+          <button
+            className="dropdown-toggle list-group-item list-group-item-action list-group-item-light p-3"
+            type="button"
+            id="dropdownMenu2"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <i className="fs-5 bi-card-list"></i>
+            Solicitudes
+          </button>
+          <ul className="dropdown-menu" aria-labelledby="dropdownMenu2">
+            <li>
+              <button
+                onClick={handleProvider}
+                className="dropdown-item"
+                type="button"
+              >
+                Solicitud de creación
+              </button>
+            </li>
+          </ul>
         </div>
-    )
-}
+
+        <div className="dropdown">
+          <button
+            className="dropdown-toggle list-group-item list-group-item-action list-group-item-light p-3"
+            type="button"
+            id="dropdownMenu2"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <i className="fs-5 bi-card-list"></i>
+            Administración
+          </button>
+          <ul className="dropdown-menu" aria-labelledby="dropdownMenu2">
+            <li>
+              <button
+                onClick={handleProfile}
+                className="dropdown-item"
+                type="button"
+              >
+                Mi Perfil de Usuario
+              </button>
+            </li>
+            <li>
+              <button
+                onClick={handleSecundary}
+                className="dropdown-item"
+                type="button"
+              >
+                Administrar usuarios
+              </button>
+            </li>
+            <li>
+              <button
+                onClick={handleReasing}
+                className="dropdown-item"
+                type="button"
+              >
+                Reasignar usuario administrador
+              </button>
+            </li>
+            <li>
+              <button
+                onClick={handleCompany}
+                className="dropdown-item"
+                type="button"
+              >
+                Información de empresa
+              </button>
+            </li>
+            <li>
+              <button
+                onClick={handleChangeRequests}
+                className="dropdown-item"
+                type="button"
+              >
+                Mis Solicitudes
+              </button>
+            </li>
+          </ul>
+        </div>
+
+        <button
+          className="list-group-item list-group-item-action list-group-item-light p-3"
+          onClick={handleLogout}
+        >
+          <i className="fs-5 bi-box-arrow-right"></i>
+          Cerrar Sesión
+        </button>
+      </div>
+    </div>
+  );
+};

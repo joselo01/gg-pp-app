@@ -18,84 +18,86 @@ import { CompanyProfile } from "../pages/CompanyProfile";
 import { ChangeDataRequests } from "../pages/ChangeDataRequests";
 import { useSelector } from "react-redux";
 import { MainMenu } from "../components/molecules/MainMenu";
+import { NavToogle } from "../components/atoms/NavToogle";
 
 export const DashboardRoutes = () => {
-
   const { role } = useSelector((state) => state.auth);
+
   return (
     <Router>
       <div className="bg-image">
-        <div className="main-login">
+        <div className="main-login dashboard">
           <div className="child-login">
             <div className="fluid-container">
-              <div className="container-fluid overflow-hidden">
-                <div className="row overflow-auto">
-                  <div className={`col d-flex flex-column h-sm-100`}>
-                    <main className="row overflow-auto">
-                      {/* <Navbar /> */}
-                      <MainMenu/>
-                      <div className="col">
-                        <div className="col d-flex flex-column p-3 card">
-                          <Switch>
-                            <Route
-                              exact
-                              path="/provider-requests"
-                              component={ProviderRequests}
-                            />
-                            <Route
-                              exact
-                              path="/provider-preview"
-                              component={ProviderPreview}
-                            />
-                            <Route
-                              exact
-                              path="/providers"
-                              component={Proveedores}
-                            />
-                            <Route
-                              exact
-                              path="/admin-profile"
-                              component={AdminProfile}
-                            />
-                            <Route
-                              exact
-                              path="/secondary-accounts"
-                              component={SecondaryAccounts} />
-                            <Route
-                              exact
-                              path="/reasign-accounts"
-                              component={ReasignAccounts} />
-                            <Route
-                              exact
-                              path="/company-profile"
-                              component={CompanyProfile} />
-                            <Route
-                              exact
-                              path="/change-requests"
-                              component={ChangeDataRequests} />
-                            <Route
-                              exact
-                              path="/supplier_verification"
-                              component={ValidateProvider}
-                            />
-                            <Route
-                              exact
-                              path="/create_password"
-                              component={CreatePassword}
-                            />
-                            {role === "ADMIN_ROLE" && (
-                              <Redirect to="/provider-requests" />
-                            )}
-                            {role === "PROVE_ROLE" && (
-                              <Redirect to="/provider-requests" />
-                            )}
-                            {role === "COMP_ROLE" && (
-                              <Redirect to="/comprador" />
-                            )}
-                          </Switch>
-                        </div>
+              <div className="d-flex" id="wrapper">
+                {/* <Navbar /> */}
+                <MainMenu />
+                <div id="page-content-wrapper">
+                  <NavToogle />
+                  <div className="container-fluid">
+                    <div className="col">
+                      <div className="col d-flex flex-column p-3 card">
+                        <Switch>
+                          <Route
+                            exact
+                            path="/provider-requests"
+                            component={ProviderRequests}
+                          />
+                          <Route
+                            exact
+                            path="/provider-preview"
+                            component={ProviderPreview}
+                          />
+                          <Route
+                            exact
+                            path="/providers"
+                            component={Proveedores}
+                          />
+                          <Route
+                            exact
+                            path="/admin-profile"
+                            component={AdminProfile}
+                          />
+                          <Route
+                            exact
+                            path="/secondary-accounts"
+                            component={SecondaryAccounts}
+                          />
+                          <Route
+                            exact
+                            path="/reasign-accounts"
+                            component={ReasignAccounts}
+                          />
+                          <Route
+                            exact
+                            path="/company-profile"
+                            component={CompanyProfile}
+                          />
+                          <Route
+                            exact
+                            path="/change-requests"
+                            component={ChangeDataRequests}
+                          />
+                          <Route
+                            exact
+                            path="/supplier_verification"
+                            component={ValidateProvider}
+                          />
+                          <Route
+                            exact
+                            path="/create_password"
+                            component={CreatePassword}
+                          />
+                          {role === "ADMIN_ROLE" && (
+                            <Redirect to="/provider-requests" />
+                          )}
+                          {role === "PROVE_ROLE" && (
+                            <Redirect to="/provider-requests" />
+                          )}
+                          {role === "COMP_ROLE" && <Redirect to="/comprador" />}
+                        </Switch>
                       </div>
-                    </main>
+                    </div>
                   </div>
                 </div>
               </div>
