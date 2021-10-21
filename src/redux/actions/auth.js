@@ -8,9 +8,9 @@ export const startLogin = (email, password) => {
     const body = await resp.json();
 
     if (body.ok) {
+      localStorage.setItem("isLogged", "true");
       localStorage.setItem("token", body.token);
       localStorage.setItem("token-init-date", new Date().getTime());
-
       dispatch(
         login({
           uid: body.uid,
@@ -30,7 +30,7 @@ export const startLogin = (email, password) => {
 export const startRegister = (email, password, nombre) => {
 
   return async (dispatch) => {
-    const resp = await fetchWithoutToken("auth/new", { email, password, nombre}, "POST");
+    const resp = await fetchWithoutToken("auth/new", { email, password, nombre }, "POST");
     const body = await resp.json();
 
     console.log(body);
@@ -50,7 +50,7 @@ export const startRegister = (email, password, nombre) => {
         icon: 'error',
         title: body.msg
       })
-      
+
     }
 
   }
@@ -63,6 +63,7 @@ export const startChecking = () => {
     const body = await resp.json();
 
     if (body.ok) {
+      localStorage.setItem("isLogged", "true");
       localStorage.setItem("token", body.token);
       localStorage.setItem("token-init-date", new Date().getTime());
 
@@ -80,10 +81,12 @@ export const startChecking = () => {
 
 const checkingFinish = () => ({ type: types.authCheckingFinish })
 
-const login = (user) => ({
-  type: types.authLogin,
-  payload: user,
-});
+const login = (user) => (
+  {
+    type: types.authLogin,
+    payload: user,
+  }
+);
 
 export const startLogout = () => {
   return (dispatch) => {

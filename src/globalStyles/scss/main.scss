@@ -40,9 +40,20 @@ body {
   min-height: 6rem;
 }
 
-.nav-style {
-  height: 80vh;
-  background-color: $primary !important;
+
+@media (min-width:576px  ) {
+  .nav-style {
+    position: sticky;
+    height: 100%;
+    min-height: 100vh;
+    background-color: $primary !important;
+  }
+}
+@media (max-width: 576px) {
+  .nav-style {
+    height: 80px;
+    background-color: $primary !important;
+  }
 }
 
 .text-danger {
