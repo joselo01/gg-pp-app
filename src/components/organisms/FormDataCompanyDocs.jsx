@@ -10,7 +10,9 @@ export const FormDataCompanyDocs = ({ errors, setFieldValue, file }) => {
 
   return (
     <div className="card mb-3">
-      
+       <div class="alert alert-success">
+      Adjuntar archivos según los requisitos de la Empresa a la que postula
+</div>
       <div className="card-body">
         {
           isLogged && <>
