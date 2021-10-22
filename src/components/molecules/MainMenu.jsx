@@ -2,7 +2,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { startLogout } from "../../redux/actions/auth";
-export const MainMenu = () => {
+export const MainMenu = ({navFlag}) => {
   const dispatch = useDispatch();
   const { nombre } = useSelector((state) => state.auth);
   const handleLogout = () => {
@@ -10,36 +10,20 @@ export const MainMenu = () => {
   };
   const history = useHistory();
 
-  const handleInicio = () => {
-    history.push("/");
-  };
-
-  const handleProvider = () => {
-    history.push("/provider-requests");
-  };
-  const handleProfile = () => {
-    history.push("/admin-profile");
-  };
-  const handleSecundary = () => {
-    history.push("/secondary-accounts");
-  };
-  const handleReasing = () => {
-    history.push("/reasign-accounts");
-  };
-  const handleCompany = () => {
-    history.push("/company-profile");
-  };
-  const handleChangeRequests = () => {
-    history.push("/change-requests");
-  };
+  function goToPage(page) {
+    history.push(`/${page}`);
+}
   return (
-    <div className="border-end bg-white" id="sidebar-wrapper">
+    <>
+      {
+        (navFlag) ?
+        <div className="border-end bg-white" id="sidebar-wrapper">
       <div className="sidebar-heading border-bottom bg-light">
         Hola {nombre}
       </div>
       <div className="list-group list-group-flush">
         <button
-          onClick={() => console.log("Inicio Dashboard")}
+          onClick={() => goToPage('init')}
           className="list-group-item list-group-item-action list-group-item-light p-3"
         >
           <i className="fs-5 bi-house"></i>
@@ -60,7 +44,7 @@ export const MainMenu = () => {
           <ul className="dropdown-menu" aria-labelledby="dropdownMenu2">
             <li>
               <button
-                onClick={handleProvider}
+                onClick={() => goToPage('provider-requests')}
                 className="dropdown-item"
                 type="button"
               >
@@ -84,7 +68,7 @@ export const MainMenu = () => {
           <ul className="dropdown-menu" aria-labelledby="dropdownMenu2">
             <li>
               <button
-                onClick={handleProfile}
+                onClick={() => goToPage('admin-profile')}
                 className="dropdown-item"
                 type="button"
               >
@@ -93,7 +77,7 @@ export const MainMenu = () => {
             </li>
             <li>
               <button
-                onClick={handleSecundary}
+                onClick={() => goToPage('secondary-accounts')}
                 className="dropdown-item"
                 type="button"
               >
@@ -102,7 +86,7 @@ export const MainMenu = () => {
             </li>
             <li>
               <button
-                onClick={handleReasing}
+                onClick={() => goToPage('reasign-accounts')}
                 className="dropdown-item"
                 type="button"
               >
@@ -111,7 +95,7 @@ export const MainMenu = () => {
             </li>
             <li>
               <button
-                onClick={handleCompany}
+                onClick={() => goToPage('company-profile')}
                 className="dropdown-item"
                 type="button"
               >
@@ -120,7 +104,7 @@ export const MainMenu = () => {
             </li>
             <li>
               <button
-                onClick={handleChangeRequests}
+                onClick={() => goToPage('change-requests')}
                 className="dropdown-item"
                 type="button"
               >
@@ -139,5 +123,8 @@ export const MainMenu = () => {
         </button>
       </div>
     </div>
+    : null
+      }
+    </>
   );
 };

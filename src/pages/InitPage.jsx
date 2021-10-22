@@ -1,13 +1,20 @@
 import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { Logo } from '../components/atoms/Logo'
+import { startLogout } from '../redux/actions/auth';
 
 export const InitPage = ({ handle }) => {
 
     const history = useHistory();
 
+  const dispatch = useDispatch();
+  const { nombre } = useSelector((state) => state.auth);
+  const handleLogout = () => {
+    dispatch(startLogout());
+  };
+
     function goToPage(page) {
-        console.log('REGISTRANDO');
         history.push(`/${page}`);
     }
 
@@ -17,8 +24,13 @@ export const InitPage = ({ handle }) => {
     }, [handle]);
     return (
         <>
-            <div style={{ height: 180, padding: 20, backgroundColor: '#04003f' }}>
-                <Logo />
+            <div style={{ height: 110, padding: 20, backgroundColor: '#04003f' }}>
+                <div className="row">
+                    <div className="col-12 col-md-5">
+                        <Logo />
+                    </div>
+                   
+                </div>
             </div>
             <div style={{ height: "calc(100vh - 180px)"}}>
                 <div className="m-2 p-2 card">

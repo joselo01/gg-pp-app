@@ -44,6 +44,12 @@ body.sb-sidenav-toggled #wrapper #sidebar-wrapper {
 .navbar {
   padding-bottom: 0.6rem !important;
 }
+#sidebar-wrapper {
+  .list-group-item-action:hover,:focus {
+    color: white !important;
+  }
+}
+
 
 @media (min-width: 768px) {
   #sidebar-wrapper {
