@@ -38,6 +38,7 @@ export const TableHistoric = () => {
                             </div>
                         </th> */}
                         <th scope="col">Fecha de Aplicación</th>
+                        <th scope="col">N° Solicitud</th>
                         <th scope="col">Nombre de Proveedor</th>
                         <th scope="col">Emisor</th>
                         <th scope="col">Receptor</th>
@@ -53,6 +54,9 @@ export const TableHistoric = () => {
                             <tr key={item.ruc}>
                                 <td>
                                     {item.date}
+                                </td>
+                                <td>
+                                    {`000010${index}`}
                                 </td>
                                 <td>
                                     {item.providerName}

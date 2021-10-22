@@ -23,7 +23,7 @@ export const DashboardRoutes = () => {
   const [navFlag, setNavFlag] = React.useState(true);
 
   const { role } = useSelector((state) => state.auth);
-  console.log(navFlag);
+  console.log(role);
   return (
     <Router>
       <div className="bg-image">
@@ -111,7 +111,7 @@ export const DashboardRoutes = () => {
                   </div>
                   {role === "ADMIN_ROLE" && <Redirect to="/init" />}
                   {role === "PROVE_ROLE" && <Redirect to="/init" />}
-                  {role === "COMP_ROLE" && <Redirect to="/comprador" />}
+                  {role === "COMP_ROLE" && <Redirect to="/init" />}
                 </>
               </Switch>
             </div>
