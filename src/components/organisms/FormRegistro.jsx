@@ -366,7 +366,9 @@ export const FormRegistro = () => {
                 ></Field>
               </div>
             </div>
-
+            <div class="alert alert-success">
+            Complete los datos solicitados en cada una de las siguientes pestañas
+</div>
             <ul className="nav nav-tabs nav-justified">
               {tabList.map((tab, index) => (
                 <TabItem

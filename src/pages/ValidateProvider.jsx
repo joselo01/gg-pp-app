@@ -3,7 +3,6 @@ import { useHistory } from "react-router-dom";
 import { Logo } from "../components/atoms/Logo";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
-import { useForm } from "../hooks/useForm001";
 
 export const ValidateProvider = ({handle}) => {
 
@@ -52,6 +51,9 @@ export const ValidateProvider = ({handle}) => {
             >
               {({ errors, values, handleSubmit, handleChange  }) => (
             <Form name="form" className="form-group" onSubmit={handleSubmit}>
+               <div class="alert alert-success">
+               Un código de verificación ha sido enviado a su correo electrónico, ingresar y pulse enviar.
+</div>
               <div className="col-12">
                 <div className="input-group">
                   <span className="input-group-text">
@@ -71,6 +73,30 @@ export const ValidateProvider = ({handle}) => {
                             <span className="text-danger">{errors.validateProvider}</span>
                           )}
                         />
+                </div>
+              </div>
+              <div className="col-12">
+                <div className="input-group">
+                  <span className="input-group-text">
+                  Tiempo restante
+                  </span>
+                  <input
+                    type="text"
+                    aria-label="First name"
+                    className="form-control"
+                    name="time"
+                    readOnly
+                    value="120 seg"
+                  />
+                  <div className="d-grid gap-2 col-12 col-md-6">
+                   <button
+                      type="button"
+                      onClick={() => console.log('envio')}
+                      className="btn bg-button block subtitle"
+                    >
+                      Solicitar envío de nuevo código
+                    </button>
+                    </div>
                 </div>
               </div>
               <div className="row mt-4">

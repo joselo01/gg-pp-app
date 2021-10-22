@@ -6,40 +6,45 @@ import * as Yup from "yup";
 import { Button, Form, Label, Input } from "reactstrap";
 
 export const FormPreRegistro = ({ handleValidated }) => {
-  
   const dispatch = useDispatch();
 
   const formik = useFormik({
     initialValues: {
       idFiscal: "",
       pais: "",
-      rubrosFilter: [],
+      rubrosFilter: "",
       empresa: "",
       comprador: "",
       comentario: "",
     },
     validationSchema: Yup.object({
-      idFiscal: Yup.string().required("El campo idFiscal es requerido"),
-      pais: Yup.string().required("El campo Pais es requerido"),
-      rubrosFilter: Yup.array().required("At least one checkbox is required"),
+      idFiscal: Yup.string()
+        .required("El campo ID Fiscal es requerido")
+        .matches(
+          /^[a-z0-9]+$/i,
+          "El campo solo debe contener números y letras"
+        ),
+     /*  pais: Yup.string().required("El campo Pais es requerido"),
+      rubrosFilter: Yup.string().required("At least one checkbox is required"),
       empresa: Yup.string().required("El campo Empresa es requerido"),
       comprador: Yup.string().required("El campo Comprador es requerido"),
-      comentario: Yup.string().required("El campo Comentario es requerido"),
+      comentario: Yup.string().required("El campo Comentario es requerido"), */
     }),
     onSubmit: async (formData) => {
       const rubrosFilter = isChecked.filter((item) => item.select === true);
-      console.log("rubrosFilter", rubrosFilter);
-      const {idFiscal, pais, empresa, comprador, comentario} = formData;
-      try { 
-        const resultAction = await dispatch(preRegisterAddNew(
+      const { idFiscal, pais, empresa, comprador, comentario } = formData;
+      try {
+        await dispatch(
+          preRegisterAddNew(
             idFiscal,
             pais,
             rubrosFilter,
             empresa,
             comprador,
             comentario
-          ));
-        console.log(resultAction);
+          )
+        );
+        handleValidated();
       } catch (error) {
         console.log(console.error);
       }
@@ -97,6 +102,9 @@ export const FormPreRegistro = ({ handleValidated }) => {
   return (
     <Form name="form" className="form-group" onSubmit={formik.handleSubmit}>
       <div className="row">
+        <div class="alert alert-success">
+          Ingresar los siguientes datos para su registro y pulsar validar
+        </div>
         <div className="form-group col-12 mb-3">
           <Label htmlFor="idFiscal">N° Id. Fiscal</Label>
           <Input
@@ -106,10 +114,10 @@ export const FormPreRegistro = ({ handleValidated }) => {
             autoComplete="off"
             value={formik.values.idFiscal}
             onChange={formik.handleChange}
+            maxLength={14}
           />
-          
+
           <span className="text-danger">{formik.errors.idFiscal}</span>
-          
         </div>
         <div className="form-group col-12 mb-3">
           <Label htmlFor="pais">País</Label>
@@ -140,7 +148,7 @@ export const FormPreRegistro = ({ handleValidated }) => {
                 <div key={d.id}>
                   <span>
                     <Input
-                      onChange={formik.handleChange, (event) => {
+                      onChange={(event) => {
                         let checked = event.target.checked;
                         setisChecked(
                           isChecked.map((data) => {
@@ -151,20 +159,22 @@ export const FormPreRegistro = ({ handleValidated }) => {
                             return data;
                           })
                         );
+                        let eve = {
+                          target: { name: "rubrosFilter", value: checked },
+                        };
+                        formik.handleChange(eve);
                       }}
                       type="checkbox"
-                      name={'rubrosFilter[]'}
+                      name="rubrosFilter"
                       value={formik.values.rubrosFilter}
                       checked={d.select}
                     />
                   </span>
                   <span>{d.value}</span>
-                  
                 </div>
               ))}
             </div>
             <span className="text-danger">{formik.errors.rubrosFilter}</span>
-            
           </div>
         </div>
         <div className="form-group col-12 mb-3">
@@ -184,9 +194,7 @@ export const FormPreRegistro = ({ handleValidated }) => {
               );
             })}
           </Input>
-          <span className="text-danger" >{formik.errors.empresa}</span>
-
-          
+          <span className="text-danger">{formik.errors.empresa}</span>
         </div>
         <div className="form-group col-12 mb-3">
           <Label htmlFor="comprador">Comprador responsable</Label>
@@ -206,7 +214,7 @@ export const FormPreRegistro = ({ handleValidated }) => {
             })}
           </Input>
 
-          <span className="text-danger" >{formik.errors.comprador}</span>
+          <span className="text-danger">{formik.errors.comprador}</span>
         </div>
         <div className="form-group col-12 mb-3">
           <Label htmlFor="comentario">Contacto y/o Comentario</Label>
@@ -218,8 +226,8 @@ export const FormPreRegistro = ({ handleValidated }) => {
             value={formik.values.comentario}
             onChange={formik.handleChange}
           />
-          
-          <span className="text-danger" >{formik.errors.comentario}</span>
+
+          <span className="text-danger">{formik.errors.comentario}</span>
         </div>
         <div className="d-grid gap-2">
           <Button type="submit" className="btn bg-button block subtitle">

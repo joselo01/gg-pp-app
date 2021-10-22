@@ -6,8 +6,13 @@ import { Input } from "reactstrap";
 export const FormDataCompanyDocs = ({ errors, setFieldValue, file }) => {
   return (
     <div className="card mb-3">
+      
       <div className="card-body">
+      <div class="alert alert-success">
+      Adjuntar archivos según los requisitos de la Empresa a la que postula
+</div>
         <div className="input-group">
+          
           {/* <div className="input-group-prepend">
                                                             <span className="input-group-text">
                                                                 Nombre del Vendedor 1
