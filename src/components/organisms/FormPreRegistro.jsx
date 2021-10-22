@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { preRegisterAddNew } from "../../redux/actions/PreRegister";
-import { Field, useFormik } from "formik";
+import { useFormik } from "formik";
 import * as Yup from "yup";
 import { Button, Form, Label, Input } from "reactstrap";
-import CheckboxGroup from "../atoms/CheckboxGroup";
 
 export const FormPreRegistro = ({ handleValidated }) => {
   
