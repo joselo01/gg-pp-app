@@ -27,7 +27,7 @@ export const DashboardRoutes = () => {
   return (
     <Router>
       <div className="bg-image">
-        <div className="main-login">
+        <div className="main-login dashboard">
           <div className="child-login">
             <div className="fluid-container">
               <Switch>

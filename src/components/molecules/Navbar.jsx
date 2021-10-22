@@ -89,17 +89,17 @@ export const Navbar = ({navFlag}) => {
                         <a href="#" className="nav-link px-sm-0 px-2">
                             <i className="fs-5 bi-people"></i><span className="ms-1 d-none d-sm-inline">Customers</span> </a>
                     </li> */}
-          <li>
-            <button
-              className="nav-link px-sm-0 px-2 text-white"
-              onClick={handleLogout}
-            >
-              <i className="fs-5 bi-box-arrow-right"></i>
-              <span className="ms-1 d-none d-sm-inline">Cerrar Sesión</span>
-            </button>
-          </li>
-        </ul>
-        {/* <div className="dropdown py-sm-4 mt-sm-auto ms-auto ms-sm-0 flex-shrink-1">
+            <li>
+              <button
+                className="nav-link px-sm-0 px-2 text-white"
+                onClick={handleLogout}
+              >
+                <i className="fs-5 bi-box-arrow-right"></i>
+                <span className="ms-1 d-none d-sm-inline">Cerrar Sesión</span>
+              </button>
+            </li>
+          </ul>
+          {/* <div className="dropdown py-sm-4 mt-sm-auto ms-auto ms-sm-0 flex-shrink-1">
                     <a href="#" className="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
                         <img src="https://github.com/mdo.png" alt="hugenerd" width="28" height="28" className="rounded-circle" />
                         <span className="d-none d-sm-inline mx-1">Joe</span>
@@ -114,8 +114,8 @@ export const Navbar = ({navFlag}) => {
                         <li><a className="dropdown-item" href="#">Sign out</a></li>
                     </ul>
                 </div> */}
+        </div>
       </div>
-    </div>
     : null
 
     }

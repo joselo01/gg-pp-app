@@ -1,6 +1,6 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
-import OwCarousel from "../organisms/OwlCarousel";
+import OwlCarousel from "../organisms/OwlCarousel";
 
 
 export const Footer = ({footerFlag}) => {
@@ -43,7 +43,7 @@ export const Footer = ({footerFlag}) => {
 
         <div className="footer-box-bottom">
           <div className="container">
-           <OwCarousel />
+           <OwlCarousel/>
           </div>
         </div>
       </footer> : null

@@ -35,6 +35,8 @@ body {
 
 .card {
   border: none;
+  border-radius: 0;
+  margin-top:  0.75rem;
 }
 
 .height-multiple {
@@ -117,6 +119,13 @@ body {
   background-color: rgba(20, 146, 136, 0.5);
 }
 
+.fs-5 {
+  padding-right: 6px;
+}
+table {
+  font-size: 0.9rem;
+}
+
 .owl-prev {
   width: 15px;
   position: absolute;
@@ -139,3 +148,6 @@ body {
 .owl-theme .owl-nav {
   margin-top: 0 !important;
 }
+
+
+
