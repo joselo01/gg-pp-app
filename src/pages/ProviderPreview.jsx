@@ -41,8 +41,8 @@ export const ProviderPreview = () => {
 
     return (
         <>
-        {
-              isLogged && <h3>Solicitudes de Creación</h3>
+            {
+                isLogged && <h3>Solicitudes de Creación</h3>
             }
             <ul className="nav nav-tabs nav-justified">
                 {tabList.map((tab, index) => (
@@ -100,7 +100,7 @@ export const ProviderPreview = () => {
                                                 </button>
                                             </div>
                                         </div>
-                                        {/* <div className="col-12 col-md-3">
+                                        <div className="col-12 col-md-3">
                                             <div className="d-grid gap-2">
                                                 <button
                                                     data-bs-toggle="modal"
@@ -111,8 +111,8 @@ export const ProviderPreview = () => {
                                                     Enviar
                                                 </button>
                                             </div>
-                                        </div> */}
-                                        <div className="col-12 col-md-3">
+                                        </div>
+                                        {/* <div className="col-12 col-md-3">
                                             <div className="d-grid gap-2">
                                                 <button
                                                     data-bs-toggle="modal"
@@ -123,7 +123,7 @@ export const ProviderPreview = () => {
                                                     Aprobar
                                                 </button>
                                             </div>
-                                        </div>
+                                        </div> */}
                                     </>
                                     : <></>
                             }
@@ -146,7 +146,7 @@ export const ProviderPreview = () => {
                                                 <textarea
                                                     className="form-control"
                                                     type="text"
-                                                    placeholder="Ingrese un motivo"
+                                                    placeholder="Ingrese la razón del rechazo"
                                                     // name="idFiscal"
                                                     autoComplete="off"
                                                     value="motivo de rechazo"
@@ -186,7 +186,7 @@ export const ProviderPreview = () => {
                                                 <textarea
                                                     className="form-control"
                                                     type="text"
-                                                    placeholder="Ingrese un motivo"
+                                                    placeholder="Ingrese la razón de la observación"
                                                     // name="idFiscal"
                                                     autoComplete="off"
                                                     value="motivo de observación"
@@ -218,7 +218,8 @@ export const ProviderPreview = () => {
                                 <div className="modal-content">
                                     <div className="modal-body row">
                                         <form className="form-group">
-                                            <div className="form-group col-12 mb-3">
+                                            <span>¿Está seguro de enviar esta información?</span>
+                                            <div className="form-group col-12 mb-3 mt-2">
                                                 <label>Dirección de correo:</label>
                                                 <input
                                                     className="form-control"
@@ -240,7 +241,6 @@ export const ProviderPreview = () => {
                                                     onChange={handleInputChange}
                                                 />
                                             </div>
-                                            <span>Antes de enviar, por favor valide que la información consignada es correcta.</span>
                                         </form>
                                     </div>
                                     <div className="modal-footer">

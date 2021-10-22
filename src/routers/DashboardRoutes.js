@@ -101,7 +101,7 @@ export const DashboardRoutes = () => {
                               {role === "ADMIN_ROLE" && <Redirect to="/init" />}
                               {role === "PROVE_ROLE" && <Redirect to="/init" />}
                               {role === "COMP_ROLE" && (
-                                <Redirect to="/comprador" />
+                                <Redirect to="/init" />
                               )}
                             </Switch>
                           </div>
