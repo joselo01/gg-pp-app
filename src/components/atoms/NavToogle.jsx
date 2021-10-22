@@ -24,7 +24,7 @@ export const NavToogle = ({navFlag}) => {
           id="sidebarToggle"
         >
           <i className="bi bi-list"></i>
-           <span>Menu</span>
+           <span>Menú</span>
         </button>
       </div>
     </nav>
