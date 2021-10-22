@@ -18,9 +18,9 @@ export const FormDataCompanyDocs = ({ errors, setFieldValue, file }) => {
           isLogged && <>
             <span>Archivos Adjuntos: </span>
             <div className="mx-3">
-              <Link>Archivo 1</Link>
+              <Link to="#">Archivo 1</Link>
               <br />
-              <Link>Archivo 2</Link>
+              <Link to="#">Archivo 2</Link>
             </div>
 
           </>
