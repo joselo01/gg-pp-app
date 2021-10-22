@@ -10,10 +10,10 @@ import { startChecking } from "../redux/actions/auth";
 export const AppRouter = () => {
   const dispatch = useDispatch();
 
-  const { checking, uid } = useSelector(state => state.auth);
+  const { checking, uid } = useSelector((state) => state.auth);
 
   useEffect(() => {
-    dispatch(startChecking())
+    dispatch(startChecking());
   }, [dispatch]);
 
   if (checking) {
@@ -36,12 +36,12 @@ export const AppRouter = () => {
             path="/home"
             component={OnboardRoutes}
             isAuthenticated={!!uid}
-             />
-          <PrivateRoute
+          />
+           <PrivateRoute
             path="/"
             component={DashboardRoutes}
             isAuthenticated={!!uid}
-             />
+          />
         </Switch>
       </div>
     </Router>

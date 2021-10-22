@@ -12,16 +12,18 @@ export const ValidateProvider = ({handle}) => {
     validateProvider: ""
   }
 
+  useEffect(() => {
+    handle(false);
+    return () => handle(true);
+  }, [handle]);
+
   const ValidateProviderShema = Yup.object().shape({
     validateProvider: Yup.string()
     .required("EL campo código de verifiación es requerido.")
     .matches(/^[a-z0-9]+$/i, "El campo solo debe contener números y letras"),
   });
 
-  useEffect(() => {
-    handle(false);
-    return () => handle(true);
-  }, [handle]);
+
 
   const history = useHistory();
 
@@ -33,7 +35,7 @@ export const ValidateProvider = ({handle}) => {
     <>
       <div className="container">
         <div className="row">
-          <div className="col-6">
+          <div className="col-12 col-md-6">
             <Logo />
           </div>
           <div className="col-6"></div>

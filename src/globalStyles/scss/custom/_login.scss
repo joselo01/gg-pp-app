@@ -45,6 +45,26 @@
       display: table-cell;
       vertical-align: middle;
     }
+   
+  }
+  &.dashboard {
+   padding-top: 0;   
+  }
+}
+
+@media (max-width: 768px) {
+  .main-login {
+    
+    .child-login {
+     
+      display: block;
+     
+  
+      .fluid-container {
+        display: block;
+        
+      }
+    }
   }
 }
 

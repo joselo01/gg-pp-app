@@ -1,9 +1,7 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
-import { Carousel } from "../organisms/Carousel";
-import c1 from "../../images/logo_empresas/AgroAurora.jpg";
-import c2 from "../../images/logo_empresas/Agroazucar.jpg";
-import c3 from "../../images/logo_empresas/Andina.jpg";
+import OwlCarousel from "../organisms/OwlCarousel";
+
 
 export const Footer = ({footerFlag}) => {
   const history = useHistory();
@@ -22,7 +20,7 @@ export const Footer = ({footerFlag}) => {
         <div className="footer-box-top">
           <div className="container">
             <div className="text-center subtitle">
-            Si no estas registrado como proveedor, selecciona en "Crea tu cuenta", si ya tienes una cuenta slecciona "Inicio de sesión
+            Si no esta registrado como proveedor, seleccione Crea tu cuenta
             </div>
             <div className="text-center">
               <button
@@ -45,20 +43,7 @@ export const Footer = ({footerFlag}) => {
 
         <div className="footer-box-bottom">
           <div className="container">
-            <Carousel show={5}>
-              <img src={c1} alt="placeholder" />
-              <img src={c2} alt="placeholder" />
-              <img src={c3} alt="placeholder" />
-              <img src={c1} alt="placeholder" />
-              <img src={c2} alt="placeholder" />
-              <img src={c3} alt="placeholder" />
-              <img src={c1} alt="placeholder" />
-              <img src={c2} alt="placeholder" />
-              <img src={c3} alt="placeholder" />
-              <img src={c1} alt="placeholder" />
-              <img src={c2} alt="placeholder" />
-              <img src={c3} alt="placeholder" />
-            </Carousel>
+           <OwlCarousel/>
           </div>
         </div>
       </footer> : null

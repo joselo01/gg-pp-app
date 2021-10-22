@@ -47,7 +47,7 @@ export const FormDataBank = ({ errors, values, handleChange }) => {
         <div className="mt-2 mb-2">
           <h5>Datos bancarios</h5>
         </div>
-
+        <div class="table-responsive">
         <table className="table table-bordered">
           <thead>
             <tr>
@@ -76,6 +76,7 @@ export const FormDataBank = ({ errors, values, handleChange }) => {
             ))}
           </tbody>
         </table>
+        </div>
 
         <div className="mt-2 mb-2">
           <h5>Datos de venta</h5>
