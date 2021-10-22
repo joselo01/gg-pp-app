@@ -47,35 +47,35 @@ export const FormDataBank = ({ errors, values, handleChange }) => {
         <div className="mt-2 mb-2">
           <h5>Datos bancarios</h5>
         </div>
-        <div class="table-responsive">
-        <table className="table table-bordered">
-          <thead>
-            <tr>
-              <th scope="col">País</th>
-              <th scope="col">Banco</th>
-              <th scope="col">N° cuenta bancaria</th>
-              <th scope="col">Nombre de titular de la cuenta</th>
-              <th scope="col">CC</th>
-              <th scope="col">N° interbancario</th>
-              <th scope="col">Tipo de banco interlocutor</th>
-              <th scope="col">N° interbancario</th>
-            </tr>
-          </thead>
-          <tbody>
-            {[0, 1, 2, 3].map((item) => (
-              <tr key={item}>
-                <th scope="row"></th>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
+        <div className="table-responsive">
+          <table className="table table-bordered">
+            <thead>
+              <tr>
+                <th scope="col">País</th>
+                <th scope="col">Banco</th>
+                <th scope="col">N° cuenta bancaria</th>
+                <th scope="col">Nombre de titular de la cuenta</th>
+                <th scope="col">CC</th>
+                <th scope="col">N° interbancario</th>
+                <th scope="col">Tipo de banco interlocutor</th>
+                <th scope="col">N° interbancario</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {[0, 1, 2, 3].map((item) => (
+                <tr key={item}>
+                  <th scope="row"></th>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
 
         <div className="mt-2 mb-2">
