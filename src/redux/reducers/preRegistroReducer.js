@@ -1,7 +1,13 @@
 import { types } from "../types/types";
 
 const dataInicial = {
-    ok: false
+    ok: false,
+    idFiscal: "", 
+    pais: "", 
+    rubro:[], 
+    empresa:"", 
+    comprador:"", 
+    comentario:""
 }
 
 export const preRegistroReducer = (state = dataInicial , action) => {

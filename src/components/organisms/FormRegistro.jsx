@@ -408,13 +408,13 @@ export const FormRegistro = () => {
         <div className="col-md-6 col-12">
           <div className="form-group col-md-12 col-12 mb-3">
             <Label htmlFor="rubro">Rubros</Label>
-            {rubro.map((item, i) => {
+            {rubro.map((r, i) => {
               return (
                 <Input
                   key={i}
                   type="text"
                   className="form-control"
-                  value={item.value}
+                  value={r.value}
                   readOnly
                 />
               );
