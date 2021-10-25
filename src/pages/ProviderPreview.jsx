@@ -265,9 +265,17 @@ export const ProviderPreview = () => {
                             <div className="modal-dialog modal-dialog-centered">
                                 <div className="modal-content">
                                     <div className="modal-body">
-                                        <span>Solicitud aprobada con éxito.</span>
+                                        <span>¿Aprobar solicitud de creación?.</span>
                                     </div>
                                     <div className="modal-footer">
+                                        <button
+                                            type="button"
+                                            className="btn btn-primary"
+                                            data-bs-dismiss="modal"
+                                            onClick={handleConfirmData}
+                                        >
+                                            Cancelar
+                                        </button>
                                         <button
                                             type="button"
                                             className="btn btn-primary"

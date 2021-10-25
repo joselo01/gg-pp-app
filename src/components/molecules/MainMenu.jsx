@@ -31,107 +31,194 @@ export const MainMenu = ({ navFlag }) => {
                 Inicio
               </button>
 
-              <div className="dropdown">
-                <button
-                  className="dropdown-toggle list-group-item list-group-item-action list-group-item-light p-3"
-                  type="button"
-                  id="dropdownMenu2"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  <i className="fs-5 bi-card-list"></i>
-                  Solicitudes
-                </button>
-                <ul className="dropdown-menu" aria-labelledby="dropdownMenu2">
-                  <li>
-                    <button
-                      onClick={() => goToPage('provider-requests')}
-                      className="dropdown-item"
-                      type="button"
-                    >
-                      Solicitudes de creación
-                    </button>
-                  </li>
-                  <li>
-                    <button
-                      onClick={() => goToPage('provider-requests')}
-                      className="dropdown-item"
-                      type="button"
-                    >
-                      Solicitudes de Modificación
-                    </button>
-                  </li>
-                  <li>
-                    <button
-                      onClick={() => goToPage('provider-requests')}
-                      className="dropdown-item"
-                      type="button"
-                    >
-                      Solicitudes de Ampliación
-                    </button>
-                  </li>
-                </ul>
-              </div>
+              {
+                {
+                  'Proveedor': <>
+                    <div className="dropdown">
+                      <button
+                        className="dropdown-toggle list-group-item list-group-item-action list-group-item-light p-3"
+                        type="button"
+                        id="dropdownMenu2"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                      >
+                        <i className="fs-5 bi-card-list"></i>
+                        Manuales de Usuario
+                      </button>
+                      <ul className="dropdown-menu" aria-labelledby="dropdownMenu2">
+                        <li>
+                          <button
+                            onClick={() => goToPage('admin-profile')}
+                            className="dropdown-item"
+                            type="button"
+                          >
+                            Administración de Perfil
+                          </button>
+                        </li>
+                        <li>
+                          <button
+                            onClick={() => goToPage('secondary-accounts')}
+                            className="dropdown-item"
+                            type="button"
+                          >
+                            Administración de Usuarios
+                          </button>
+                        </li>
+                      </ul>
+                    </div>
+                    <div className="dropdown">
+                      <button
+                        className="dropdown-toggle list-group-item list-group-item-action list-group-item-light p-3"
+                        type="button"
+                        id="dropdownMenu2"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                      >
+                        <i className="fs-5 bi-card-list"></i>
+                        Administración de Cuenta
+                      </button>
+                      <ul className="dropdown-menu" aria-labelledby="dropdownMenu2">
+                        <li>
+                          <button
+                            onClick={() => goToPage('admin-profile')}
+                            className="dropdown-item"
+                            type="button"
+                          >
+                            Mi Perfil de Usuario
+                          </button>
+                        </li>
+                        <li>
+                          <button
+                            onClick={() => goToPage('secondary-accounts')}
+                            className="dropdown-item"
+                            type="button"
+                          >
+                            Administrar usuarios
+                          </button>
+                        </li>
+                        <li>
+                          <button
+                            onClick={() => goToPage('reasign-accounts')}
+                            className="dropdown-item"
+                            type="button"
+                          >
+                            Reasignar usuario administrador
+                          </button>
+                        </li>
+                        <li>
+                          <button
+                            onClick={() => goToPage('company-profile')}
+                            className="dropdown-item"
+                            type="button"
+                          >
+                            Información de empresa
+                          </button>
+                        </li>
+                        <li>
+                          <button
+                            onClick={() => goToPage('change-requests')}
+                            className="dropdown-item"
+                            type="button"
+                          >
+                            Mis Solicitudes
+                          </button>
+                        </li>
+                      </ul>
+                    </div>
+                  </>,
+                  'Comprador': <>
+                    <div className="dropdown">
+                      <button
+                        className="dropdown-toggle list-group-item list-group-item-action list-group-item-light p-3"
+                        type="button"
+                        id="dropdownMenu2"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                      >
+                        <i className="fs-5 bi-card-list"></i>
+                        Solicitudes
+                      </button>
+                      <ul className="dropdown-menu" aria-labelledby="dropdownMenu2">
+                        <li>
+                          <button
+                            onClick={() => goToPage('provider-requests')}
+                            className="dropdown-item"
+                            type="button"
+                          >
+                            Solicitudes de creación
+                          </button>
+                        </li>
+                        <li>
+                          <button
+                            onClick={() => goToPage('provider-requests')}
+                            className="dropdown-item"
+                            type="button"
+                          >
+                            Solicitudes de Modificación
+                          </button>
+                        </li>
+                        <li>
+                          <button
+                            onClick={() => goToPage('provider-requests')}
+                            className="dropdown-item"
+                            type="button"
+                          >
+                            Solicitudes de Ampliación
+                          </button>
+                        </li>
+                      </ul>
+                    </div>
+                  </>,
+                  'Admin': <>
+                    <div className="dropdown">
+                      <button
+                        className="dropdown-toggle list-group-item list-group-item-action list-group-item-light p-3"
+                        type="button"
+                        id="dropdownMenu2"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                      >
+                        <i className="fs-5 bi-card-list"></i>
+                        Solicitudes
+                      </button>
+                      <ul className="dropdown-menu" aria-labelledby="dropdownMenu2">
+                        <li>
+                          <button
+                            onClick={() => goToPage('provider-requests')}
+                            className="dropdown-item"
+                            type="button"
+                          >
+                            Solicitudes de creación
+                          </button>
+                        </li>
+                        <li>
+                          <button
+                            onClick={() => goToPage('provider-requests')}
+                            className="dropdown-item"
+                            type="button"
+                          >
+                            Solicitudes de Modificación
+                          </button>
+                        </li>
+                        <li>
+                          <button
+                            onClick={() => goToPage('provider-requests')}
+                            className="dropdown-item"
+                            type="button"
+                          >
+                            Solicitudes de Ampliación
+                          </button>
+                        </li>
+                      </ul>
+                    </div>
+                  </>
+                }[nombre]
+              }
 
-              {/* <div className="dropdown">
-                <button
-                  className="dropdown-toggle list-group-item list-group-item-action list-group-item-light p-3"
-                  type="button"
-                  id="dropdownMenu2"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  <i className="fs-5 bi-card-list"></i>
-                  Administración
-                </button>
-                <ul className="dropdown-menu" aria-labelledby="dropdownMenu2">
-                  <li>
-                    <button
-                      onClick={() => goToPage('admin-profile')}
-                      className="dropdown-item"
-                      type="button"
-                    >
-                      Mi Perfil de Usuario
-                    </button>
-                  </li>
-                  <li>
-                    <button
-                      onClick={() => goToPage('secondary-accounts')}
-                      className="dropdown-item"
-                      type="button"
-                    >
-                      Administrar usuarios
-                    </button>
-                  </li>
-                  <li>
-                    <button
-                      onClick={() => goToPage('reasign-accounts')}
-                      className="dropdown-item"
-                      type="button"
-                    >
-                      Reasignar usuario administrador
-                    </button>
-                  </li>
-                  <li>
-                    <button
-                      onClick={() => goToPage('company-profile')}
-                      className="dropdown-item"
-                      type="button"
-                    >
-                      Información de empresa
-                    </button>
-                  </li>
-                  <li>
-                    <button
-                      onClick={() => goToPage('change-requests')}
-                      className="dropdown-item"
-                      type="button"
-                    >
-                      Mis Solicitudes
-                    </button>
-                  </li>
-                </ul>
-              </div> */}
+
+
+
+
 
               <button
                 className="list-group-item list-group-item-action list-group-item-light p-3"

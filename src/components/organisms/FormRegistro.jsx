@@ -15,13 +15,15 @@ export const FormRegistro = () => {
   const history = useHistory();
 
   const isLogged = localStorage.getItem("isLogged") === "true";
-  console.log(isLogged);
-  
+  const { nombre } = useSelector((state) => state.auth);
+
+  console.log(nombre);
+
   function handleVerification() {
     history.push("/supplier_verification");
   }
 
-  const tabsProvider = [
+  const tabsOnboard = [
     {
       name: "Datos de usuario administrador",
     },
@@ -36,7 +38,25 @@ export const FormRegistro = () => {
     },
   ];
 
-  const tabsPurchaser = [
+  const tabsComprador = [
+    {
+      name: "Datos de usuario administrador",
+    },
+    {
+      name: "Datos generales",
+    },
+    {
+      name: "Datos bancarios/comerciales",
+    },
+    {
+      name: "Documentos de su empresa",
+    },
+    {
+      name: "Datos de Compras",
+    }
+  ];
+
+  const tabsAdmin = [
     {
       name: "Datos de usuario administrador",
     },
@@ -52,10 +72,21 @@ export const FormRegistro = () => {
     {
       name: "Datos de Compras",
     },
-    // PERFIL DATA MASTER
     {
       name: "Administrador de datos maestros",
     },
+  ];
+
+  const tabsProveedor = [
+    {
+      name: "Datos generales",
+    },
+    {
+      name: "Datos bancarios/comerciales",
+    },
+    {
+      name: "Documentos de su empresa",
+    }
   ];
 
   const initialValues = {
@@ -254,7 +285,11 @@ export const FormRegistro = () => {
       ),
   });
 
-  const [tabList] = useState(tabsPurchaser);
+  const [tabList] = useState(
+    nombre == undefined
+      ? tabsOnboard : nombre === "Comprador"
+        ? tabsComprador : nombre === "Admin"
+          ? tabsAdmin : tabsProveedor);
 
   const [tabIndex, setTabIndex] = useState(0);
 
@@ -264,7 +299,7 @@ export const FormRegistro = () => {
 
   return (
     <>
-    
+
       <Formik
         initialValues={initialValues}
         /* validationSchema={RegisterShema} */
@@ -277,7 +312,7 @@ export const FormRegistro = () => {
       >
         {({ errors, values, setFieldValue, handleSubmit, handleChange }) => (
           <Form name="form" className="form-group row" onSubmit={handleSubmit}>
-            
+
             <div className="mt-2">
               <h5>Datos del registrador</h5>
             </div>
@@ -436,13 +471,13 @@ export const FormRegistro = () => {
             </div>
 
             {!isLogged && (
-            <div className="col-12">
-              <div className="d-grid gap-2">
-                <button type="submit" className="btn btn-next block subtitle">
-                  Enviar
-                </button>
+              <div className="col-12">
+                <div className="d-grid gap-2">
+                  <button type="submit" className="btn btn-next block subtitle">
+                    Enviar
+                  </button>
+                </div>
               </div>
-            </div>
             )}
           </Form>
         )}
