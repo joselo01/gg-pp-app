@@ -15,11 +15,14 @@ import { Button, Form, Label, Input } from "reactstrap";
 export const FormRegistro = () => {
   const history = useHistory();
 
+  const { nombre } = useSelector((state) => state.auth);
+
   const { idFiscal, pais, rubro, empresa, comprador, comentario } = useSelector(
     (state) => state.preRegistro
   );
 
   const isLogged = localStorage.getItem("isLogged") === "true";
+  
 
   function handleVerification() {
     history.push("/supplier_verification");
@@ -103,15 +106,14 @@ export const FormRegistro = () => {
 
     validationSchema: Yup.object({
       // Datos del registrador
-     /*  titulo: Yup.string().required("El campo titulo es requerido"),
+      /*  titulo: Yup.string().required("El campo titulo es requerido"),
       nombres: Yup.string().required("El campo nombre es requerido"),
       apellidos: Yup.string().required("El campo apellidos es requerido"),
       email: Yup.string()
         .email("Ingrese un email valido")
         .required("El campo email es requerido"), */
-
       //GeneralData
-     /*  tratamiento: Yup.string().required("El campo tratamiento es requerido"),
+      /*  tratamiento: Yup.string().required("El campo tratamiento es requerido"),
       razonSocial: Yup.string().required("El campo razon social es requerido"),
       nombreComercial: Yup.string().required(
         "El campo nombre comercial es requerido"
@@ -212,14 +214,11 @@ export const FormRegistro = () => {
       incotermsDos: Yup.string().required(
         "El campo incoterms (lugar de entrega) es requerido"
       ), */
-
       //Companydocuments
-     /*  file: Yup.mixed()
+      /*  file: Yup.mixed()
         .required("El campo adjunto es requerido"), */
-
       // OrgShopping
-
-     /*  orgCompras: Yup.string().required(
+      /*  orgCompras: Yup.string().required(
         "El campo organización de compras es requerido"
       ),
       sociedad: Yup.string().required("El campo sociedad es requerido"),
@@ -293,7 +292,7 @@ export const FormRegistro = () => {
     },
   });
 
-  const tabsProvider = [
+  const tabsOnboard = [
     {
       name: "Datos de usuario administrador",
     },
@@ -323,7 +322,7 @@ export const FormRegistro = () => {
     },
     {
       name: "Datos de Compras",
-    }
+    },
   ];
 
   const tabsAdmin = [
@@ -347,7 +346,27 @@ export const FormRegistro = () => {
     },
   ];
 
-  const [tabList] = useState(tabsPurchaser);
+  const tabsProveedor = [
+    {
+      name: "Datos generales",
+    },
+    {
+      name: "Datos bancarios/comerciales",
+    },
+    {
+      name: "Documentos de su empresa",
+    },
+  ];
+
+  const [tabList] = useState(
+    nombre == undefined
+      ? tabsOnboard
+      : nombre === "Comprador"
+      ? tabsComprador
+      : nombre === "Admin"
+      ? tabsAdmin
+      : tabsProveedor
+  );
 
   const [tabIndex, setTabIndex] = useState(0);
 
@@ -390,21 +409,17 @@ export const FormRegistro = () => {
         <div className="col-md-6 col-12">
           <div className="form-group col-md-12 col-12 mb-3">
             <Label htmlFor="rubro">Rubros</Label>
-            
-              {rubro.map((item, i) => {
-                return (
-                  <Input
-                    type="text"
-                    className="form-control"
-                    key={i}
-                    value={item.value}
-                    readOnly
-                  />
-                   
-                 
-                );
-              })}
-           
+            {rubro.map((item, i) => {
+              return (
+                <Input
+                  type="text"
+                  className="form-control"
+                  key={i}
+                  value={item.value}
+                  readOnly
+                />
+              );
+            })}
           </div>
         </div>
         <div className="col-md-6 col-12">

@@ -11,11 +11,10 @@ export const FormPreRegistro = ({ handleValidated }) => {
 
   let redirect = ok;
   useEffect(() => {
-  if (redirect === true) {
-    handleValidated();
-  }
- }, [redirect])
-
+    if (redirect === true) {
+      handleValidated();
+    }
+  }, [redirect]);
 
   const formik = useFormik({
     initialValues: {
@@ -33,11 +32,11 @@ export const FormPreRegistro = ({ handleValidated }) => {
           /^[a-z0-9]+$/i,
           "El campo solo debe contener números y letras"
         ),
-     /*  pais: Yup.string().required("El campo Pais es requerido"),
+      pais: Yup.string().required("El campo Pais es requerido"),
       rubrosFilter: Yup.string().required("El campo rubro es requerido"),
       empresa: Yup.string().required("El campo Empresa es requerido"),
       comprador: Yup.string().required("El campo Comprador es requerido"),
-      comentario: Yup.string().required("El campo Comentario es requerido"), */
+      comentario: Yup.string().required("El campo Comentario es requerido"),
     }),
     onSubmit: async (formData) => {
       const rubrosFilter = isChecked.filter((item) => item.select === true);
