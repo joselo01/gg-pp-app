@@ -1,7 +1,7 @@
-import { ErrorMessage, Field } from "formik";
 import React from "react";
+import { Label, Input } from "reactstrap";
 
-export const FormDataAdmin = ({ errors, values, handleChange }) => {
+export const FormDataAdmin = ({formik}) => {
   return (
     <div className="card mb-3">
       <div className="card-body row">
@@ -9,72 +9,52 @@ export const FormDataAdmin = ({ errors, values, handleChange }) => {
           <h5>Datos del registrador</h5>
         </div>
         <div className="form-group col-md-6 col-12 mb-3">
-          <label htmlFor="titulo">Título</label>
-          <Field
+          <Label htmlFor="titulo">Título</Label>
+          <Input
             className="form-control"
             type="text"
             name="titulo"
             autoComplete="off"
-            value={values.titulo}
-            onChange={handleChange}
+            value={formik.values.titulo}
+            onChange={formik.handleChange}
           />
-          <ErrorMessage
-            name="titulo"
-            component={() => (
-              <span className="text-danger">{errors.titulo}</span>
-            )}
-          />
+          <span className="text-danger">{formik.errors.titulo}</span>
         </div>
         <div className="form-group col-md-6 col-12 mb-3">
-          <label htmlFor="nombres">Nombres</label>
-          <Field
+          <Label htmlFor="nombres">Nombres</Label>
+          <Input
             className="form-control"
             type="text"
             name="nombres"
             autoComplete="off"
-            value={values.nombres}
-            onChange={handleChange}
+            value={formik.values.nombres}
+            onChange={formik.handleChange}
           />
-          <ErrorMessage
-            name="nombres"
-            component={() => (
-              <span className="text-danger">{errors.nombres}</span>
-            )}
-          />
+          <span className="text-danger">{formik.errors.nombres}</span>
         </div>
         <div className="form-group col-md-6 col-12 mb-3">
-          <label htmlFor="apellidos">Apellidos</label>
-          <Field
+          <Label htmlFor="apellidos">Apellidos</Label>
+          <Input
             className="form-control"
             type="text"
             name="apellidos"
             autoComplete="off"
-            value={values.apellidos}
-            onChange={handleChange}
+            value={formik.values.apellidos}
+            onChange={formik.handleChange}
           />
-          <ErrorMessage
-            name="apellidos"
-            component={() => (
-              <span className="text-danger">{errors.apellidos}</span>
-            )}
-          />
+          <span className="text-danger">{formik.errors.apellidos}</span>
         </div>
         <div className="form-group col-md-6 col-12 mb-3">
-          <label htmlFor="email"> Email de usuario administrador:</label>
-          <Field
+          <Label htmlFor="email"> Email de usuario administrador:</Label>
+          <Input
             className="form-control"
             type="text"
             name="email"
             autoComplete="off"
-            value={values.email}
-            onChange={handleChange}
+            value={formik.values.email}
+            onChange={formik.handleChange}
           />
-          <ErrorMessage
-            name="email"
-            component={() => (
-              <span className="text-danger">{errors.email}</span>
-            )}
-          />
+         <span className="text-danger">{formik.errors.email}</span>
         </div>
       </div>
     </div>

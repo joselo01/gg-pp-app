@@ -18,6 +18,10 @@ body {
   font-family: "pf_beausans_proregular";
 }
 
+ul {
+  list-style: none;
+}
+
 .loading {
   display: flex;
   min-height: 100vh;
@@ -103,8 +107,8 @@ body {
 }
 
 .checkboxes input[type="checkbox"] {
-  width: 12px;
-  height: 12px;
+  width: 14px;
+  height: 14px;
   display: inline-block;
   vertical-align: middle;
   margin: -5px 0px 0 0;
@@ -156,5 +160,26 @@ table {
   background-color: $green;
   color: white;
   text-align: center;
+}
+
+.swal2-title {
+  font-size: 1.2em !important;
+}
+
+.btn-secondary {
+  background-color: $green;
+}
+
+@media (max-width: 768px) {
+  .btn-secondary {
+    width: 100%;
+  }
+}
+
+.files {
+  background-color:transparent !important;
+  border-top:0;
+  border-right:0 ;
+  border-left:0 ;
 }
 

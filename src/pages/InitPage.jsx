@@ -1,18 +1,11 @@
 import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { Logo } from '../components/atoms/Logo'
-import { startLogout } from '../redux/actions/auth';
 
 export const InitPage = ({ handle }) => {
 
     const history = useHistory();
 
-  const dispatch = useDispatch();
-  const { nombre } = useSelector((state) => state.auth);
-  const handleLogout = () => {
-    dispatch(startLogout());
-  };
 
     function goToPage(page) {
         history.push(`/${page}`);

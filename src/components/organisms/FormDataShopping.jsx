@@ -1,7 +1,7 @@
-import { ErrorMessage, Field } from "formik";
+import { Label, Input } from "reactstrap";
 import React from "react";
 
-export const FormDataShopping = (errors) => {
+export const FormDataShopping = ({formik}) => {
   return (
     <div className="card mb-3">
       <div className="card-body row">
@@ -10,96 +10,76 @@ export const FormDataShopping = (errors) => {
                                 </div> */}
 
         <div className="form-group col-md-6 col-12 mb-3">
-          <label htmlFor="orgCompras">Org. de Compras</label>
-          <Field
+          <Label htmlFor="orgCompras">Org. de Compras</Label>
+          <Input
             className="form-control"
             type="text"
             name="orgCompras"
+            value={formik.values.orgCompras}
+            onChange={formik.handleChange}
             autoComplete="off"
           />
-          <ErrorMessage
-            name="orgCompras"
-            component={() => (
-              <span className="text-danger">{errors.orgCompras}</span>
-            )}
-          />
+          <span className="text-danger">{formik.errors.orgCompras}</span>
         </div>
         <div className="form-group col-md-6 col-12 mb-3">
-          <label htmlFor="sociedad">Sociedad</label>
-          <Field
+          <Label htmlFor="sociedad">Sociedad</Label>
+          <Input
             className="form-control"
             type="text"
             name="sociedad"
+            value={formik.values.sociedad}
+            onChange={formik.handleChange}
             autoComplete="off"
           />
-          <ErrorMessage
-            name="sociedad"
-            component={() => (
-              <span className="text-danger">{errors.sociedad}</span>
-            )}
-          />
+          <span className="text-danger">{formik.errors.sociedad}</span>
         </div>
         <div className="form-group col-md-6 col-12 mb-3">
-          <label htmlFor="grpoTesoreria">Grupo de Tesoreria</label>
-          <Field
+          <Label htmlFor="grpoTesoreria">Grupo de Tesoreria</Label>
+          <Input
             className="form-control"
             type="text"
-            name="grpoTesoreria"
+            name="gpoTesoreria"
+            value={formik.values.gpoTesoreria}
+            onChange={formik.handleChange}
             autoComplete="off"
           />
-          <ErrorMessage
-            name="grpoTesoreria"
-            component={() => (
-              <span className="text-danger">{errors.gpoTesoreria}</span>
-            )}
-          />
+          <span className="text-danger">{formik.errors.gpoTesoreria}</span>
         </div>
         <div className="form-group col-md-12 col-12 mb-3">
-          <label htmlFor="respGastosTransferencia">Responsable de gastos transferencia</label>
-          <Field
+          <Label htmlFor="respGastosTransferencia">Responsable de gastos transferencia</Label>
+          <Input
             className="form-control"
             type="text"
             name="respGastosTransferencia"
+            value={formik.values.respGastosTransferencia}
+            onChange={formik.handleChange}
             autoComplete="off"
           />
-          <ErrorMessage
-            name="respGastosTransferencia"
-            component={() => (
-              <span className="text-danger">
-                {errors.respGastosTransferencia}
-              </span>
-            )}
-          />
+          <span className="text-danger">{formik.errors.respGastosTransferencia}</span>
         </div>
         <div className="form-group col-md-6 col-12 mb-3">
-          <label htmlFor="transporteFrontera">Modo de transporte frontera</label>
-          <Field
+          <Label htmlFor="transporteFrontera">Modo de transporte frontera</Label>
+          <Input
             className="form-control"
             type="text"
             name="transporteFrontera"
+            value={formik.values.transporteFrontera}
+            onChange={formik.handleChange}
             autoComplete="off"
           />
-          <ErrorMessage
-            name="transporteFrontera"
-            component={() => (
-              <span className="text-danger">{errors.transporteFrontera}</span>
-            )}
-          />
+         <span className="text-danger">{formik.errors.transporteFrontera}</span>
         </div>
         <div className="form-group col-md-6 col-12 mb-3">
-          <label htmlFor="condicionPagoCompras">Condicion de pago compras</label>
-          <Field
+          <Label htmlFor="condicionPagoCompras">Condicion de pago compras</Label>
+          <Input
             className="form-control"
             type="text"
             name="condicionPagoCompras"
+            value={formik.values.condicionPagoCompras}
+            onChange={formik.handleChange}
             autoComplete="off"
           />
-          <ErrorMessage
-            name="condicionPagoCompras"
-            component={() => (
-              <span className="text-danger">{errors.condicionPagoCompras}</span>
-            )}
-          />
+          <span className="text-danger">{formik.errors.condicionPagoCompras}</span>
         </div>
       </div>
     </div>

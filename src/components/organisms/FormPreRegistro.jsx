@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { preRegisterAddNew } from "../../redux/actions/PreRegister";
 import { useFormik } from "formik";
 import * as Yup from "yup";
@@ -7,6 +7,15 @@ import { Button, Form, Label, Input } from "reactstrap";
 
 export const FormPreRegistro = ({ handleValidated }) => {
   const dispatch = useDispatch();
+  const { ok } = useSelector((state) => state.preRegistro);
+
+  let redirect = ok;
+  useEffect(() => {
+  if (redirect === true) {
+    handleValidated();
+  }
+ }, [redirect])
+
 
   const formik = useFormik({
     initialValues: {
@@ -25,7 +34,7 @@ export const FormPreRegistro = ({ handleValidated }) => {
           "El campo solo debe contener números y letras"
         ),
      /*  pais: Yup.string().required("El campo Pais es requerido"),
-      rubrosFilter: Yup.string().required("At least one checkbox is required"),
+      rubrosFilter: Yup.string().required("El campo rubro es requerido"),
       empresa: Yup.string().required("El campo Empresa es requerido"),
       comprador: Yup.string().required("El campo Comprador es requerido"),
       comentario: Yup.string().required("El campo Comentario es requerido"), */
@@ -33,6 +42,7 @@ export const FormPreRegistro = ({ handleValidated }) => {
     onSubmit: async (formData) => {
       const rubrosFilter = isChecked.filter((item) => item.select === true);
       const { idFiscal, pais, empresa, comprador, comentario } = formData;
+
       try {
         await dispatch(
           preRegisterAddNew(
@@ -44,9 +54,8 @@ export const FormPreRegistro = ({ handleValidated }) => {
             comentario
           )
         );
-        handleValidated();
       } catch (error) {
-        console.log(console.error);
+        console.log(error);
       }
     },
   });
@@ -102,7 +111,7 @@ export const FormPreRegistro = ({ handleValidated }) => {
   return (
     <Form name="form" className="form-group" onSubmit={formik.handleSubmit}>
       <div className="row">
-        <div class="alert alert-success">
+        <div className="alert alert-success">
           Ingresar los siguientes datos para su registro y pulsar validar
         </div>
         <div className="form-group col-12 mb-3">

@@ -1,7 +1,7 @@
-import { ErrorMessage, Field } from "formik";
+import { Label, Input } from "reactstrap";
 import React from "react";
 
-export const FormDataGeneral = ({ errors, values, handleChange }) => {
+export const FormDataGeneral = ({ formik }) => {
   return (
     <div className="card mb-3">
       <div className="card-body row">
@@ -9,456 +9,326 @@ export const FormDataGeneral = ({ errors, values, handleChange }) => {
           <h5>Nombre</h5>
         </div>
         <div className="form-group col-md-6 col-12 mb-3">
-          <label htmlFor="tratamiento">Tratamiento</label>
-          <Field
+          <Label htmlFor="tratamiento">Tratamiento</Label>
+          <Input
             className="form-control"
             type="text"
             name="tratamiento"
             autoComplete="off"
-            value={values.tratamiento}
-            onChange={handleChange}
+            value={formik.values.tratamiento}
+            onChange={formik.handleChange}
           />
-          <ErrorMessage
-            name="tratamiento"
-            component={() => (
-              <span className="text-danger">{errors.tratamiento}</span>
-            )}
-          />
+          <span className="text-danger">{formik.errors.tratamiento}</span>
         </div>
         <div className="form-group col-md-6 col-12 mb-3">
-          <label htmlFor="razonSocial">Razon Social</label>
-          <Field
+          <Label htmlFor="razonSocial">Razon Social</Label>
+          <Input
             className="form-control"
             type="text"
             name="razonSocial"
             autoComplete="off"
-            value={values.razonSocial}
-            onChange={handleChange}
+            value={formik.values.razonSocial}
+            onChange={formik.handleChange}
           />
-          <ErrorMessage
-            name="razonSocial"
-            component={() => (
-              <span className="text-danger">{errors.razonSocial}</span>
-            )}
-          />
+          <span className="text-danger">{formik.errors.razonSocial}</span>
         </div>
         <div className="mt-2 mb-2">
           <h5>Concepto de búsqueda</h5>
         </div>
         <div className="form-group col-md-12 col-12 mb-3">
-          <label htmlFor="nombreComercial">Nombre Comercial</label>
-          <Field
+          <Label htmlFor="nombreComercial">Nombre Comercial</Label>
+          <Input
             className="form-control"
             type="text"
             name="nombreComercial"
             autoComplete="off"
-            value={values.nombreComercial}
-            onChange={handleChange}
+            value={formik.values.nombreComercial}
+            onChange={formik.handleChange}
           />
-          <ErrorMessage
-            name="nombreComercial"
-            component={() => (
-              <span className="text-danger">{errors.nombreComercial}</span>
-            )}
-          />
+          <span className="text-danger">{formik.errors.nombreComercial}</span>
         </div>
         <div className="mt-2 mb-2">
           <h5>Dirección de Calle</h5>
         </div>
         <div className="form-group col-md-6 col-12 mb-3">
-          <label htmlFor="calle">Calle</label>
-          <Field
+          <Label htmlFor="calle">Calle</Label>
+          <Input
             className="form-control"
             type="text"
             name="calle"
             autoComplete="off"
-            value={values.calle}
-            onChange={handleChange}
+            value={formik.values.calle}
+            onChange={formik.handleChange}
           />
-          <ErrorMessage
-            name="calle"
-            component={() => (
-              <span className="text-danger">{errors.calle}</span>
-            )}
-          />
+          <span className="text-danger">{formik.errors.calle}</span>
         </div>
         <div className="form-group col-md-6 col-12 mb-3">
-          <label htmlFor="numero">Número</label>
-          <Field
+          <Label htmlFor="numero">Número</Label>
+          <Input
             className="form-control"
             type="text"
             name="numero"
             autoComplete="off"
-            value={values.numero}
-            onChange={handleChange}
+            value={formik.values.numero}
+            onChange={formik.handleChange}
           />
-          <ErrorMessage
-            name="numero"
-            component={() => (
-              <span className="text-danger">{errors.numero}</span>
-            )}
-          />
+         <span className="text-danger">{formik.errors.numero}</span>
         </div>
         <div className="form-group col-md-6 col-12 mb-3">
-          <label htmlFor="distrito">Distrito/Barrio/Urb/Zona</label>
-          <Field
+          <Label htmlFor="distrito">Distrito/Barrio/Urb/Zona</Label>
+          <Input
             className="form-control"
             type="text"
             name="distrito"
             autoComplete="off"
-            value={values.distrito}
-            onChange={handleChange}
+            value={formik.values.distrito}
+            onChange={formik.handleChange}
           />
-          <ErrorMessage
-            name="distrito"
-            component={() => (
-              <span className="text-danger">{errors.distrito}</span>
-            )}
-          />
+         <span className="text-danger">{formik.errors.distrito}</span>
         </div>
         <div className="form-group col-md-6 col-12 mb-3">
-          <label htmlFor="provincia">Provincia/Comarca/Condado</label>
-          <Field
+          <Label htmlFor="provincia">Provincia/Comarca/Condado</Label>
+          <Input
             className="form-control"
             type="text"
             name="provincia"
             autoComplete="off"
-            value={values.provincia}
-            onChange={handleChange}
+            value={formik.values.provincia}
+            onChange={formik.handleChange}
           />
-          <ErrorMessage
-            name="provincia"
-            component={() => (
-              <span className="text-danger">{errors.provincia}</span>
-            )}
-          />
+          <span className="text-danger">{formik.errors.provincia}</span>
         </div>
         <div className="form-group col-md-6 col-12 mb-3">
-          <label htmlFor="codigoPostal"> Código Postal</label>
-          <Field
+          <Label htmlFor="codigoPostal"> Código Postal</Label>
+          <Input
             className="form-control"
             type="text"
             name="codigoPostal"
             autoComplete="off"
-            value={values.codigoPostal}
-            onChange={handleChange}
+            value={formik.values.codigoPostal}
+            onChange={formik.handleChange}
           />
-          <ErrorMessage
-            name="codigoPostal"
-            component={() => (
-              <span className="text-danger">{errors.codigoPostal}</span>
-            )}
-          />
+         <span className="text-danger">{formik.errors.codigoPostal}</span>
         </div>
         <div className="form-group col-md-6 col-12 mb-3">
-          <label htmlFor="country">País</label>
-          <Field
+          <Label htmlFor="country">País</Label>
+          <Input
             className="form-control"
             type="text"
             name="country"
             autoComplete="off"
-            value={values.country}
-            onChange={handleChange}
+            value={formik.values.country}
+            onChange={formik.handleChange}
           />
-          <ErrorMessage
-            name="country"
-            component={() => (
-              <span className="text-danger">{errors.country}</span>
-            )}
-          />
+          <span className="text-danger">{formik.errors.country}</span>
         </div>
         <div className="form-group col-md-6 col-12 mb-3">
-          <label htmlFor="region">Región</label>
-          <Field
+          <Label htmlFor="region">Región</Label>
+          <Input
             className="form-control"
             type="text"
             name="region"
             autoComplete="off"
-            value={values.region}
-            onChange={handleChange}
+            value={formik.values.region}
+            onChange={formik.handleChange}
           />
-          <ErrorMessage
-            name="region"
-            component={() => (
-              <span className="text-danger">{errors.region}</span>
-            )}
-          />
+          <span className="text-danger">{formik.errors.region}</span>
         </div>
 
         <div className="mt-2 mb-2">
           <h5>Comunicación</h5>
         </div>
         <div className="form-group col-md-6 col-12 mb-3">
-          <label htmlFor="idioma">Idioma</label>
-          <Field
+          <Label htmlFor="idioma">Idioma</Label>
+          <Input
             className="form-control"
             type="text"
             name="idioma"
             autoComplete="off"
-            value={values.idioma}
-            onChange={handleChange}
+            value={formik.values.idioma}
+            onChange={formik.handleChange}
           />
-          <ErrorMessage
-            name="idioma"
-            component={() => (
-              <span className="text-danger">{errors.idioma}</span>
-            )}
-          />
+          <span className="text-danger">{formik.errors.idioma}</span>
         </div>
         <div className="form-group col-md-6 col-12 mb-3">
-          <label htmlFor="telefonoUno">Teléfono 1</label>
-          <Field
+          <Label htmlFor="telefonoUno">Teléfono 1</Label>
+          <Input
             className="form-control"
             type="text"
             name="telefonoUno"
             autoComplete="off"
-            value={values.telefonoUno}
-            onChange={handleChange}
+            value={formik.values.telefonoUno}
+            onChange={formik.handleChange}
           />
-          <ErrorMessage
-            name="telefonoUno"
-            component={() => (
-              <span className="text-danger">{errors.telefonoUno}</span>
-            )}
-          />
+          <span className="text-danger">{formik.errors.telefonoUno}</span>
         </div>
         <div className="form-group col-md-6 col-12 mb-3">
-          <label htmlFor="telefonoDos">Teléfono 2</label>
-          <Field
+          <Label htmlFor="telefonoDos">Teléfono 2</Label>
+          <Input
             className="form-control"
             type="text"
             name="telefonoDos"
             autoComplete="off"
-            value={values.telefonoDos}
-            onChange={handleChange}
+            value={formik.values.telefonoDos}
+            onChange={formik.handleChange}
           />
-          <ErrorMessage
-            name="telefonoDos"
-            component={() => (
-              <span className="text-danger">{errors.telefonoDos}</span>
-            )}
-          />
+          <span className="text-danger">{formik.errors.telefonoDos}</span>
         </div>
         <div className="form-group col-md-6 col-12 mb-3">
-          <label htmlFor="telefonoTres">Teléfono 3</label>
-          <Field
+          <Label htmlFor="telefonoTres">Teléfono 3</Label>
+          <Input
             className="form-control"
             type="text"
             name="telefonoTres"
             autoComplete="off"
-            value={values.telefonoTres}
-            onChange={handleChange}
+            value={formik.values.telefonoTres}
+            onChange={formik.handleChange}
           />
-          <ErrorMessage
-            name="telefonoTres"
-            component={() => (
-              <span className="text-danger">{errors.telefonoTres}</span>
-            )}
-          />
+         <span className="text-danger">{formik.errors.telefonoTres}</span>
         </div>
         <div className="form-group col-md-6 col-12 mb-3">
-          <label htmlFor="telefonoCuatro">Teléfono 4</label>
-          <Field
+          <Label htmlFor="telefonoCuatro">Teléfono 4</Label>
+          <Input
             className="form-control"
             type="text"
             name="telefonoCuatro"
             autoComplete="off"
-            value={values.telefonoCuatro}
-            onChange={handleChange}
+            value={formik.values.telefonoCuatro}
+            onChange={formik.handleChange}
           />
-          <ErrorMessage
-            name="telefonoCuatro"
-            component={() => (
-              <span className="text-danger">{errors.telefonoCuatro}</span>
-            )}
-          />
+          <span className="text-danger">{formik.errors.telefonoCuatro}</span>
         </div>
         <div className="form-group col-md-6 col-12 mb-3">
-          <label htmlFor="telefonoCinco">Teléfono 5</label>
-          <Field
+          <Label htmlFor="telefonoCinco">Teléfono 5</Label>
+          <Input
             className="form-control"
             type="text"
             name="telefonoCinco"
             autoComplete="off"
-            value={values.telefonoCinco}
-            onChange={handleChange}
+            value={formik.values.telefonoCinco}
+            onChange={formik.handleChange}
           />
-          <ErrorMessage
-            name="telefonoCinco"
-            component={() => (
-              <span className="text-danger">{errors.telefonoCinco}</span>
-            )}
-          />
+          <span className="text-danger">{formik.errors.telefonoCinco}</span>
         </div>
         <div className="form-group col-md-6 col-12 mb-3">
-          <label htmlFor="emailUno">Correo Electrónico 1</label>
-          <Field
+          <Label htmlFor="emailUno">Correo Electrónico 1</Label>
+          <Input
             className="form-control"
             type="text"
             name="emailUno"
             autoComplete="off"
-            value={values.emailUno}
-            onChange={handleChange}
+            value={formik.values.emailUno}
+            onChange={formik.handleChange}
           />
-          <ErrorMessage
-            name="emailUno"
-            component={() => (
-              <span className="text-danger">{errors.emailUno}</span>
-            )}
-          />
+         <span className="text-danger">{formik.errors.emailUno}</span>
         </div>
         <div className="form-group col-md-6 col-12 mb-3">
-          <label htmlFor="emailDos">Correo Electrónico 2</label>
-          <Field
+          <Label htmlFor="emailDos">Correo Electrónico 2</Label>
+          <Input
             className="form-control"
             type="text"
             name="emailDos"
             autoComplete="off"
-            value={values.emailDos}
-            onChange={handleChange}
+            value={formik.values.emailDos}
+            onChange={formik.handleChange}
           />
-          <ErrorMessage
-            name="emailDos"
-            component={() => (
-              <span className="text-danger">{errors.emailDos}</span>
-            )}
-          />
+          <span className="text-danger">{formik.errors.emailDos}</span>
         </div>
         <div className="form-group col-md-6 col-12 mb-3">
-          <label htmlFor="emailTres">Correo Electrónico 3</label>
-          <Field
+          <Label htmlFor="emailTres">Correo Electrónico 3</Label>
+          <Input
             className="form-control"
             type="text"
             name="emailTres"
             autoComplete="off"
-            value={values.emailTres}
-            onChange={handleChange}
+            value={formik.values.emailTres}
+            onChange={formik.handleChange}
           />
-          <ErrorMessage
-            name="emailTres"
-            component={() => (
-              <span className="text-danger">{errors.emailTres}</span>
-            )}
-          />
+          <span className="text-danger">{formik.errors.emailTres}</span>
         </div>
         <div className="form-group col-md-6 col-12 mb-3">
-          <label htmlFor="emailCuatro">Correo Electrónico 4</label>
-          <Field
+          <Label htmlFor="emailCuatro">Correo Electrónico 4</Label>
+          <Input
             className="form-control"
             type="text"
             name="emailCuatro"
             autoComplete="off"
-            value={values.emailCuatro}
-            onChange={handleChange}
+            value={formik.values.emailCuatro}
+            onChange={formik.handleChange}
           />
-          <ErrorMessage
-            name="emailCuatro"
-            component={() => (
-              <span className="text-danger">{errors.emailCuatro}</span>
-            )}
-          />
+          <span className="text-danger">{formik.errors.emailCuatro}</span>
         </div>
         <div className="form-group col-md-6 col-12 mb-3">
-          <label htmlFor="emailCinco">Correo Electrónico 5</label>
-          <Field
+          <Label htmlFor="emailCinco">Correo Electrónico 5</Label>
+          <Input
             className="form-control"
             type="text"
             name="emailCinco"
             autoComplete="off"
-            value={values.emailCinco}
-            onChange={handleChange}
+            value={formik.values.emailCinco}
+            onChange={formik.handleChange}
           />
-          <ErrorMessage
-            name="emailCinco"
-            component={() => (
-              <span className="text-danger">{errors.emailCinco}</span>
-            )}
-          />
+           <span className="text-danger">{formik.errors.emailCinco}</span>
         </div>
         <div className="form-group col-md-6 col-12 mb-3">
-          <label htmlFor="rolUno">Rol 1</label>
-          <Field
+          <Label htmlFor="rolUno">Rol 1</Label>
+          <Input
             className="form-control"
             type="text"
             name="rolUno"
             autoComplete="off"
-            value={values.rolUno}
-            onChange={handleChange}
+            value={formik.values.rolUno}
+            onChange={formik.handleChange}
           />
-          <ErrorMessage
-            name="rolUno"
-            component={() => (
-              <span className="text-danger">{errors.rolUno}</span>
-            )}
-          />
+          <span className="text-danger">{formik.errors.rolUno}</span>
         </div>
         <div className="form-group col-md-6 col-12 mb-3">
-          <label htmlFor="rolDos">Rol 2</label>
-          <Field
+          <Label htmlFor="rolDos">Rol 2</Label>
+          <Input
             className="form-control"
             type="text"
             name="rolDos"
             autoComplete="off"
-            value={values.rolDos}
-            onChange={handleChange}
+            value={formik.values.rolDos}
+            onChange={formik.handleChange}
           />
-          <ErrorMessage
-            name="rolDos"
-            component={() => (
-              <span className="text-danger">{errors.rolDos}</span>
-            )}
-          />
+          <span className="text-danger">{formik.errors.rolDos}</span>
         </div>
         <div className="form-group col-md-6 col-12 mb-3">
-          <label htmlFor="rolTres">Rol 3</label>
-          <Field
+          <Label htmlFor="rolTres">Rol 3</Label>
+          <Input
             className="form-control"
             type="text"
             name="rolTres"
             autoComplete="off"
-            value={values.rolTres}
-            onChange={handleChange}
+            value={formik.values.rolTres}
+            onChange={formik.handleChange}
           />
-          <ErrorMessage
-            name="rolTres"
-            component={() => (
-              <span className="text-danger">{errors.rolTres}</span>
-            )}
-          />
+          <span className="text-danger">{formik.errors.rolTres}</span>
         </div>
         <div className="form-group col-md-6 col-12 mb-3">
-          <label htmlFor="rolCuatro">Rol 4</label>
-          <Field
+          <Label htmlFor="rolCuatro">Rol 4</Label>
+          <Input
             className="form-control"
             type="text"
             name="rolCuatro"
             autoComplete="off"
-            value={values.rolCuatro}
-            onChange={handleChange}
+            value={formik.values.rolCuatro}
+            onChange={formik.handleChange}
           />
-          <ErrorMessage
-            name="rolCuatro"
-            component={() => (
-              <span className="text-danger">{errors.rolCuatro}</span>
-            )}
-          />
+          <span className="text-danger">{formik.errors.rolCuatro}</span>
         </div>
         <div className="form-group col-md-6 col-12 mb-3">
-          <label htmlFor="rolCinco">Rol 5</label>
-          <Field
+          <Label htmlFor="rolCinco">Rol 5</Label>
+          <Input
             className="form-control"
             type="text"
             name="rolCinco"
             autoComplete="off"
-            value={values.rolCinco}
-            onChange={handleChange}
+            value={formik.values.rolCinco}
+            onChange={formik.handleChange}
           />
-          <ErrorMessage
-            name="rolCinco"
-            component={() => (
-              <span className="text-danger">{errors.rolCinco}</span>
-            )}
-          />
+         <span className="text-danger">{formik.errors.rolCinco}</span>
         </div>
       </div>
     </div>
