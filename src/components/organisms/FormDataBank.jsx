@@ -1,7 +1,7 @@
-import { ErrorMessage, Field } from "formik";
+import { Label, Input } from "reactstrap";
 import React from "react";
 
-export const FormDataBank = ({ errors, values, handleChange }) => {
+export const FormDataBank = ({ formik }) => {
   return (
     <div className="card mb-3">
       <div className="card-body row">
@@ -9,40 +9,30 @@ export const FormDataBank = ({ errors, values, handleChange }) => {
           <h5>Información fiscal</h5>
         </div>
         <div className="form-group col-md-6 col-12 mb-3">
-          <label htmlFor="idFiscalDos">
+          <Label htmlFor="idFiscalDos">
             Documento de identificación fiscal
-          </label>
-          <Field
+          </Label>
+          <Input
             className="form-control"
             type="text"
             name="idFiscalDos"
             autoComplete="off"
-            value={values.idFiscalDos}
-            onChange={handleChange}
+            value={formik.values.idFiscalDos}
+            onChange={formik.handleChange}
           />
-          <ErrorMessage
-            name="idFiscalDos"
-            component={() => (
-              <span className="text-danger">{errors.idFiscalDos}</span>
-            )}
-          />
+         <span className="text-danger">{formik.errors.idFiscalDos}</span>
         </div>
         <div className="form-group col-md-6 col-12 mb-3">
-          <label htmlFor="tipoDocumento">Tipo de documento</label>
-          <Field
+          <Label htmlFor="tipoDocumento">Tipo de documento</Label>
+          <Input
             className="form-control"
             type="text"
             name="tipoDocumento"
             autoComplete="off"
-            value={values.tipoDocumento}
-            onChange={handleChange}
+            value={formik.values.tipoDocumento}
+            onChange={formik.handleChange}
           />
-          <ErrorMessage
-            name="tipoDocumento"
-            component={() => (
-              <span className="text-danger">{errors.tipoDocumento}</span>
-            )}
-          />
+          <span className="text-danger">{formik.errors.tipoDocumento}</span>
         </div>
         <div className="mt-2 mb-2">
           <h5>Datos bancarios</h5>
@@ -83,113 +73,83 @@ export const FormDataBank = ({ errors, values, handleChange }) => {
         </div>
 
         <div className="form-group col-md-6 col-12 mb-3">
-          <label htmlFor="vendedorPrincipal">
+          <Label htmlFor="vendedorPrincipal">
             Nombre del vendedor principal
-          </label>
-          <Field
+          </Label>
+          <Input
             className="form-control"
             type="text"
             name="vendedorPrincipal"
             autoComplete="off"
-            value={values.vendedorPrincipal}
-            onChange={handleChange}
+            value={formik.values.vendedorPrincipal}
+            onChange={formik.handleChange}
           />
-          <ErrorMessage
-            name="vendedorPrincipal"
-            component={() => (
-              <span className="text-danger">{errors.vendedorPrincipal}</span>
-            )}
-          />
+          <span className="text-danger">{formik.errors.vendedorPrincipal}</span>
         </div>
 
         <div className="form-group col-md-6 col-12 mb-3">
-          <label htmlFor="telefonoVendedor">Teléfono del vendedor</label>
-          <Field
+          <Label htmlFor="telefonoVendedor">Teléfono del vendedor</Label>
+          <Input
             className="form-control"
             type="text"
             name="telefonoVendedor"
             autoComplete="off"
-            value={values.telefonoVendedor}
-            onChange={handleChange}
+            value={formik.values.telefonoVendedor}
+            onChange={formik.handleChange}
           />
-          <ErrorMessage
-            name="telefonoVendedor"
-            component={() => (
-              <span className="text-danger">{errors.telefonoVendedor}</span>
-            )}
-          />
+         <span className="text-danger">{formik.errors.telefonoVendedor}</span>
         </div>
 
         <div className="mt-2 mb-2">
           <h5>Condiciones</h5>
         </div>
         <div className="form-group col-md-6 col-12 mb-3">
-          <label htmlFor="moneda">Moneda de pedido</label>
-          <Field
+          <Label htmlFor="moneda">Moneda de pedido</Label>
+          <Input
             className="form-control"
             type="text"
             name="moneda"
             autoComplete="off"
-            value={values.moneda}
-            onChange={handleChange}
+            value={formik.values.moneda}
+            onChange={formik.handleChange}
           />
-          <ErrorMessage
-            name="moneda"
-            component={() => (
-              <span className="text-danger">{errors.moneda}</span>
-            )}
-          />
+          <span className="text-danger">{formik.errors.moneda}</span>
         </div>
         <div className="form-group col-md-6 col-12 mb-3">
-          <label htmlFor="condicionPago">Condiciones de pago</label>
-          <Field
+          <Label htmlFor="condicionPago">Condiciones de pago</Label>
+          <Input
             className="form-control"
             type="text"
             name="condicionPago"
             autoComplete="off"
-            value={values.condicionPago}
-            onChange={handleChange}
+            value={formik.values.condicionPago}
+            onChange={formik.handleChange}
           />
-          <ErrorMessage
-            name="condicionPago"
-            component={() => (
-              <span className="text-danger">{errors.condicionPago}</span>
-            )}
-          />
+          <span className="text-danger">{formik.errors.condicionPago}</span>
         </div>
         <div className="form-group col-md-6 col-12 mb-3">
-          <label htmlFor="incoterms">INCOTERMS</label>
-          <Field
+          <Label htmlFor="incoterms">INCOTERMS</Label>
+          <Input
             className="form-control"
             type="text"
             name="incoterms"
             autoComplete="off"
-            value={values.incoterms}
-            onChange={handleChange}
+            value={formik.values.incoterms}
+            onChange={formik.handleChange}
           />
-          <ErrorMessage
-            name="incoterms"
-            component={() => (
-              <span className="text-danger">{errors.incoterms}</span>
-            )}
-          />
+           <span className="text-danger">{formik.errors.incoterms}</span>
         </div>
         <div className="form-group col-md-6 col-12 mb-3">
-          <label htmlFor="incotermsDos">INCOTERMS 2/Lugar de entrega</label>
-          <Field
+          <Label htmlFor="incotermsDos">INCOTERMS 2/Lugar de entrega</Label>
+          <Input
             className="form-control"
             type="text"
             name="incotermsDos"
             autoComplete="off"
-            value={values.incotermsDos}
-            onChange={handleChange}
+            value={formik.values.incotermsDos}
+            onChange={formik.handleChange}
           />
-          <ErrorMessage
-            name="incotermsDos"
-            component={() => (
-              <span className="text-danger">{errors.incotermsDos}</span>
-            )}
-          />
+          <span className="text-danger">{formik.errors.incotermsDos}</span>
         </div>
       </div>
     </div>
