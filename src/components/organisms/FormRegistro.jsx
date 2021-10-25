@@ -22,7 +22,6 @@ export const FormRegistro = () => {
   );
 
   const isLogged = localStorage.getItem("isLogged") === "true";
-  
 
   function handleVerification() {
     history.push("/supplier_verification");
@@ -412,9 +411,9 @@ export const FormRegistro = () => {
             {rubro.map((item, i) => {
               return (
                 <Input
+                  key={i}
                   type="text"
                   className="form-control"
-                  key={i}
                   value={item.value}
                   readOnly
                 />
